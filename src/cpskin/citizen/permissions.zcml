@@ -1,0 +1,11 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="cpskin.citizen">
+
+  <permission
+    id="cmf.ModifyCitizenContent"
+    title="Modify citizen content"
+    />
+
+</configure>
