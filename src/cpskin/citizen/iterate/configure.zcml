@@ -3,6 +3,15 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="cpskin.citizen">
 
+  <browser:page
+    for="plone.app.stagingbehavior.interfaces.IStagingSupport"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    name="iterate_control"
+    class=".control.Control"
+    permission="zope2.View"
+    allowed_attributes="checkin_allowed checkout_allowed cancel_allowed"
+    />
+
   <adapter
     for="cpskin.citizen.behavior.ICitizenAccess"
     provides="plone.app.iterate.interfaces.IWCContainerLocator"
