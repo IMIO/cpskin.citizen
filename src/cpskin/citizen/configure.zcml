@@ -19,6 +19,13 @@
     provides="Products.GenericSetup.interfaces.EXTENSION"
     />
 
+  <genericsetup:importStep
+    name="cpskin.citizen:default-postInstall"
+    title="cpskin.citizen post_install import step"
+    description="Post install import step from cpskin.citizen"
+    handler=".setuphandlers.post_install">
+  </genericsetup:importStep>
+
   <plone:behavior
     title="Citizen Access"
     description="Give access to citizen users to specific contents"
