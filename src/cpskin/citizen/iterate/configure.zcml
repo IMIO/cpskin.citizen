@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="cpskin.citizen">
+
+  <adapter
+    for="cpskin.citizen.behavior.ICitizenAccess"
+    provides="plone.app.iterate.interfaces.IWCContainerLocator"
+    factory=".adapter.DraftFolderLocator"
+    />
+
+</configure>
