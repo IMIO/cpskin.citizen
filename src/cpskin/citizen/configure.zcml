@@ -28,4 +28,10 @@
     marker=".behavior.ICitizenAccess"
     />
 
+  <adapter
+    for=".behavior.ICitizenAccess"
+    provides="borg.localrole.interfaces.ILocalRoleProvider"
+    factory=".localrole.LocalRoleAdapter"
+    />
+
 </configure>
