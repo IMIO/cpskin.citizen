@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="cpskin.citizen">
+
+  <include package="Products.CMFCore" />
+  <include package="plone.app.dexterity" />
+
+  <genericsetup:registerProfile
+    name="default"
+    title="cpskin.citizen"
+    directory="profiles/default"
+    description="Installs the cpskin.citizen add-on."
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+  <plone:behavior
+    title="Citizen Access"
+    description="Give access to citizen users to specific contents"
+    provides=".behavior.ICitizenAccess"
+    factory=".behavior.CitizenAccess"
+    for="plone.dexterity.interfaces.IDexterityContent"
+    marker=".behavior.ICitizenAccess"
+    />
+
+</configure>
