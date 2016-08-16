@@ -22,8 +22,20 @@
 
   <adapter
     for="cpskin.citizen.behavior.ICitizenAccess"
+    provides="plone.app.iterate.interfaces.IObjectCopier"
+    factory=".copier.ContentCopierAdapter"
+    />
+
+  <adapter
+    for="cpskin.citizen.behavior.ICitizenAccess"
     provides="plone.app.iterate.interfaces.IWCContainerLocator"
     factory=".adapter.DraftFolderLocator"
+    />
+
+  <adapter
+    for="cpskin.citizen.behavior.ICitizenAccess"
+    provides="plone.app.iterate.interfaces.IObjectArchiver"
+    factory=".archiver.ContentArchiverAdapter"
     />
 
 </configure>
