@@ -9,9 +9,9 @@
   <include package="Products.CMFCore" />
   <include package="plone.app.dexterity" />
 
-  <include package=".iterate" />
-
   <include file="permissions.zcml" />
+
+  <include package=".iterate" />
 
   <genericsetup:registerProfile
     name="default"

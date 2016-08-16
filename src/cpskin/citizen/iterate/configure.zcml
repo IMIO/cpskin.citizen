@@ -12,6 +12,14 @@
     allowed_attributes="checkin_allowed checkout_allowed cancel_allowed"
     />
 
+  <browser:page
+    for="plone.app.stagingbehavior.interfaces.IStagingSupport"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    name="content-checkout"
+    class=".checkout.CheckoutView"
+    permission="zope2.View"
+    />
+
   <adapter
     for="cpskin.citizen.behavior.ICitizenAccess"
     provides="plone.app.iterate.interfaces.IWCContainerLocator"
