@@ -16,6 +16,7 @@ from zope.component import adapter
 from zope.interface import Interface
 from zope.interface import implementer
 from zope.interface import provider
+from collective.z3cform.select2.widget.widget import MultiSelect2FieldWidget
 
 from cpskin.citizen import _
 
@@ -29,8 +30,13 @@ class ICitizenAccess(Interface):
         fields=['citizens'],
     )
 
-    citizens = schema.TextLine(
+    form.widget(citizens=MultiSelect2FieldWidget)
+    citizens = schema.List(
         title=_(u'Citizens users'),
+        value_type=schema.Choice(
+            title=_(u'Citizens users'),
+            vocabulary='cpskin.citizen.citizens',
+        ),
         required=False,
     )
 

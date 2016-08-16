@@ -44,10 +44,12 @@ setup(
     zip_safe=False,
     install_requires=[
         'borg.localrole',
+        'collective.z3cform.select2',
         'plone.api',
         'plone.app.dexterity',
         'plone.app.iterate',
         'plone.app.stagingbehavior',
+        'plone.principalsource',
         'setuptools',
         'z3c.jbot',
     ],

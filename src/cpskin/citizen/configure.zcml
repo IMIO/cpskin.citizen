@@ -8,6 +8,8 @@
 
   <include package="Products.CMFCore" />
   <include package="plone.app.dexterity" />
+  <include package="plone.autoform" />
+  <include package="collective.z3cform.select2" />
 
   <include file="permissions.zcml" />
 
@@ -42,6 +44,12 @@
     for=".behavior.ICitizenAccess"
     provides="borg.localrole.interfaces.ILocalRoleProvider"
     factory=".localrole.LocalRoleAdapter"
+    />
+
+  <utility
+    component=".vocabularies.CitizensVocabulary"
+    name="cpskin.citizen.citizens"
+    provides="zope.schema.interfaces.IVocabularyFactory"
     />
 
 </configure>
