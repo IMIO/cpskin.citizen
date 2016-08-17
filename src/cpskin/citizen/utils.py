@@ -111,6 +111,12 @@ def can_edit_citizen(user, context):
     )
 
 
+def get_draft_folder(context):
+    """Return the citizen draft folder for the given context"""
+    navigation_root = api.portal.get_navigation_root(context)
+    return navigation_root['citizen-drafts']
+
+
 def dict_2_vocabulary(dictionary):
     """Transform a dictionary into a vocabulary"""
     terms = [SimpleVocabulary.createTerm(k, k, v)

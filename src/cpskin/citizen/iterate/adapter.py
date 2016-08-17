@@ -27,5 +27,4 @@ class DraftFolderLocator(object):
         return utils.can_edit_citizen(current_user, self.context)
 
     def __call__(self):
-        navigation_root = api.portal.get_navigation_root(self.context)
-        return navigation_root['citizen-drafts']
+        return utils.get_draft_folder(self.context)
