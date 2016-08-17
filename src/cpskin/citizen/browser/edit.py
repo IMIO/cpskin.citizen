@@ -76,11 +76,4 @@ class EditCitizenView(DefaultEditView):
                 url = '{0}/@@edit-citizen'.format(working_copy.absolute_url())
             self.request.response.redirect(url)
             return
-        # working_copy == self.context
         super(EditCitizenView, self).update()
-
-    def on_original(self):
-        """Verify if the current context is the original object"""
-
-    def on_working_copy(self):
-        """Verify if the current context is the working copy"""

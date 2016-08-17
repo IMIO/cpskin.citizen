@@ -7,16 +7,16 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
+from collective.z3cform.select2.widget.widget import MultiSelect2FieldWidget
 from plone.autoform import directives as form
-from plone.supermodel.directives import fieldset
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent
+from plone.supermodel.directives import fieldset
 from zope import schema
 from zope.component import adapter
 from zope.interface import Interface
 from zope.interface import implementer
 from zope.interface import provider
-from collective.z3cform.select2.widget.widget import MultiSelect2FieldWidget
 
 from cpskin.citizen import _
 
