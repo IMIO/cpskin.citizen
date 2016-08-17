@@ -19,7 +19,8 @@ class LocalRoleAdapter(object):
 
     def getRoles(self, principal):
         """Grant permission for principal"""
-        if principal in getattr(self.context, 'citizens', []):
+        citizens = getattr(self.context, 'citizens', []) or []
+        if principal in citizens:
             return ('Reader', 'Citizen Editor')
         return []
 
