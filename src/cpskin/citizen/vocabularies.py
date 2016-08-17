@@ -12,6 +12,8 @@ from plone.principalsource.source import PrincipalSource
 from zope.interface import implements
 from zope.schema.interfaces import IContextSourceBinder
 
+from cpskin.citizen import utils
+
 
 class CitizensSource(PrincipalSource):
 
@@ -34,3 +36,15 @@ class CitizensSourceBinder(object):
 
 
 CitizensVocabulary = CitizensSourceBinder()
+
+
+class CitizensPortalTypesVocabularyFactory(object):
+
+    def __call__(self, context):
+        portal_types = api.portal.get_tool('portal_types')
+        content = {k: v.title for k, v in portal_types.items()
+                   if k in utils.citizen_access_portal_types()}
+        return utils.dict_2_vocabulary(content)
+
+
+CitizensPortalTypesVocabulary = CitizensPortalTypesVocabularyFactory()

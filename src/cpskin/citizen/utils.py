@@ -12,6 +12,28 @@ from AccessControl.SecurityManagement import newSecurityManager
 from AccessControl.SecurityManagement import setSecurityManager
 from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
 from plone import api
+from zope.schema.vocabulary import SimpleVocabulary
+
+from cpskin.citizen.behavior import ICitizenAccess
+
+
+def citizen_access_portal_types():
+    """Return the portal types where the CitizenAccess is active"""
+    portal_types = api.portal.get_tool('portal_types')
+    types = []
+    cls = cls_fullpath(ICitizenAccess)
+    for portal_type in portal_types:
+        if cls in getattr(portal_types[portal_type], 'behaviors', []):
+            types.append(portal_type)
+    return types
+
+
+def cls_fullpath(cls):
+    """Return the complete path of a class"""
+    return u'{module}.{classname}'.format(
+        module=cls.__module__,
+        classname=cls.__name__,
+    )
 
 
 class UnrestrictedUser(BaseUnrestrictedUser):
@@ -87,3 +109,10 @@ def can_edit_citizen(user, context):
         user=user,
         obj=context,
     )
+
+
+def dict_2_vocabulary(dictionary):
+    """Transform a dictionary into a vocabulary"""
+    terms = [SimpleVocabulary.createTerm(k, k, v)
+             for k, v in dictionary.items()]
+    return SimpleVocabulary(terms)

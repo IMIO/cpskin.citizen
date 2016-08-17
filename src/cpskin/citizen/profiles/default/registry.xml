@@ -1,0 +1,6 @@
+<registry>
+  <records interface="cpskin.citizen.browser.settings.ISettings">
+    <value key="proposal_folders" purge="false"></value>
+    <value key="claim_types" purge="false"></value>
+  </records>
+</registry>

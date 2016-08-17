@@ -12,6 +12,7 @@
   <include package="collective.z3cform.select2" />
 
   <include file="permissions.zcml" />
+  <include file="vocabularies.zcml" />
 
   <include package=".browser" />
   <include package=".iterate" />
@@ -46,10 +47,5 @@
     factory=".localrole.LocalRoleAdapter"
     />
 
-  <utility
-    component=".vocabularies.CitizensVocabulary"
-    name="cpskin.citizen.citizens"
-    provides="zope.schema.interfaces.IVocabularyFactory"
-    />
 
 </configure>
