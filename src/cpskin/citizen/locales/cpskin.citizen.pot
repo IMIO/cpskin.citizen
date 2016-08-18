@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-08-18 15:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ../browser/settings.py:54
+msgid "Allowed content types for creation by citizens (by default all content types are allowed)"
+msgstr ""
+
+#: ../browser/settings.py:43
+msgid "Allowed content types for the claim procedure"
+msgstr ""
+
+#: ../profiles/default/controlpanel.xml
+msgid "CPSkin Citizen Settings"
+msgstr ""
+
+#: ../browser/templates/citizen-claim.pt:23
+msgid "Cancel"
+msgstr ""
+
+#: ../browser/templates/citizen-edition-viewlet.pt:22
+msgid "Cancel changes"
+msgstr ""
+
+#: ../browser/templates/citizen-cancel.pt:18
+msgid "Cancel checkout"
+msgstr ""
+
+#: ../browser/templates/citizen-edition-viewlet.pt:9
+msgid "Citizen Edition"
+msgstr ""
+
+#: ../behavior.py:29
+msgid "Citizen access"
+msgstr ""
+
+#: ../iterate/adapter.py:18
+msgid "Citizen draft folder"
+msgstr ""
+
+#: ../behavior.py:35
+msgid "Citizens users"
+msgstr ""
+
+#: ../browser/templates/citizen-edition-viewlet.pt:18
+msgid "Claim awaiting for approval"
+msgstr ""
+
+#: ../browser/settings.py:42
+msgid "Claim content types"
+msgstr ""
+
+#: ../browser/templates/citizen-claim.pt:8
+msgid "Claim modifications of ${object_title}."
+msgstr ""
+
+#: ../browser/templates/citizen-edition-viewlet.pt:15
+msgid "Claim this content"
+msgstr ""
+
+#: ../browser/templates/citizen-claim.pt:11
+msgid "Claiming this document will ask to administrators to give you the possibility to propose modifications."
+msgstr ""
+
+#: ../browser/templates/citizen-claim.pt:16
+msgid "Confirm"
+msgstr ""
+
+#: ../browser/settings.py:28
+msgid "Content type"
+msgstr ""
+
+#: ../browser/settings.py:53
+msgid "Creation content types"
+msgstr ""
+
+#: ../browser/settings.py:33
+msgid "Default folder"
+msgstr ""
+
+#: ../browser/templates/citizen-edition-viewlet.pt:11
+msgid "Edit this content"
+msgstr ""
+
+#: ../profiles/default/sharing.xml
+msgid "Is a citizen editor"
+msgstr ""
+
+#: ../browser/templates/citizen-cancel.pt:25
+msgid "Keep checkout"
+msgstr ""
+
+#: ../browser/settings.py:34
+msgid "Path to the folder from the navigation root"
+msgstr ""
+
+#: ../browser/settings.py:24
+msgid "Proposal default folders"
+msgstr ""
+
+#: ../browser/settings.py:25
+msgid "The folders where (by default) new content proposed by citizens will be created"
+msgstr ""
+
+#. Default: "Canceling the draft will delete this working copy, and any modifications made to it will be lost."
+#: ../browser/templates/citizen-cancel.pt:12
+msgid "description_cancel"
+msgstr ""
+
+#. Default: "Cancel modifications of ${object_title}."
+#: ../browser/templates/citizen-cancel.pt:9
+msgid "title_cancel"
+msgstr ""
+

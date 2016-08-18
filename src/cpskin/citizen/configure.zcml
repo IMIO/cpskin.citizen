@@ -6,6 +6,8 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="cpskin.citizen">
 
+  <i18n:registerTranslations directory="locales" />
+
   <include package="Products.CMFCore" />
   <include package="plone.app.dexterity" />
   <include package="plone.autoform" />

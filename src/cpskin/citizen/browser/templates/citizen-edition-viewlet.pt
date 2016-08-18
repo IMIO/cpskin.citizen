@@ -6,9 +6,9 @@
 
   <tal:if condition="view/can_view">
   <fieldset>
-    <legend>Citizen Edition</legend>
+    <legend i18n:translate="">Citizen Edition</legend>
     <tal:if condition="view/can_edit">
-    <a href="" tal:attributes="href string:${view/context/absolute_url}/@@edit-citizen">Edit this content</a>
+    <a href="" tal:attributes="href string:${view/context/absolute_url}/@@edit-citizen" i18n:translate="">Edit this content</a>
     </tal:if>
     <tal:if condition="view/can_claim">
     <tal:if condition="not: view/have_claimed">
@@ -19,7 +19,7 @@
     </tal:if>
     </tal:if>
     <tal:if condition="view/can_cancel">
-    <a href="" tal:attributes="href string:${view/context/absolute_url}/@@cancel-citizen">Cancel changes</a>
+    <a href="" tal:attributes="href string:${view/context/absolute_url}/@@cancel-citizen" i18n:translate="">Cancel changes</a>
     </tal:if>
   </fieldset>
   </tal:if>

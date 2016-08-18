@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-08-18 15:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ../browser/settings.py:54
+msgid "Allowed content types for creation by citizens (by default all content types are allowed)"
+msgstr "Types de contenus autorisés pour la création par les citoyens (par défaut tous les types de contenus sont autorisés)"
+
+#: ../browser/settings.py:43
+msgid "Allowed content types for the claim procedure"
+msgstr "Types de contenus autorisés pour la réclamation par un citoyen"
+
+#: ../profiles/default/controlpanel.xml
+msgid "CPSkin Citizen Settings"
+msgstr "CPSkin Citizen Configuration"
+
+#: ../browser/templates/citizen-claim.pt:23
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../browser/templates/citizen-edition-viewlet.pt:22
+msgid "Cancel changes"
+msgstr "Annuler les changements"
+
+#: ../browser/templates/citizen-cancel.pt:18
+msgid "Cancel checkout"
+msgstr "Supprimer le brouillon"
+
+#: ../browser/templates/citizen-edition-viewlet.pt:9
+msgid "Citizen Edition"
+msgstr "Accès Citoyen"
+
+#: ../behavior.py:29
+msgid "Citizen access"
+msgstr "Accès Citoyen"
+
+#: ../iterate/adapter.py:18
+msgid "Citizen draft folder"
+msgstr "Dossier de brouillons"
+
+#: ../behavior.py:35
+msgid "Citizens users"
+msgstr "Utilisateurs citoyens"
+
+#: ../browser/templates/citizen-edition-viewlet.pt:18
+msgid "Claim awaiting for approval"
+msgstr "Réclamation en attente de confirmation"
+
+#: ../browser/settings.py:42
+msgid "Claim content types"
+msgstr "Types de contenus réclamables"
+
+#: ../browser/templates/citizen-claim.pt:8
+msgid "Claim modifications of ${object_title}."
+msgstr "Réclamation de modifications de"
+
+#: ../browser/templates/citizen-edition-viewlet.pt:15
+msgid "Claim this content"
+msgstr "Réclamer ce contenu"
+
+#: ../browser/templates/citizen-claim.pt:11
+msgid "Claiming this document will ask to administrators to give you the possibility to propose modifications."
+msgstr "Réclamer ce document enverra une demande aux administrateurs pour vous donner la possibilité de proposer des modifications."
+
+#: ../browser/templates/citizen-claim.pt:16
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: ../browser/settings.py:28
+msgid "Content type"
+msgstr "Type de contenu"
+
+#: ../browser/settings.py:53
+msgid "Creation content types"
+msgstr "Types de contenus créables"
+
+#: ../browser/settings.py:33
+msgid "Default folder"
+msgstr "Dossier par défaut"
+
+#: ../browser/templates/citizen-edition-viewlet.pt:11
+msgid "Edit this content"
+msgstr "Editer ce contenu"
+
+#: ../profiles/default/sharing.xml
+msgid "Is a citizen editor"
+msgstr "Est un éditeur citoyen"
+
+#: ../browser/templates/citizen-cancel.pt:25
+msgid "Keep checkout"
+msgstr "Garder le brouillon"
+
+#: ../browser/settings.py:34
+msgid "Path to the folder from the navigation root"
+msgstr "Chemin vers le dossier à partir de la racine de navigation"
+
+#: ../browser/settings.py:24
+msgid "Proposal default folders"
+msgstr "Dossiers par défauts pour les proposition citoyennes"
+
+#: ../browser/settings.py:25
+msgid "The folders where (by default) new content proposed by citizens will be created"
+msgstr "Les dossiers ou (par défaut) les nouveaux contenus proposés par les citoyens seront créés"
+
+#. Default: "Canceling the draft will delete this working copy, and any modifications made to it will be lost."
+#: ../browser/templates/citizen-cancel.pt:12
+msgid "description_cancel"
+msgstr "Supprimer ce brouillon entrainera la suppression de cette copie de travail et de toutes ces modifications."
+
+#. Default: "Cancel modifications of ${object_title}."
+#: ../browser/templates/citizen-cancel.pt:9
+msgid "title_cancel"
+msgstr "Supprimer les modifications de ${object_title}."
+
