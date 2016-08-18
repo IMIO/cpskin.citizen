@@ -19,6 +19,14 @@
     permission="cmf.ModifyCitizenContent"
     />
 
+  <browser:page
+    name="cancel-citizen"
+    for="cpskin.citizen.behavior.ICitizenAccess"
+    class=".cancel.CancelCitizenView"
+    template="templates/citizen-cancel.pt"
+    permission="cmf.ModifyCitizenContent"
+    />
+
   <!-- viewlets -->
   <browser:viewlet
     name="citizen-edition-viewlet"

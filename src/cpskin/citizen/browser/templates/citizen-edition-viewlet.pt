@@ -10,6 +10,9 @@
     <tal:if condition="view/can_edit">
     <a href="" tal:attributes="href string:${view/context/absolute_url}/@@edit-citizen">Edit this content</a>
     </tal:if>
+    <tal:if condition="view/can_cancel">
+    <a href="" tal:attributes="href string:${view/context/absolute_url}/@@cancel-citizen">Cancel changes</a>
+    </tal:if>
   </fieldset>
   </tal:if>
 
