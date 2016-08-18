@@ -50,6 +50,21 @@
     />
 
   <adapter
+    name="citizens"
+    factory=".indexers.citizens_indexer"
+    />
+
+  <adapter
+    name="validation_required"
+    factory=".indexers.validation_required_indexer"
+    />
+
+  <adapter
+    name="citizen_claim"
+    factory=".indexers.citizen_claim_indexer"
+    />
+
+  <adapter
     for="zope.interface.Interface
          zope.interface.Interface"
     provides=".interfaces.ICitizenCreationFolder"
