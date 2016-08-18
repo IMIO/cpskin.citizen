@@ -12,9 +12,15 @@ from AccessControl.SecurityManagement import newSecurityManager
 from AccessControl.SecurityManagement import setSecurityManager
 from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
 from plone import api
+from plone.registry.interfaces import IRegistry
+from zope.component import getMultiAdapter
+from zope.component import getUtility
+from zope.component import queryMultiAdapter
 from zope.schema.vocabulary import SimpleVocabulary
 
 from cpskin.citizen.behavior import ICitizenAccess
+from cpskin.citizen.browser.settings import ISettings
+from cpskin.citizen.interfaces import ICitizenCreationFolder
 
 
 def citizen_access_portal_types():
@@ -111,6 +117,14 @@ def can_edit_citizen(user, context):
     )
 
 
+def is_citizen(user):
+    """
+    Verify if the given user is a citizen (member of the Citizens group)
+    """
+    user_groups = api.group.get_groups(user=user)
+    return 'Citizens' in [g.id for g in user_groups]
+
+
 def get_draft_folder(context):
     """Return the citizen draft folder for the given context"""
     navigation_root = api.portal.get_navigation_root(context)
@@ -122,3 +136,29 @@ def dict_2_vocabulary(dictionary):
     terms = [SimpleVocabulary.createTerm(k, k, v)
              for k, v in dictionary.items()]
     return SimpleVocabulary(terms)
+
+
+def get_settings():
+    return getUtility(IRegistry).forInterface(ISettings)
+
+
+def get_creation_folder(context, request, portal_type):
+    """Return the creation folder for a proposal from a citizen"""
+    navigation_root = api.portal.get_navigation_root(context)
+    adapter = queryMultiAdapter(
+        (context, request),
+        ICitizenCreationFolder,
+        name=portal_type,
+    )
+    if adapter:
+        return adapter.get_folder(navigation_root, portal_type)
+    adapter = getMultiAdapter((context, request), ICitizenCreationFolder)
+    return adapter.get_folder(navigation_root, portal_type)
+
+
+def get_allowed_creation_types():
+    settings = get_settings()
+    allowed_types = settings.creation_types
+    if not allowed_types:
+        allowed_types = citizen_access_portal_types()
+    return allowed_types

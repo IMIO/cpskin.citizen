@@ -27,6 +27,13 @@
     permission="cmf.ModifyCitizenContent"
     />
 
+  <browser:page
+    name="propose-citizen"
+    for="*"
+    class=".propose.ProposeCitizenView"
+    permission="zope2.View"
+    />
+
   <!-- viewlets -->
   <browser:viewlet
     name="citizen-edition-viewlet"

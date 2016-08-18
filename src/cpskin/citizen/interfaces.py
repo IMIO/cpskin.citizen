@@ -1,8 +1,19 @@
 # -*- coding: utf-8 -*-
-"""Module where all interfaces, events and exceptions live."""
+"""
+cpskin.citizen
+--------------
 
+Created by mpeeters
+:license: GPL, see LICENCE.txt for more details.
+"""
+
+from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
 class ICpskinCitizenLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
+
+
+class ICitizenCreationFolder(Interface):
+    pass
