@@ -11,13 +11,16 @@ from AccessControl import getSecurityManager
 from AccessControl.SecurityManagement import newSecurityManager
 from AccessControl.SecurityManagement import setSecurityManager
 from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
+from persistent.dict import PersistentDict
 from plone import api
 from plone.registry.interfaces import IRegistry
+from zope.annotation import IAnnotations
 from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.component import queryMultiAdapter
 from zope.schema.vocabulary import SimpleVocabulary
 
+from cpskin.citizen import ANNOTATION_KEY
 from cpskin.citizen.behavior import ICitizenAccess
 from cpskin.citizen.browser.settings import ISettings
 from cpskin.citizen.interfaces import ICitizenCreationFolder
@@ -125,6 +128,23 @@ def is_citizen(user):
     return 'Citizens' in [g.id for g in user_groups]
 
 
+def can_claim(user, context):
+    """Verify if the given user can claim the given context"""
+    if can_edit_citizen(user, context) is True:
+        return False
+    return is_citizen(user)
+
+
+def have_claimed(user, context):
+    """Verify if the given user alredy claimed the given context"""
+    return user.id in get_claimed_users(context)
+
+
+def get_claimed_users(context):
+    """Return the users that have claimed the given context"""
+    return get_annotations(context).get('claim', [])
+
+
 def get_draft_folder(context):
     """Return the citizen draft folder for the given context"""
     navigation_root = api.portal.get_navigation_root(context)
@@ -162,3 +182,10 @@ def get_allowed_creation_types():
     if not allowed_types:
         allowed_types = citizen_access_portal_types()
     return allowed_types
+
+
+def get_annotations(context):
+    annotations = IAnnotations(context)
+    if ANNOTATION_KEY not in annotations:
+        annotations[ANNOTATION_KEY] = PersistentDict()
+    return annotations[ANNOTATION_KEY]

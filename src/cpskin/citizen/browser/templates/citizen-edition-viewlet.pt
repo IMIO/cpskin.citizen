@@ -10,6 +10,14 @@
     <tal:if condition="view/can_edit">
     <a href="" tal:attributes="href string:${view/context/absolute_url}/@@edit-citizen">Edit this content</a>
     </tal:if>
+    <tal:if condition="view/can_claim">
+    <tal:if condition="not: view/have_claimed">
+    <a href="" tal:attributes="href string:${view/context/absolute_url}/@@claim-citizen" i18n:translate="">Claim this content</a>
+    </tal:if>
+    <tal:if condition="view/have_claimed">
+    <span i18n:translate="">Claim awaiting for approval</span>
+    </tal:if>
+    </tal:if>
     <tal:if condition="view/can_cancel">
     <a href="" tal:attributes="href string:${view/context/absolute_url}/@@cancel-citizen">Cancel changes</a>
     </tal:if>

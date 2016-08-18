@@ -18,8 +18,14 @@ from cpskin.citizen.behavior import ICitizenAccess
 class CitizenEditionViewlet(base.ViewletBase):
 
     def update(self):
-        self.current_user = api.user.get_current()
+        if self.can_view:
+            self.current_user = api.user.get_current()
+            self.have_claimed = utils.have_claimed(
+                self.current_user,
+                self.context,
+            )
 
+    @property
     def can_view(self):
         if api.user.is_anonymous() is True:
             return False
@@ -28,6 +34,10 @@ class CitizenEditionViewlet(base.ViewletBase):
     @property
     def can_edit(self):
         return utils.can_edit_citizen(self.current_user, self.context)
+
+    @property
+    def can_claim(self):
+        return utils.can_claim(self.current_user, self.context)
 
     @property
     def can_cancel(self):

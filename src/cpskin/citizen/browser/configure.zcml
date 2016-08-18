@@ -34,6 +34,14 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="claim-citizen"
+    for="cpskin.citizen.behavior.ICitizenAccess"
+    class=".claim.ClaimCitizenView"
+    template="templates/citizen-claim.pt"
+    permission="zope2.View"
+    />
+
   <!-- viewlets -->
   <browser:viewlet
     name="citizen-edition-viewlet"
