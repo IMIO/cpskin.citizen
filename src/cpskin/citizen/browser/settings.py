@@ -48,6 +48,18 @@ class ISettings(Interface):
         required=False,
     )
 
+    form.widget(creation_types=MultiSelect2FieldWidget)
+    creation_types = schema.List(
+        title=_(u'Creation content types'),
+        description=_(u'Allowed content types for creation by citizens '
+                      u'(by default all content types are allowed)'),
+        value_type=schema.Choice(
+            title=_(u'Claim content types'),
+            vocabulary='cpskin.citizen.portal_types',
+        ),
+        required=False,
+    )
+
 
 class SettingsEditForm(RegistryEditForm):
     schema = ISettings
