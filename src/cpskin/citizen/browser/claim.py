@@ -27,6 +27,7 @@ class ClaimCitizenView(BrowserView):
                 annotations['claim'] = []
             if self.current_user.id not in annotations['claim']:
                 annotations['claim'].append(self.current_user.id)
+                annotations._p_changed = True
                 self.context.reindexObject()
             self.request.response.redirect(view_url)
         elif 'form.button.Cancel' in self.request.form:

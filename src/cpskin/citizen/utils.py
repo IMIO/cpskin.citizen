@@ -137,10 +137,10 @@ def can_claim(user, context):
 
 def have_claimed(user, context):
     """Verify if the given user alredy claimed the given context"""
-    return user.id in get_claimed_users(context)
+    return user.id in get_claim_users(context)
 
 
-def get_claimed_users(context):
+def get_claim_users(context):
     """Return the users that have claimed the given context"""
     return get_annotations(context).get('claim', [])
 
