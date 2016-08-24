@@ -43,6 +43,13 @@
     />
 
   <browser:page
+    name="claim-citizen-approval"
+    for="cpskin.citizen.behavior.ICitizenAccess"
+    class=".claim.ClaimCitizenApprovalView"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="citizen-return-checkout"
     for="cpskin.citizen.behavior.ICitizenAccess"
     class=".iterate.ReturnView"
@@ -53,11 +60,20 @@
   <!-- viewlets -->
   <browser:viewlet
     name="citizen-edition-viewlet"
-    for="*"
+    for="cpskin.citizen.behavior.ICitizenAccess"
     manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
     class=".viewlets.CitizenEditionViewlet"
     template="templates/citizen-edition-viewlet.pt"
     permission="zope2.View"
+    />
+
+  <browser:viewlet
+    name="citizen-admin-viewlet"
+    for="cpskin.citizen.behavior.ICitizenAccess"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+    class=".viewlets.CitizenAdminViewlet"
+    template="templates/citizen-admin-viewlet.pt"
+    permission="cmf.ModifyPortalContent"
     />
 
 </configure>

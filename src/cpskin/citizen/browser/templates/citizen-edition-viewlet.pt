@@ -9,7 +9,7 @@
     <dt i18n:translate="">Comment</dt>
     <dd tal:content="view/comment"></dd>
   </dl>
-  <fieldset>
+  <fieldset class="citizen">
     <legend i18n:translate="">Citizen Edition</legend>
     <tal:if condition="view/can_edit">
     <a href="" tal:attributes="href string:${view/context/absolute_url}/@@edit-citizen" i18n:translate="">Edit this content</a>

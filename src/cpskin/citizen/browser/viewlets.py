@@ -12,25 +12,55 @@ from plone.app.layout.viewlets import common as base
 from plone.app.stagingbehavior.utils import get_working_copy
 
 from cpskin.citizen import utils
-from cpskin.citizen.behavior import ICitizenAccess
 
 
-class CitizenEditionViewlet(base.ViewletBase):
+class CitizenBaseViewlet(base.ViewletBase):
 
     def update(self):
+        self.current_user = api.user.get_current()
         if self.can_view:
-            self.current_user = api.user.get_current()
+            self.annotations = utils.get_annotations(self.context)
+
+    @property
+    def can_view(self):
+        return True
+
+    @property
+    def comment(self):
+        return self.annotations.get('comment', None)
+
+    @property
+    def has_claims(self):
+        return len(self.annotations.get('claim', [])) > 0
+
+    @property
+    def awaiting_claims(self):
+        claims = []
+        for claim in self.annotations.get('claim', []):
+            user = api.user.get(userid=claim)
+            if user:
+                claims.append({
+                    'id': claim,
+                    'username': user.getProperty('fullname'),
+                })
+        return claims
+
+
+class CitizenEditionViewlet(CitizenBaseViewlet):
+
+    def update(self):
+        super(CitizenEditionViewlet, self).update()
+        if self.can_view:
             self.have_claimed = utils.have_claimed(
                 self.current_user,
                 self.context,
             )
-            self.annotations = utils.get_annotations(self.context)
 
     @property
     def can_view(self):
         if api.user.is_anonymous() is True:
             return False
-        return ICitizenAccess.providedBy(self.context)
+        return utils.is_citizen(self.current_user)
 
     @property
     def can_edit(self):
@@ -46,6 +76,6 @@ class CitizenEditionViewlet(base.ViewletBase):
             return False
         return self.context == get_working_copy(self.context)
 
-    @property
-    def comment(self):
-        return self.annotations.get('comment', None)
+
+class CitizenAdminViewlet(CitizenBaseViewlet):
+    pass
