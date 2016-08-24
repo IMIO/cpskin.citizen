@@ -29,6 +29,10 @@ class Control(control.Control):
             return utils.can_edit_citizen(current_user, context)
         return True
 
+    def cancel_allowed(self):
+        """Check if a checkout cancel is allowed"""
+        return False
+
     def return_allowed(self):
         """Check if a return checkout is allowed"""
         return super(Control, self).cancel_allowed()
