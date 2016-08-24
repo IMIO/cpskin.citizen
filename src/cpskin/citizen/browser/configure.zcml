@@ -42,6 +42,14 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="citizen-return-checkout"
+    for="cpskin.citizen.behavior.ICitizenAccess"
+    class=".iterate.ReturnView"
+    template="templates/citizen-return-checkout.pt"
+    permission="cmf.ModifyPortalContent"
+    />
+
   <!-- viewlets -->
   <browser:viewlet
     name="citizen-edition-viewlet"

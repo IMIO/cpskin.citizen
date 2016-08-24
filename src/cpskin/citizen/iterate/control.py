@@ -28,3 +28,7 @@ class Control(control.Control):
             current_user = api.user.get_current()
             return utils.can_edit_citizen(current_user, context)
         return True
+
+    def return_allowed(self):
+        """Check if a return checkout is allowed"""
+        return super(Control, self).cancel_allowed()

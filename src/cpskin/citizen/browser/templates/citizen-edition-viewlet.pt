@@ -5,6 +5,10 @@
       i18n:domain="cpskin.citizen" lang="en">
 
   <tal:if condition="view/can_view">
+  <dl class="portalMessage warning" tal:condition="view/comment">
+    <dt i18n:translate="">Comment</dt>
+    <dd tal:content="view/comment"></dd>
+  </dl>
   <fieldset>
     <legend i18n:translate="">Citizen Edition</legend>
     <tal:if condition="view/can_edit">

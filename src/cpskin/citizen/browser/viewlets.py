@@ -24,6 +24,7 @@ class CitizenEditionViewlet(base.ViewletBase):
                 self.current_user,
                 self.context,
             )
+            self.annotations = utils.get_annotations(self.context)
 
     @property
     def can_view(self):
@@ -44,3 +45,7 @@ class CitizenEditionViewlet(base.ViewletBase):
         if utils.can_edit_citizen(self.current_user, self.context) is False:
             return False
         return self.context == get_working_copy(self.context)
+
+    @property
+    def comment(self):
+        return self.annotations.get('comment', None)
