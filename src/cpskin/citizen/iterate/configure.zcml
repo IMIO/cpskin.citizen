@@ -4,7 +4,16 @@
     i18n_domain="cpskin.citizen">
 
   <browser:page
-    for="plone.app.stagingbehavior.interfaces.IStagingSupport"
+    for="*"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    name="iterate_control"
+    class=".control.DefaultControl"
+    permission="zope2.View"
+    allowed_attributes="checkin_allowed checkout_allowed cancel_allowed return_allowed"
+    />
+
+  <browser:page
+    for="cpskin.citizen.behavior.ICitizenAccess"
     layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
     name="iterate_control"
     class=".control.Control"
