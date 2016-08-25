@@ -30,6 +30,10 @@ class CitizenBaseViewlet(base.ViewletBase):
         return self.annotations.get('comment', None)
 
     @property
+    def validation_required(self):
+        return self.annotations.get('validation_required', False)
+
+    @property
     def has_claims(self):
         return len(self.annotations.get('claim', [])) > 0
 
@@ -75,6 +79,12 @@ class CitizenEditionViewlet(CitizenBaseViewlet):
         if utils.can_edit_citizen(self.current_user, self.context) is False:
             return False
         return self.context == get_working_copy(self.context)
+
+    @property
+    def can_ask_validation(self):
+        if self.context != get_working_copy(self.context):
+            return False
+        return not self.validation_required
 
 
 class CitizenAdminViewlet(CitizenBaseViewlet):
