@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-18 15:07+0000\n"
+"POT-Creation-Date: 2016-08-25 13:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,15 +22,37 @@ msgstr "Types de contenus autorisés pour la création par les citoyens (par dé
 msgid "Allowed content types for the claim procedure"
 msgstr "Types de contenus autorisés pour la réclamation par un citoyen"
 
+#: ../browser/templates/citizen-return-checkout.pt:8
+msgid "Ask for changes on ${object_title}."
+msgstr "Demander des changements sur ${object_title}."
+
+#: ../browser/templates/citizen-edition-viewlet.pt:31
+msgid "Ask for validation"
+msgstr "Demander la validation"
+
+#: ../browser/templates/citizen-validation-required.pt:8
+msgid "Ask for validation on ${object_title}."
+msgstr "Demander la validation pour ${object_title}."
+
+#: ../browser/templates/citizen-validation-required.pt:11
+msgid "Ask validation for this document will ask to administrators to publish your modifications."
+msgstr "Demander la validation de ce document enverra une demande aux administrateurs pour la publication de vos modifications."
+
+#: ../browser/templates/citizen-edition-viewlet.pt:20
+msgid "Awaiting for validation"
+msgstr "En attent de validation"
+
 #: ../profiles/default/controlpanel.xml
 msgid "CPSkin Citizen Settings"
 msgstr "CPSkin Citizen Configuration"
 
 #: ../browser/templates/citizen-claim.pt:23
+#: ../browser/templates/citizen-return-checkout.pt:34
+#: ../browser/templates/citizen-validation-required.pt:23
 msgid "Cancel"
 msgstr "Annuler"
 
-#: ../browser/templates/citizen-edition-viewlet.pt:22
+#: ../browser/templates/citizen-edition-viewlet.pt:28
 msgid "Cancel changes"
 msgstr "Annuler les changements"
 
@@ -38,7 +60,11 @@ msgstr "Annuler les changements"
 msgid "Cancel checkout"
 msgstr "Supprimer le brouillon"
 
-#: ../browser/templates/citizen-edition-viewlet.pt:9
+#: ../browser/templates/citizen-admin-viewlet.pt:13
+msgid "Citizen Administration"
+msgstr "Administration Citoyen"
+
+#: ../browser/templates/citizen-edition-viewlet.pt:23
 msgid "Citizen Edition"
 msgstr "Accès Citoyen"
 
@@ -54,7 +80,7 @@ msgstr "Dossier de brouillons"
 msgid "Citizens users"
 msgstr "Utilisateurs citoyens"
 
-#: ../browser/templates/citizen-edition-viewlet.pt:18
+#: ../browser/templates/citizen-edition-viewlet.pt:15
 msgid "Claim awaiting for approval"
 msgstr "Réclamation en attente de confirmation"
 
@@ -66,7 +92,7 @@ msgstr "Types de contenus réclamables"
 msgid "Claim modifications of ${object_title}."
 msgstr "Réclamation de modifications de"
 
-#: ../browser/templates/citizen-edition-viewlet.pt:15
+#: ../browser/templates/citizen-edition-viewlet.pt:36
 msgid "Claim this content"
 msgstr "Réclamer ce contenu"
 
@@ -74,7 +100,18 @@ msgstr "Réclamer ce contenu"
 msgid "Claiming this document will ask to administrators to give you the possibility to propose modifications."
 msgstr "Réclamer ce document enverra une demande aux administrateurs pour vous donner la possibilité de proposer des modifications."
 
+#: ../browser/templates/citizen-admin-viewlet.pt:9
+#: ../browser/templates/citizen-edition-viewlet.pt:9
+msgid "Comment"
+msgstr "Commentaire"
+
+#: ../browser/templates/citizen-return-checkout.pt:16
+msgid "Comment on changes"
+msgstr "Commenter les changements"
+
+#: ../browser/templates/citizen-admin-viewlet.pt:25
 #: ../browser/templates/citizen-claim.pt:16
+#: ../browser/templates/citizen-return-checkout.pt:27
 msgid "Confirm"
 msgstr "Confirmer"
 
@@ -90,9 +127,17 @@ msgstr "Types de contenus créables"
 msgid "Default folder"
 msgstr "Dossier par défaut"
 
-#: ../browser/templates/citizen-edition-viewlet.pt:11
+#: ../browser/templates/citizen-edition-viewlet.pt:25
 msgid "Edit this content"
 msgstr "Editer ce contenu"
+
+#: ../browser/templates/citizen-return-checkout.pt:17
+msgid "Enter a message for the citizen to specify what changes need to be made."
+msgstr "Veuillez entrer un message pour indiquer au citoyen les changements devant être réalisés"
+
+#: ../browser/templates/citizen-edition-viewlet.pt:14
+msgid "Info"
+msgstr "Info"
 
 #: ../profiles/default/sharing.xml
 msgid "Is a citizen editor"
@@ -109,6 +154,18 @@ msgstr "Chemin vers le dossier à partir de la racine de navigation"
 #: ../browser/settings.py:24
 msgid "Proposal default folders"
 msgstr "Dossiers par défauts pour les proposition citoyennes"
+
+#: ../browser/templates/citizen-admin-viewlet.pt:29
+msgid "Refuse"
+msgstr "Refuser"
+
+#: ../profiles/default/actions.xml
+msgid "Return check-out"
+msgstr "Renvoyer le brouillon"
+
+#: ../browser/templates/citizen-return-checkout.pt:11
+msgid "Return this document to the citizen and ask for changes."
+msgstr "Renvoyer ce document au citoyen pour lui demander des changements."
 
 #: ../browser/settings.py:25
 msgid "The folders where (by default) new content proposed by citizens will be created"
