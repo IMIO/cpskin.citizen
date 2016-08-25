@@ -37,6 +37,15 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    for="plone.app.stagingbehavior.interfaces.IStagingSupport"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    name="iterate_diff"
+    class=".diff.DiffView"
+    permission="zope2.View"
+    template="diff.pt"
+    />
+
   <adapter
     for="cpskin.citizen.behavior.ICitizenAccess"
     provides="plone.app.iterate.interfaces.IObjectCopier"
