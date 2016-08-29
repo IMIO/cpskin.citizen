@@ -45,6 +45,7 @@ setup(
     install_requires=[
         'borg.localrole',
         'collective.z3cform.select2',
+        'collective.monkeypatcher',
         'plone.api',
         'plone.app.dexterity',
         'plone.app.iterate',
