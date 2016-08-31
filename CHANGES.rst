@@ -5,6 +5,9 @@ Changelog
 1.0a2 (unreleased)
 ------------------
 
+- Automatically add subscribed users to the Citizens group
+  [mpeeters]
+
 - Add missing translations
   [mpeeters]
 
