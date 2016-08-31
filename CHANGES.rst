@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a2 (unreleased)
+1.0a2 (2016-08-31)
 ------------------
 
 - Automatically add subscribed users to the Citizens group
