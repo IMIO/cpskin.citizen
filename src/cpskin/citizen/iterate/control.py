@@ -37,6 +37,10 @@ class Control(control.Control):
 
     def cancel_allowed(self):
         """Check if a checkout cancel is allowed"""
+        context = aq_inner(self.context)
+        if ICitizenAccess.providedBy(context):
+            current_user = api.user.get_current()
+            return utils.can_edit_citizen(current_user, context)
         return False
 
     def return_allowed(self):
