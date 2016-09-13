@@ -70,6 +70,16 @@
     />
 
   <adapter
+    name="is_draft"
+    factory=".indexers.is_draft"
+    />
+
+  <adapter
+    name="has_claim"
+    factory=".indexers.has_claim"
+    />
+
+  <adapter
     for="zope.interface.Interface
          zope.interface.Interface"
     provides=".interfaces.ICitizenCreationFolder"

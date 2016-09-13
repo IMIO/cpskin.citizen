@@ -19,4 +19,9 @@
     <indexed_attr value="is_draft"/>
   </index>
   <column value="is_draft"/>
+
+  <index name="has_claim" meta_type="BooleanIndex">
+    <indexed_attr value="has_claim"/>
+  </index>
+  <column value="has_claim"/>
 </object>
