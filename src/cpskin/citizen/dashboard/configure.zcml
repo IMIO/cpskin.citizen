@@ -1,0 +1,88 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:faceted="http://namespaces.zope.org/faceted"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="cpskin.citizen">
+
+  <!-- faceted query -->
+  <configure package="eea.facetednavigation.browser">
+
+    <browser:page
+      for="eea.facetednavigation.interfaces.IFacetedNavigable"
+      name="faceted_query"
+      class="cpskin.citizen.dashboard.query.DashboardQueryHandler"
+      template="template/query.pt"
+      layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+      permission="zope2.View"
+      />
+
+  </configure>
+
+  <!-- table -->
+  <faceted:view
+    name="citizen-faceted-dashboard"
+    for=".interfaces.ICitizenDashboard"
+    template="faceted-table-items.pt"
+    title="Citizen dashboard faceted table items"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="user-table-faceted-view"
+    class=".view.DashboardUserContentTableView"
+    for="plone.dexterity.interfaces.IDexterityContainer"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    permission="zope2.View"
+    />
+
+
+  <configure package="imio.actionspanel.browser">
+
+    <browser:page
+      name="actions_panel"
+      class="cpskin.citizen.dashboard.actions.ActionsView"
+      for="cpskin.citizen.behavior.ICitizenAccess"
+      layer="imio.actionspanel.interfaces.IActionsPanelLayer"
+      template="actions_panel.pt"
+      permission="zope2.View"
+      />
+
+  </configure>
+
+  <!-- utilities -->
+  <utility
+    provides=".interfaces.ICitizenDashboardQuery"
+    factory=".utility.DefaultQueryFilters"
+    name="default"
+    />
+
+  <!-- columns -->
+  <adapter
+    for="zope.interface.Interface
+         zope.publisher.interfaces.browser.IBrowserRequest
+         .interfaces.IFacetedDashboardTable
+         z3c.table.interfaces.IColumn"
+    factory=".table.DashboardColumnHeader"
+    provides="z3c.table.interfaces.IColumnHeader"
+    />
+
+  <adapter
+    name="draft-state-column"
+    for="zope.interface.Interface
+         zope.interface.Interface
+         .interfaces.IFacetedDashboardTable"
+    factory=".table.DraftStateColumn"
+    provides="z3c.table.interfaces.IColumn"
+    />
+
+  <adapter
+    name="actions"
+    for="zope.interface.Interface
+         cpskin.citizen.interfaces.ICpskinCitizenLayer
+         .interfaces.IFacetedDashboardTable"
+    factory=".table.ActionsColumn"
+    provides="z3c.table.interfaces.IColumn"
+    />
+
+</configure>

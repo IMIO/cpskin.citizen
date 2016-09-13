@@ -44,8 +44,9 @@ setup(
     zip_safe=False,
     install_requires=[
         'borg.localrole',
-        'collective.z3cform.select2',
         'collective.monkeypatcher',
+        'collective.z3cform.select2',
+        'imio.dashboard',
         'plone.api',
         'plone.app.dexterity',
         'plone.app.iterate',
