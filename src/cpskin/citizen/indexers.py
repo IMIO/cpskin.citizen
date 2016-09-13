@@ -33,3 +33,8 @@ def citizen_claim_indexer(obj):
     if obj != get_working_copy(obj):
         annotations = utils.get_annotations(obj)
         return annotations.get('claim', [])
+
+
+@indexer(ICitizenAccess)
+def is_draft(obj):
+    return obj == get_working_copy(obj)

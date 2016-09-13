@@ -14,4 +14,9 @@
     <indexed_attr value="citizen_claim"/>
   </index>
   <column value="citizen_claim"/>
+
+  <index name="is_draft" meta_type="BooleanIndex">
+    <indexed_attr value="is_draft"/>
+  </index>
+  <column value="is_draft"/>
 </object>
