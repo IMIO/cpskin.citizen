@@ -5,6 +5,8 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="cpskin.citizen">
 
+  <include file="columns.zcml" />
+
   <!-- faceted query -->
   <configure package="eea.facetednavigation.browser">
 
@@ -29,13 +31,36 @@
     />
 
   <browser:page
-    name="user-table-faceted-view"
-    class=".view.DashboardUserContentTableView"
+    name="citizen-content-table-view"
+    class=".view.UserContentTableView"
     for="plone.dexterity.interfaces.IDexterityContainer"
     layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
     permission="zope2.View"
     />
 
+  <browser:page
+    name="citizen-claims-table-view"
+    class=".view.UserClaimTableView"
+    for="plone.dexterity.interfaces.IDexterityContainer"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="admin-content-table-view"
+    class=".view.AdminContentTableView"
+    for="plone.dexterity.interfaces.IDexterityContainer"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    permission="cpskin.AdminCitizenContent"
+    />
+
+  <browser:page
+    name="admin-claims-table-view"
+    class=".view.AdminClaimTableView"
+    for="plone.dexterity.interfaces.IDexterityContainer"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    permission="cpskin.AdminCitizenContent"
+    />
 
   <configure package="imio.actionspanel.browser">
 
@@ -57,32 +82,36 @@
     name="default"
     />
 
-  <!-- columns -->
-  <adapter
-    for="zope.interface.Interface
-         zope.publisher.interfaces.browser.IBrowserRequest
-         .interfaces.IFacetedDashboardTable
-         z3c.table.interfaces.IColumn"
-    factory=".table.DashboardColumnHeader"
-    provides="z3c.table.interfaces.IColumnHeader"
+  <utility
+    provides=".interfaces.ICitizenDashboardQuery"
+    factory=".utility.CitizenContentQueryFilters"
+    name="citizen-content"
     />
 
-  <adapter
-    name="draft-state-column"
-    for="zope.interface.Interface
-         zope.interface.Interface
-         .interfaces.IFacetedDashboardTable"
-    factory=".table.DraftStateColumn"
-    provides="z3c.table.interfaces.IColumn"
+  <utility
+    provides=".interfaces.ICitizenDashboardQuery"
+    factory=".utility.CitizenClaimQueryFilters"
+    name="citizen-claims"
     />
 
+  <utility
+    provides=".interfaces.ICitizenDashboardQuery"
+    factory=".utility.AdminContentQueryFilters"
+    name="admin-content"
+    />
+
+  <utility
+    provides=".interfaces.ICitizenDashboardQuery"
+    factory=".utility.AdminClaimQueryFilters"
+    name="admin-claims"
+    />
+
+  <!-- adapter -->
+
   <adapter
-    name="actions"
-    for="zope.interface.Interface
-         cpskin.citizen.interfaces.ICpskinCitizenLayer
-         .interfaces.IFacetedDashboardTable"
-    factory=".table.ActionsColumn"
-    provides="z3c.table.interfaces.IColumn"
+    for=".interfaces.ICitizenDashboard"
+    provides="borg.localrole.interfaces.ILocalRoleProvider"
+    factory=".localrole.DashboardLocalRoleAdapter"
     />
 
 </configure>

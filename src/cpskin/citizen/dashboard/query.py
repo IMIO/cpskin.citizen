@@ -22,3 +22,7 @@ class DashboardQueryHandler(FacetedQueryHandler):
         if utility is None:
             utility = getUtility(ICitizenDashboardQuery, name='default')
         return utility.apply_filters(query)
+
+    def table_view(self):
+        view_name = '@@{0}-table-view'.format(self.context.id)
+        return self.context.restrictedTraverse(view_name)

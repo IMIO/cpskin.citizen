@@ -37,7 +37,7 @@
         <div style="clear: both;"></div>
         <div class="eea-preview-items"
              tal:condition="batch/sequence_length"
-             tal:define="table_view nocall:context/@@user-table-faceted-view;">
+             tal:define="table_view view/table_view">
           <span tal:replace="structure python:table_view.render_table(batch)" />
         </div>
 
