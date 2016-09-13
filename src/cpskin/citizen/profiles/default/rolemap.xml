@@ -9,5 +9,13 @@
         <role name="Manager"/>
         <role name="Citizen Editor"/>
     </permission>
+
+    <permission name="Admin citizen content"
+                acquire="False">
+        <role name="Manager"/>
+        <role name="Site Administrator"/>
+        <role name="Reviewer"/>
+        <role name="Editor"/>
+    </permission>
   </permissions>
 </rolemap>

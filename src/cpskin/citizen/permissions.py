@@ -16,3 +16,14 @@ security = ModuleSecurityInfo('cpskin.citizen')
 security.declarePublic('ModifyCitizenContent')
 ModifyCitizenContent = 'Modify citizen content'
 setDefaultRoles(ModifyCitizenContent, ('Manager', 'Citizen Editor',))
+
+security.declarePublic('AdminCitizenContent')
+AdminCitizenContent = 'Admin citizen content'
+setDefaultRoles(
+    AdminCitizenContent, (
+        'Manager',
+        'Site Administrator',
+        'Reviewer',
+        'Editor',
+    ),
+)

@@ -16,7 +16,7 @@
     name="edit-citizen"
     for="cpskin.citizen.behavior.ICitizenAccess"
     class=".edit.EditCitizenView"
-    permission="cmf.ModifyCitizenContent"
+    permission="cpskin.ModifyCitizenContent"
     />
 
   <browser:page
@@ -24,7 +24,7 @@
     for="cpskin.citizen.behavior.ICitizenAccess"
     class=".cancel.CancelCitizenView"
     template="templates/citizen-cancel.pt"
-    permission="cmf.ModifyCitizenContent"
+    permission="cpskin.ModifyCitizenContent"
     />
 
   <browser:page

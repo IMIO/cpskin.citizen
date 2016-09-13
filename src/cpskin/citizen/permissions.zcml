@@ -4,8 +4,13 @@
     i18n_domain="cpskin.citizen">
 
   <permission
-    id="cmf.ModifyCitizenContent"
+    id="cpskin.ModifyCitizenContent"
     title="Modify citizen content"
+    />
+
+  <permission
+    id="cpskin.AdminCitizenContent"
+    title="Admin citizen content"
     />
 
 </configure>
