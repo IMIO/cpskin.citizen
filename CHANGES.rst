@@ -5,7 +5,30 @@ Changelog
 1.0a3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add dashboards for citizens and administrators
+  [mpeeters]
+
+- Add plone.app.contenttypes to metadata dependencies
+  [mpeeters]
+
+- Add a permission for citizen administration
+  [mpeeters]
+
+- Add new indexes for draft and claimed contents
+  [mpeeters]
+
+- Add an index to differentiate draft from original
+  [mpeeters]
+
+- First implementation for citizen dashboards
+  [mpeeters]
+
+- Add plone.app.iterate and plone.app.stagingbehavior to package metadata
+  [mpeeters]
+
+- Avoid an error for citizens with the cancel action
+  [mpeeters]
+
 
 
 1.0a2 (2016-08-31)
