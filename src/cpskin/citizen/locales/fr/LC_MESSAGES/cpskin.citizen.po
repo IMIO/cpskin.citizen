@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-09-14 06:36+0000\n"
+"POT-Creation-Date: 2016-09-14 14:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,6 +81,10 @@ msgstr "Accès Citoyen"
 msgid "Citizen access"
 msgstr "Accès Citoyen"
 
+#: ../dashboard/templates/dashboard-portlet.pt:6
+msgid "Citizen dashboards"
+msgstr "Tableaux de bords citoyens"
+
 #: ../iterate/adapter.py:18
 msgid "Citizen draft folder"
 msgstr "Dossier de brouillons"
@@ -131,6 +135,10 @@ msgstr "Type de contenu"
 #: ../browser/settings.py:53
 msgid "Creation content types"
 msgstr "Types de contenus créables"
+
+#: ../profiles/default/portlets.xml
+msgid "Dashboard Portlet"
+msgstr "Portlet pour les tableaux de bords"
 
 #: ../browser/settings.py:33
 msgid "Default folder"
@@ -192,6 +200,10 @@ msgstr "Renvoyer le brouillon"
 #: ../browser/templates/citizen-return-checkout.pt:11
 msgid "Return this document to the citizen and ask for changes."
 msgstr "Renvoyer ce document au citoyen pour lui demander des changements."
+
+#: ../profiles/default/portlets.xml
+msgid "Show citizen dashboards"
+msgstr "Affiche les tableaux de bords pour les citoyens"
 
 #: ../browser/settings.py:25
 msgid "The folders where (by default) new content proposed by citizens will be created"
