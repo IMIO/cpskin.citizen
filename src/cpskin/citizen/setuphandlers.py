@@ -9,12 +9,20 @@ Created by mpeeters
 
 from eea.facetednavigation.layout.interfaces import IFacetedLayout
 from plone import api
+from plone.portlets.constants import CONTEXT_CATEGORY
+from plone.portlets.interfaces import ILocalPortletAssignmentManager
+from plone.portlets.interfaces import IPortletAssignmentMapping
+from plone.portlets.interfaces import IPortletManager
+from zope.component import getMultiAdapter
+from zope.component import getUtility
+from zope.container.interfaces import INameChooser
 from zope.interface import alsoProvides
 
 import os
 
 from cpskin.citizen.dashboard.interfaces import ICitizenDashboard
 from cpskin.citizen.dashboard.interfaces import IAdminDashboard
+from cpskin.citizen.dashboard.portlet import DashboardPortletAssignment
 
 
 def post_install(context):
@@ -53,6 +61,9 @@ def post_install(context):
                 container=folder,
                 exclude_from_nav=True,
             )
+            add_portlet(folder[u'citizen-dashboard'],
+                        assignment=DashboardPortletAssignment())
+
         dashboard_folder = folder[u'citizen-dashboard']
         for id, title, interface in dashboards:
             if id not in dashboard_folder:
@@ -63,7 +74,8 @@ def post_install(context):
                     container=dashboard_folder,
                     exclude_from_nav=True,
                 )
-            setup_faceted_dashboard_config(dashboard_folder[id], interface)
+                setup_faceted_dashboard_config(dashboard_folder[id], interface)
+        disable_portlet_inheritance(folder[u'citizen-dashboard'])
     if not api.group.get(groupname='Citizens'):
         api.group.create(groupname='Citizens', title='Citizens')
 
@@ -83,3 +95,18 @@ def setup_faceted_dashboard_config(context,
     context.unrestrictedTraverse('@@faceted_exportimport').import_xml(
         import_file=open(config_xml, 'r'),
     )
+
+
+def add_portlet(context, column_name='plone.leftcolumn', assignment=None):
+    if not assignment:
+        return
+    column = getUtility(IPortletManager, column_name)
+    manager = getMultiAdapter((context, column), IPortletAssignmentMapping)
+    chooser = INameChooser(manager)
+    manager[chooser.chooseName(None, assignment)] = assignment
+
+
+def disable_portlet_inheritance(context, column_name='plone.leftcolumn'):
+    column = getUtility(IPortletManager, column_name)
+    manager = getMultiAdapter((context, column), ILocalPortletAssignmentManager)
+    manager.setBlacklistStatus(CONTEXT_CATEGORY, True)

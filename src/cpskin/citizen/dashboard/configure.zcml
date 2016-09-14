@@ -2,6 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:faceted="http://namespaces.zope.org/faceted"
+    xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="cpskin.citizen">
 
@@ -68,7 +69,7 @@
       name="actions_panel"
       class="cpskin.citizen.dashboard.actions.ActionsView"
       for="cpskin.citizen.behavior.ICitizenAccess"
-      layer="imio.actionspanel.interfaces.IActionsPanelLayer"
+      layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
       template="actions_panel.pt"
       permission="zope2.View"
       />
@@ -112,6 +113,17 @@
     for=".interfaces.ICitizenDashboard"
     provides="borg.localrole.interfaces.ILocalRoleProvider"
     factory=".localrole.DashboardLocalRoleAdapter"
+    />
+
+  <!-- portlet -->
+  <plone:portlet
+    name="cpskin.citizen.portlets.DashboardPortlet"
+    interface=".portlet.IDashboardPortlet"
+    assignment=".portlet.DashboardPortletAssignment"
+    view_permission="zope2.View"
+    edit_permission="cmf.ManagePortal"
+    renderer=".portlet.DashboardPortletRenderer"
+    addview=".portlet.DashboardPortletAddForm"
     />
 
 </configure>

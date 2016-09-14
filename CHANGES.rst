@@ -5,10 +5,10 @@ Changelog
 1.0a3 (unreleased)
 ------------------
 
-- Add dashboards for citizens and administrators
+- Add the menu portlet for dashboards
   [mpeeters]
 
-- Add plone.app.contenttypes to metadata dependencies
+- Add dashboards for citizens and administrators
   [mpeeters]
 
 - Add a permission for citizen administration

@@ -12,6 +12,7 @@
   <include package="plone.app.dexterity" />
   <include package="plone.autoform" />
   <include package="plone.app.iterate" />
+  <include package="plone.app.portlets" />
   <include package="plone.app.stagingbehavior" />
   <include package="collective.z3cform.select2" />
   <include package="imio.dashboard" />
