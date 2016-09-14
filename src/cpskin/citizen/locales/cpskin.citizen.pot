@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-25 13:43+0000\n"
+"POT-Creation-Date: 2016-09-14 06:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,6 +13,10 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+
+#: ../dashboard/columns.py:45
+msgid "Actions"
+msgstr ""
 
 #: ../browser/settings.py:54
 msgid "Allowed content types for creation by citizens (by default all content types are allowed)"
@@ -38,7 +42,12 @@ msgstr ""
 msgid "Ask validation for this document will ask to administrators to publish your modifications."
 msgstr ""
 
+#: ../dashboard/columns.py:40
+msgid "Awaiting for changes"
+msgstr ""
+
 #: ../browser/templates/citizen-edition-viewlet.pt:20
+#: ../dashboard/columns.py:38
 msgid "Awaiting for validation"
 msgstr ""
 
@@ -127,6 +136,15 @@ msgstr ""
 msgid "Default folder"
 msgstr ""
 
+#: ../dashboard/actions_panel_citizen.pt:5
+#: ../dashboard/columns.py:41
+msgid "Draft"
+msgstr ""
+
+#: ../dashboard/actions_panel_citizen.pt:11
+msgid "Edit"
+msgstr ""
+
 #: ../browser/templates/citizen-edition-viewlet.pt:25
 msgid "Edit this content"
 msgstr ""
@@ -145,6 +163,14 @@ msgstr ""
 
 #: ../browser/templates/citizen-cancel.pt:25
 msgid "Keep checkout"
+msgstr ""
+
+#: ../dashboard/columns.py:27
+msgid "Modification state"
+msgstr ""
+
+#: ../dashboard/columns.py:35
+msgid "None"
 msgstr ""
 
 #: ../browser/settings.py:34
