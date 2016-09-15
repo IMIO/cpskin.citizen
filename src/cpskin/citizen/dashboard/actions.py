@@ -25,7 +25,7 @@ class ActionsView(ActionsPanelView):
 
     def render_citizen_actions(self):
         """Render citizen actions"""
-        return ViewPageTemplateFile('actions_panel_citizen.pt')(self)
+        return ViewPageTemplateFile('templates/actions_panel_citizen.pt')(self)
 
     @property
     def can_edit(self):

@@ -26,6 +26,7 @@ import os
 from cpskin.citizen import _
 from cpskin.citizen.dashboard.interfaces import ICitizenDashboard
 from cpskin.citizen.dashboard.interfaces import IAdminDashboard
+from cpskin.citizen.dashboard.interfaces import ICitizenMyContent
 from cpskin.citizen.dashboard.portlet import DashboardPortletAssignment
 
 
@@ -46,10 +47,11 @@ def post_install(context):
             api.portal.get_default_language(),
         )]
     dashboards = (
-        (u'citizen-content', _(u'Citizen Content'), ICitizenDashboard),
-        (u'citizen-claims', _(u'Citizen Claims'), ICitizenDashboard),
-        (u'admin-content', _(u'Admin Citizen Content'), IAdminDashboard),
-        (u'admin-claims', _(u'Admin Citizen Claims'), IAdminDashboard),
+        (u'citizen-content', _(u'Citizen Content'),
+         (ICitizenDashboard, ICitizenMyContent)),
+        (u'citizen-claims', _(u'Citizen Claims'), (ICitizenDashboard, )),
+        (u'admin-content', _(u'Admin Citizen Content'), (IAdminDashboard, )),
+        (u'admin-claims', _(u'Admin Citizen Claims'), (IAdminDashboard, )),
     )
     for folder, lng in lrfs:
         if u'citizen-drafts' not in folder:
@@ -72,7 +74,7 @@ def post_install(context):
                         assignment=DashboardPortletAssignment())
 
         dashboard_folder = folder[u'citizen-dashboard']
-        for id, title, interface in dashboards:
+        for id, title, interfaces in dashboards:
             if id not in dashboard_folder:
                 api.content.create(
                     type='Folder',
@@ -81,7 +83,8 @@ def post_install(context):
                     container=dashboard_folder,
                     exclude_from_nav=True,
                 )
-                setup_faceted_dashboard_config(dashboard_folder[id], interface)
+                setup_faceted_dashboard_config(
+                    dashboard_folder[id], interfaces)
 
         # adding citizen map dashboard
         id = u'citizen-map'
@@ -126,14 +129,15 @@ def post_install(context):
 
 
 def setup_faceted_dashboard_config(context,
-                                   interface,
+                                   interfaces,
                                    layout='citizen-faceted-dashboard',
                                    config_path='dashboard/faceted_config.xml'):
     subtyper = context.restrictedTraverse('@@faceted_subtyper')
     if subtyper.is_faceted:
         return
     subtyper.enable()
-    alsoProvides(context, interface)
+    for interface in interfaces:
+        alsoProvides(context, interface)
     context.restrictedTraverse('@@faceted_settings').toggle_left_column()
     IFacetedLayout(context).update_layout(layout)
     config_xml = os.path.join(os.path.dirname(__file__), config_path)

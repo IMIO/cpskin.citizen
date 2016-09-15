@@ -8,6 +8,9 @@ Changelog
 - Add user map view dashborad for citizen.
   [bsuttor]
 
+- Add the viewlet for content proposal for citizens
+  [mpeeters]
+
 - Add user actions for citizen dashboards
   [mpeeters]
 

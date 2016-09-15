@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-09-15 06:49+0000\n"
+"POT-Creation-Date: 2016-09-15 13:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,15 +14,15 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../dashboard/columns.py:45
+#: ../dashboard/columns.py:49
 msgid "Actions"
 msgstr ""
 
-#: ../setuphandlers.py:50
+#: ../setuphandlers.py:51
 msgid "Admin Citizen Claims"
 msgstr ""
 
-#: ../setuphandlers.py:49
+#: ../setuphandlers.py:50
 msgid "Admin Citizen Content"
 msgstr ""
 
@@ -58,12 +58,16 @@ msgstr ""
 msgid "Ask validation for this document will ask to administrators to publish your modifications."
 msgstr ""
 
-#: ../dashboard/columns.py:40
+#: ../browser/templates/citizen-admin-viewlet.pt:15
+msgid "Awaiting claims"
+msgstr ""
+
+#: ../dashboard/columns.py:44
 msgid "Awaiting for changes"
 msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:20
-#: ../dashboard/columns.py:38
+#: ../dashboard/columns.py:42
 msgid "Awaiting for validation"
 msgstr ""
 
@@ -89,19 +93,19 @@ msgstr ""
 msgid "Citizen Administration"
 msgstr ""
 
-#: ../setuphandlers.py:48
+#: ../setuphandlers.py:49
 msgid "Citizen Claims"
 msgstr ""
 
-#: ../setuphandlers.py:47
+#: ../setuphandlers.py:48
 msgid "Citizen Content"
 msgstr ""
 
-#: ../setuphandlers.py:64
+#: ../setuphandlers.py:65
 msgid "Citizen Dashboard"
 msgstr ""
 
-#: ../setuphandlers.py:56
+#: ../setuphandlers.py:57
 msgid "Citizen Drafts"
 msgstr ""
 
@@ -162,9 +166,9 @@ msgstr ""
 msgid "Comment on changes"
 msgstr ""
 
+#: ../browser/propose.py:42
 #: ../browser/templates/citizen-admin-viewlet.pt:25
 #: ../browser/templates/citizen-claim.pt:16
-#: ../browser/templates/citizen-return-checkout.pt:27
 msgid "Confirm"
 msgstr ""
 
@@ -184,12 +188,12 @@ msgstr ""
 msgid "Default folder"
 msgstr ""
 
-#: ../dashboard/actions_panel_citizen.pt:5
-#: ../dashboard/columns.py:41
+#: ../dashboard/columns.py:45
+#: ../dashboard/templates/actions_panel_citizen.pt:5
 msgid "Draft"
 msgstr ""
 
-#: ../dashboard/actions_panel_citizen.pt:11
+#: ../dashboard/templates/actions_panel_citizen.pt:11
 msgid "Edit"
 msgstr ""
 
@@ -213,11 +217,11 @@ msgstr ""
 msgid "Keep checkout"
 msgstr ""
 
-#: ../dashboard/columns.py:27
+#: ../dashboard/columns.py:28
 msgid "Modification state"
 msgstr ""
 
-#: ../dashboard/columns.py:35
+#: ../dashboard/columns.py:39
 msgid "None"
 msgstr ""
 
@@ -225,8 +229,16 @@ msgstr ""
 msgid "Path to the folder from the navigation root"
 msgstr ""
 
+#: ../browser/propose.py:26
+msgid "Portal Type"
+msgstr ""
+
 #: ../browser/settings.py:24
 msgid "Proposal default folders"
+msgstr ""
+
+#: ../browser/templates/citizen-propose-viewlet.pt:9
+msgid "Propose content"
 msgstr ""
 
 #: ../browser/templates/citizen-admin-viewlet.pt:29
@@ -247,6 +259,10 @@ msgstr ""
 
 #: ../browser/settings.py:25
 msgid "The folders where (by default) new content proposed by citizens will be created"
+msgstr ""
+
+#: ../browser/propose.py:32
+msgid "Title"
 msgstr ""
 
 #. Default: "Canceling the draft will delete this working copy, and any modifications made to it will be lost."

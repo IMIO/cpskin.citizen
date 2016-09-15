@@ -12,7 +12,7 @@
   <fieldset class="citizen">
     <legend i18n:translate="">Citizen Administration</legend>
     <div tal:condition="view/awaiting_claims">
-      <div class="title">Awaiting claims</div>
+      <div class="title" i18n:translate="">Awaiting claims</div>
       <tal:for repeat="claim view/awaiting_claims">
       <form action="" tal:attributes="action string: ${view/context/absolute_url}/@@claim-citizen-approval" method="post">
       <ul>

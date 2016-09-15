@@ -31,6 +31,7 @@
     name="propose-citizen"
     for="*"
     class=".propose.ProposeCitizenView"
+    template="templates/propose-citizen.pt"
     permission="zope2.View"
     />
 
@@ -98,6 +99,15 @@
   <subscriber
     for="Products.PlonePAS.events.UserInitialLoginInEvent"
     handler=".citizen_first_login.create_lat_lon"
+    />
+
+  <browser:viewlet
+    name="citizen-propose-viewlet"
+    for="cpskin.citizen.dashboard.interfaces.ICitizenMyContent"
+    manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+    class=".viewlets.CitizenProposeContentViewlet"
+    template="templates/citizen-propose-viewlet.pt"
+    permission="zope2.View"
     />
 
 </configure>

@@ -89,3 +89,7 @@ class CitizenEditionViewlet(CitizenBaseViewlet):
 
 class CitizenAdminViewlet(CitizenBaseViewlet):
     pass
+
+
+class CitizenProposeContentViewlet(CitizenBaseViewlet):
+    pass

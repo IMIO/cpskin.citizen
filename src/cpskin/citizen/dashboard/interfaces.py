@@ -19,6 +19,10 @@ class IAdminDashboard(ICitizenDashboard):
     """Marker interface for admin dashboard folder"""
 
 
+class ICitizenMyContent(Interface):
+    """Marker interface for "My contents" dashboard"""
+
+
 class ICitizenDashboardQuery(Interface):
     """Utility for citizen dashboard query extra filters"""
 
