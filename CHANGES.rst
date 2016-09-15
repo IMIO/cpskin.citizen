@@ -4,6 +4,10 @@ Changelog
 
 1.0a3 (unreleased)
 ------------------
+
+- Add the viewlet for content proposal for citizens
+  [mpeeters]
+
 - Add user actions for citizen dashboards
   [mpeeters]
 
