@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-09-14 14:49+0000\n"
+"POT-Creation-Date: 2016-09-15 06:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,22 @@ msgstr ""
 
 #: ../dashboard/columns.py:45
 msgid "Actions"
+msgstr ""
+
+#: ../setuphandlers.py:50
+msgid "Admin Citizen Claims"
+msgstr ""
+
+#: ../setuphandlers.py:49
+msgid "Admin Citizen Content"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "Admin citizen claims dashboard"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "Admin citizen content dashboard"
 msgstr ""
 
 #: ../browser/settings.py:54
@@ -73,12 +89,36 @@ msgstr ""
 msgid "Citizen Administration"
 msgstr ""
 
+#: ../setuphandlers.py:48
+msgid "Citizen Claims"
+msgstr ""
+
+#: ../setuphandlers.py:47
+msgid "Citizen Content"
+msgstr ""
+
+#: ../setuphandlers.py:64
+msgid "Citizen Dashboard"
+msgstr ""
+
+#: ../setuphandlers.py:56
+msgid "Citizen Drafts"
+msgstr ""
+
 #: ../browser/templates/citizen-edition-viewlet.pt:23
 msgid "Citizen Edition"
 msgstr ""
 
 #: ../behavior.py:29
 msgid "Citizen access"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "Citizen claims dashboard"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "Citizen content dashboard"
 msgstr ""
 
 #: ../dashboard/templates/dashboard-portlet.pt:6
