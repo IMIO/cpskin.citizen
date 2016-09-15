@@ -17,9 +17,11 @@ from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.container.interfaces import INameChooser
 from zope.interface import alsoProvides
+from zope.i18n import translate
 
 import os
 
+from cpskin.citizen import _
 from cpskin.citizen.dashboard.interfaces import ICitizenDashboard
 from cpskin.citizen.dashboard.interfaces import IAdminDashboard
 from cpskin.citizen.dashboard.portlet import DashboardPortletAssignment
@@ -33,22 +35,25 @@ def post_install(context):
     # Create the draft folder for each language
     lrfs = api.content.find(
         context=portal,
-        portal_type='Language Root Folder',
+        portal_type='LRF',
     )
-    lrfs = [e.getObject() for e in lrfs]
+    lrfs = [(e.getObject(), e.id) for e in lrfs]
     if not lrfs:
-        lrfs = [api.portal.get_navigation_root(portal)]
+        lrfs = [(
+            api.portal.get_navigation_root(portal),
+            api.portal.get_default_language(),
+        )]
     dashboards = (
-        (u'citizen-content', u'Citizen Content', ICitizenDashboard),
-        (u'citizen-claims', u'Citizen Claims', ICitizenDashboard),
-        (u'admin-content', 'Admin Content', IAdminDashboard),
-        (u'admin-claims', 'Admin Claims', IAdminDashboard),
+        (u'citizen-content', _(u'Citizen Content'), ICitizenDashboard),
+        (u'citizen-claims', _(u'Citizen Claims'), ICitizenDashboard),
+        (u'admin-content', _(u'Admin Citizen Content'), IAdminDashboard),
+        (u'admin-claims', _(u'Admin Citizen Claims'), IAdminDashboard),
     )
-    for folder in lrfs:
+    for folder, lng in lrfs:
         if u'citizen-drafts' not in folder:
             api.content.create(
                 type='Folder',
-                title=u'Citizen Drafts',
+                title=translate(_(u'Citizen Drafts'), target_language=lng),
                 id=u'citizen-drafts',
                 container=folder,
                 exclude_from_nav=True,
@@ -56,7 +61,7 @@ def post_install(context):
         if u'citizen-dashboard' not in folder:
             api.content.create(
                 type='Folder',
-                title=u'Citizen Dashboard',
+                title=translate(_(u'Citizen Dashboard'), target_language=lng),
                 id=u'citizen-dashboard',
                 container=folder,
                 exclude_from_nav=True,
@@ -69,7 +74,7 @@ def post_install(context):
             if id not in dashboard_folder:
                 api.content.create(
                     type='Folder',
-                    title=title,
+                    title=translate(title, target_language=lng),
                     id=id,
                     container=dashboard_folder,
                     exclude_from_nav=True,
