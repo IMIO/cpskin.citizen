@@ -10,7 +10,6 @@ logger = logging.getLogger('cpskin.citizen get lat lon')
 
 def create_lat_lon(event):
     user = event.object
-    import ipdb; ipdb.set_trace()
     loc = get_lat_lon_from_address(
         user.street, user.number, user.zip_code, user.location)
 
