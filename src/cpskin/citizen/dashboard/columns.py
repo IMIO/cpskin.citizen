@@ -32,7 +32,7 @@ class DraftStateColumn(BaseColumn):
         obj = obj.getObject()
         working_copy = get_working_copy(obj)
         if not working_copy:
-            return _(u'None')
+            return u''
         annotations = utils.get_annotations(working_copy)
         if annotations.get('validation_required', False):
             return _(u'Awaiting for validation')
