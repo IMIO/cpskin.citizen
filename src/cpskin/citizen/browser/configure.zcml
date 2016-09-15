@@ -65,6 +65,17 @@
     permission="zope2.View"
     />
 
+  <!-- control view -->
+
+  <browser:page
+    for="*"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    name="citizen_control"
+    class=".control.CitizenControl"
+    permission="zope2.View"
+    allowed_attributes="is_citizen is_admin"
+    />
+
   <!-- viewlets -->
   <browser:viewlet
     name="citizen-edition-viewlet"
