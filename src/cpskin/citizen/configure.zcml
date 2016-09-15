@@ -87,4 +87,10 @@
     factory=".adapter.CitizenCreationFolderAdapter"
     />
 
+  <adapter
+    provides=".user.IEnhancedUserDataSchema"
+    for="*"
+    factory=".user.EnhancedUserDataPanelAdapter"
+    />
+
 </configure>

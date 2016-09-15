@@ -9,10 +9,12 @@ Created by mpeeters
 
 from eea.facetednavigation.layout.interfaces import IFacetedLayout
 from plone import api
+from plone.app.controlpanel.security import ISecuritySchema
 from plone.portlets.constants import CONTEXT_CATEGORY
 from plone.portlets.interfaces import ILocalPortletAssignmentManager
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import IPortletManager
+from zope.component import getAdapter
 from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.container.interfaces import INameChooser
@@ -80,9 +82,47 @@ def post_install(context):
                     exclude_from_nav=True,
                 )
                 setup_faceted_dashboard_config(dashboard_folder[id], interface)
+
+        # adding citizen map dashboard
+        id = u'citizen-map'
+        if id not in dashboard_folder:
+            api.content.create(
+                type='Folder',
+                title=translate(_(u'Citizen Map'), target_language=lng),
+                id=id,
+                container=dashboard_folder,
+                exclude_from_nav=True
+            )
+            setup_faceted_dashboard_config(
+                dashboard_folder[id],
+                ICitizenDashboard,
+                'faceted-map-view',
+                'dashboard/faceted_map_view_config.xml'
+            )
+
         disable_portlet_inheritance(folder[u'citizen-dashboard'])
+
     if not api.group.get(groupname='Citizens'):
         api.group.create(groupname='Citizens', title='Citizens')
+
+    # set auto enable registration
+    security_schema = getAdapter(api.portal.get(), ISecuritySchema)
+    security_schema.enable_self_reg = True
+
+    # add user_registration_fields
+    portal_properties = api.portal.get_tool('portal_properties')
+    site_properties = portal_properties.site_properties
+    site_properties.user_registration_fields = (
+        'fullname',
+        'username',
+        'email',
+        'password',
+        'mail_me',
+        'street',
+        'number',
+        'zip_code',
+        'location'
+    )
 
 
 def setup_faceted_dashboard_config(context,
@@ -113,5 +153,6 @@ def add_portlet(context, column_name='plone.leftcolumn', assignment=None):
 
 def disable_portlet_inheritance(context, column_name='plone.leftcolumn'):
     column = getUtility(IPortletManager, column_name)
-    manager = getMultiAdapter((context, column), ILocalPortletAssignmentManager)
+    manager = getMultiAdapter(
+        (context, column), ILocalPortletAssignmentManager)
     manager.setBlacklistStatus(CONTEXT_CATEGORY, True)

@@ -95,4 +95,9 @@
     permission="cmf.ModifyPortalContent"
     />
 
+  <subscriber
+    for="Products.PlonePAS.events.UserInitialLoginInEvent"
+    handler=".citizen_first_login.create_lat_lon"
+    />
+
 </configure>

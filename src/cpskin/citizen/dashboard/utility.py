@@ -55,3 +55,13 @@ class CitizenClaimQueryFilters(DefaultQueryFilters):
         query = super(CitizenClaimQueryFilters, self).apply_filters(query)
         query['citizen_claim'] = current_user.id
         return query
+
+
+class CitizenMapQueryFilters(DefaultQueryFilters):
+
+    def apply_filters(self, query):
+        citizen_map_portal_types = api.portal.get_registry_record(
+            'cpskin.citizen.browser.settings.ISettings.map_view_types')
+        if citizen_map_portal_types:
+            query['portal_type'] = citizen_map_portal_types
+            return query

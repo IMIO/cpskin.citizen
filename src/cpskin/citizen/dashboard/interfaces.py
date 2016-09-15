@@ -35,6 +35,10 @@ class IFacetedDashboardCitizenClaimTable(IFacetedDashboardTable):
     """Citizen faceted claim table"""
 
 
+class IFacetedDashboardCitizenMapTable(IFacetedDashboardTable):
+    """Citizen faceted claim table"""
+
+
 class IFacetedDashboardAdminContentTable(IFacetedDashboardTable):
     """Admin faceted content table"""
 

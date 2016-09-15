@@ -54,6 +54,8 @@ setup(
         'plone.principalsource',
         'setuptools',
         'z3c.jbot',
+        'geocoder',  # find which is better between geocoder and geopy
+        'geopy',
     ],
     extras_require={
         'test': [

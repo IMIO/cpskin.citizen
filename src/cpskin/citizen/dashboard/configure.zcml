@@ -47,6 +47,15 @@
     permission="zope2.View"
     />
 
+
+  <browser:page
+    name="citizen-map-table-view"
+    class=".view.UserMapTableView"
+    for="plone.dexterity.interfaces.IDexterityContainer"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    permission="zope2.View"
+    />
+
   <browser:page
     name="admin-content-table-view"
     class=".view.AdminContentTableView"
@@ -93,6 +102,12 @@
     provides=".interfaces.ICitizenDashboardQuery"
     factory=".utility.CitizenClaimQueryFilters"
     name="citizen-claims"
+    />
+
+  <utility
+    provides=".interfaces.ICitizenDashboardQuery"
+    factory=".utility.CitizenMapQueryFilters"
+    name="citizen-map"
     />
 
   <utility

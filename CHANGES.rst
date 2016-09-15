@@ -4,6 +4,10 @@ Changelog
 
 1.0a3 (unreleased)
 ------------------
+
+- Add user map view dashborad for citizen.
+  [bsuttor]
+
 - Add user actions for citizen dashboards
   [mpeeters]
 

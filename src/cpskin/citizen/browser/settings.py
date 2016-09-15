@@ -60,6 +60,18 @@ class ISettings(Interface):
         required=False,
     )
 
+    form.widget(creation_types=MultiSelect2FieldWidget)
+    map_view_types = schema.List(
+        title=_(u'Map view content types'),
+        description=_(u'Visibled content types for map view for citizens '
+                      u'(by default no content types are allowed)'),
+        value_type=schema.Choice(
+            title=_(u'Map view content types'),
+            vocabulary='plone.app.vocabularies.PortalTypes',
+        ),
+        required=False,
+    )
+
 
 class SettingsEditForm(RegistryEditForm):
     schema = ISettings

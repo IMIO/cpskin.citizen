@@ -20,6 +20,10 @@ class UserClaimTableView(table.CitizenClaimTable, FacetedTableView):
     pass
 
 
+class UserMapTableView(table.CitizenMapTable, FacetedTableView):
+    pass
+
+
 class AdminContentTableView(table.AdminContentTable, FacetedTableView):
     pass
 

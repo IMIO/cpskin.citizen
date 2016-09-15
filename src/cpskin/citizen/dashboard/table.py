@@ -51,3 +51,9 @@ class AdminContentTable(DashboardTable):
 
 class AdminClaimTable(DashboardTable):
     implements(interfaces.IFacetedDashboardAdminClaimTable)
+
+
+class CitizenMapTable(Table):
+    implements(interfaces.IFacetedDashboardCitizenContentTable)
+
+    batchSize = 10000
