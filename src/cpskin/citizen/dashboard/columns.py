@@ -11,6 +11,7 @@ from imio.dashboard import columns
 from collective.eeafaceted.z3ctable.columns import BaseColumn
 from collective.eeafaceted.z3ctable.columns import BaseColumnHeader
 from plone.app.stagingbehavior.utils import get_working_copy
+from zope.i18n import translate
 
 from cpskin.citizen import _
 from cpskin.citizen import utils
@@ -28,17 +29,20 @@ class DraftStateColumn(BaseColumn):
     attrName = 'title'
     weight = 10
 
+    def _translate(self, msgid):
+        return translate(msgid, context=self.request)
+
     def renderCell(self, obj):
         obj = obj.getObject()
         working_copy = get_working_copy(obj)
         if not working_copy:
-            return u''
+            return self._translate(_(u'None'))
         annotations = utils.get_annotations(working_copy)
         if annotations.get('validation_required', False):
-            return _(u'Awaiting for validation')
+            return self._translate(_(u'Awaiting for validation'))
         if annotations.get('comment', None):
-            return _(u'Awaiting for changes')
-        return _(u'Draft')
+            return self._translate(_(u'Awaiting for changes'))
+        return self._translate(_(u'Draft'))
 
 
 class ActionsColumn(columns.ActionsColumn):
