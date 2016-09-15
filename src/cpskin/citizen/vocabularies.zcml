@@ -15,4 +15,10 @@
     provides="zope.schema.interfaces.IVocabularyFactory"
     />
 
+  <utility
+    component=".vocabularies.CitizensAllowedCreationTypesVocabulary"
+    name="cpskin.citizen.allowed_creation_portal_types"
+    provides="zope.schema.interfaces.IVocabularyFactory"
+    />
+
 </configure>

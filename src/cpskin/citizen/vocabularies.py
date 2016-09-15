@@ -48,3 +48,15 @@ class CitizensPortalTypesVocabularyFactory(object):
 
 
 CitizensPortalTypesVocabulary = CitizensPortalTypesVocabularyFactory()
+
+
+class CitizensAllowedCreationTypesVocabularyFactory(object):
+
+    def __call__(self, context):
+        portal_types = api.portal.get_tool('portal_types')
+        content = {k: v.title for k, v in portal_types.items()
+                   if k in utils.get_allowed_creation_types()}
+        return utils.dict_2_vocabulary(content)
+
+
+CitizensAllowedCreationTypesVocabulary = CitizensAllowedCreationTypesVocabularyFactory()

@@ -31,6 +31,7 @@
     name="propose-citizen"
     for="*"
     class=".propose.ProposeCitizenView"
+    template="templates/propose-citizen.pt"
     permission="zope2.View"
     />
 
@@ -93,6 +94,15 @@
     class=".viewlets.CitizenAdminViewlet"
     template="templates/citizen-admin-viewlet.pt"
     permission="cmf.ModifyPortalContent"
+    />
+
+  <browser:viewlet
+    name="citizen-propose-viewlet"
+    for="cpskin.citizen.dashboard.interfaces.ICitizenMyContent"
+    manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+    class=".viewlets.CitizenProposeContentViewlet"
+    template="templates/citizen-propose-viewlet.pt"
+    permission="zope2.View"
     />
 
 </configure>
