@@ -4,6 +4,8 @@ Changelog
 
 1.0a3 (unreleased)
 ------------------
+- Add user actions for citizen dashboards
+  [mpeeters]
 
 - Add the menu portlet for dashboards
   [mpeeters]
