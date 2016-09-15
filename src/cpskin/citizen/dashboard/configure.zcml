@@ -12,7 +12,7 @@
   <configure package="eea.facetednavigation.browser">
 
     <browser:page
-      for="eea.facetednavigation.interfaces.IFacetedNavigable"
+      for="cpskin.citizen.dashboard.interfaces.ICitizenDashboard"
       name="faceted_query"
       class="cpskin.citizen.dashboard.query.DashboardQueryHandler"
       template="template/query.pt"
