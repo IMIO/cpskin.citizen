@@ -97,7 +97,7 @@
     />
 
   <subscriber
-    for="Products.PlonePAS.events.UserInitialLoginInEvent"
+    for="Products.PlonePAS.events.UserLoggedInEvent"
     handler=".citizen_first_login.create_lat_lon"
     />
 
