@@ -26,7 +26,7 @@
   <faceted:view
     name="citizen-faceted-dashboard"
     for=".interfaces.ICitizenDashboard"
-    template="faceted-table-items.pt"
+    template="templates/faceted-table-items.pt"
     title="Citizen dashboard faceted table items"
     permission="zope2.View"
     />
