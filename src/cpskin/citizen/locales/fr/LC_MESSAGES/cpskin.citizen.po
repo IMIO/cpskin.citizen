@@ -91,7 +91,7 @@ msgstr "Administration Citoyen"
 
 #: ../setuphandlers.py:48
 msgid "Citizen Claims"
-msgstr "Réclamations"
+msgstr "Revendications de contenus"
 
 #: ../setuphandlers.py:47
 msgid "Citizen Content"
