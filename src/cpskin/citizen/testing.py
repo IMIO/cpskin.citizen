@@ -154,6 +154,10 @@ class BaseTestCase(unittest.TestCase):
     def documents(self):
         return self.portal['documents']
 
+    @property
+    def dashboards(self):
+        return self.portal['citizen-dashboard']
+
 
 class TestCreationFolderAdapter(CitizenCreationFolderAdapter):
 
