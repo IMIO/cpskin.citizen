@@ -84,7 +84,7 @@ def execute_under_unrestricted_user(portal, function, user, *args, **kwargs):
             # Call the function
             return function(*args, **kwargs)
 
-        except:
+        except:  # noqa
             # If special exception handlers are needed, run them here
             raise
     finally:
