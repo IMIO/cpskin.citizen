@@ -124,6 +124,8 @@ def is_citizen(user):
     """
     Verify if the given user is a citizen (member of the Citizens group)
     """
+    if api.user.is_anonymous():
+        return False
     user_groups = api.group.get_groups(user=user)
     return 'Citizens' in [g.id for g in user_groups]
 
