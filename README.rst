@@ -24,3 +24,12 @@ License
 -------
 
 The project is licensed under the GPLv2.
+
+
+Tests
+-----
+
+This package is tested using Travis CI. The current status of the add-on is :
+
+.. image:: https://api.travis-ci.org/IMIO/cpskin.citizen.png
+    :target: http://travis-ci.org/IMIO/cpskin.citizen.json
