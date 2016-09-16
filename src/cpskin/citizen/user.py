@@ -43,7 +43,7 @@ class IEnhancedUserDataSchema(IUserDataSchema):
         required=False,
     )
 
-    latitude = schema.Number(
+    latitude = schema.TextLine(
         title=_(u'Latitude', default=u'Latitude'),
         description=_(u'help_street_description',
                       default=u"Indiquez le nom de votre rue"),
@@ -51,7 +51,7 @@ class IEnhancedUserDataSchema(IUserDataSchema):
         readonly=True
     )
 
-    longitude = schema.Number(
+    longitude = schema.TextLine(
         title=_(u'Longitude', default=u'Longitude'),
         description=_(u'help_street_description',
                       default=u"Indiquez le nom de votre rue"),
