@@ -21,8 +21,11 @@ from plone.testing import z2
 from zope.annotation import IAnnotations
 
 import transaction
+import unittest
 
 from cpskin.citizen import ANNOTATION_KEY
+from cpskin.citizen.adapter import CitizenCreationFolderAdapter
+from cpskin.citizen.browser.settings import ISettings
 
 import cpskin.citizen
 
@@ -83,6 +86,19 @@ class CpskinCitizenLayer(PloneSandboxLayer):
         annotations[ANNOTATION_KEY] = PersistentDict()
         annotations[ANNOTATION_KEY]['claim'] = ['citizen']
 
+        api.content.create(
+            type='Folder',
+            id='documents',
+            title='Documents',
+            container=portal,
+        )
+
+        api.portal.set_registry_record(
+            name='creation_types',
+            value=['Document'],
+            interface=ISettings,
+        )
+
         logout()
         transaction.commit()
 
@@ -114,3 +130,32 @@ CPSKIN_CITIZEN_ACCEPTANCE_TESTING = FunctionalTesting(
     ),
     name='CpskinCitizenLayer:AcceptanceTesting'
 )
+
+
+class BaseTestCase(unittest.TestCase):
+
+    @property
+    def portal(self):
+        return self.layer['portal']
+
+    @property
+    def citizen_document(self):
+        return self.portal['citizen-document']
+
+    @property
+    def claim_document(self):
+        return self.portal['claim-document']
+
+    @property
+    def document(self):
+        return self.portal['document']
+
+    @property
+    def documents(self):
+        return self.portal['documents']
+
+
+class TestCreationFolderAdapter(CitizenCreationFolderAdapter):
+
+    def get_folder(self, navigation_root, portal_type):
+        return navigation_root['documents']

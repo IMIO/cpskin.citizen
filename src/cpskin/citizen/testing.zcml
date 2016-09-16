@@ -14,4 +14,12 @@
     provides="Products.GenericSetup.interfaces.EXTENSION"
     />
 
+  <adapter
+    for="zope.interface.Interface
+         zope.interface.Interface"
+    provides=".interfaces.ICitizenCreationFolder"
+    factory=".testing.TestCreationFolderAdapter"
+    name="Document"
+    />
+
 </configure>

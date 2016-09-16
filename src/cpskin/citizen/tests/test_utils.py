@@ -11,31 +11,27 @@ from Products.CMFCore.exceptions import AccessControl_Unauthorized
 from plone import api
 from plone.app.testing import login
 from plone.app.testing import logout
-
-import unittest
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
+from zope.publisher.browser import TestRequest
 
 from cpskin.citizen import testing
 from cpskin.citizen import utils
+from cpskin.citizen.browser.settings import ISettings
 
 
-class TestUtils(unittest.TestCase):
+class TestUtils(testing.BaseTestCase):
     layer = testing.CPSKIN_CITIZEN_INTEGRATION_TESTING
 
-    @property
-    def portal(self):
-        return self.layer['portal']
+    def setUp(self):
+        self.request = TestRequest()
 
-    @property
-    def citizen_document(self):
-        return self.portal['citizen-document']
-
-    @property
-    def claim_document(self):
-        return self.portal['claim-document']
-
-    @property
-    def document(self):
-        return self.portal['document']
+    def tearDown(self):
+        api.portal.set_registry_record(
+            name='creation_types',
+            value=['Document'],
+            interface=ISettings,
+        )
 
     def test_citizen_access_portal_types(self):
         """Test 'citizen_access_portal_types' function"""
@@ -147,7 +143,37 @@ class TestUtils(unittest.TestCase):
             utils.get_draft_folder(self.document),
         )
 
+    def test_get_settings(self):
+        """Test 'get_settings' function"""
+        settings = utils.get_settings()
+        self.assertEqual(['Document'], settings.creation_types)
+
+    def test_get_creation_folder_default(self):
+        """Test 'get_creation_folder' function default"""
+        self.assertEqual(
+            self.portal,
+            utils.get_creation_folder(self.portal, self.request, 'foo'),
+        )
+
+    def test_get_creation_folder_custom_adapter(self):
+        """Test 'get_creation_folder' function for a custom adapter"""
+        self.assertEqual(
+            self.portal['documents'],
+            utils.get_creation_folder(self.portal, self.request, 'Document'),
+        )
+
     def test_get_annotations(self):
         """Test 'get_annotations' function"""
         annotations = utils.get_annotations(self.claim_document)
         self.assertEqual(['citizen'], annotations['claim'])
+
+    def test_get_allowed_creation_types(self):
+        self.assertEqual(['Document'], utils.get_allowed_creation_types())
+        registry = getUtility(IRegistry).forInterface(ISettings)
+        registry.creation_types = None
+        registry_values = api.portal.get_registry_record(
+            name='creation_types',
+            interface=ISettings,
+        )
+        self.assertEqual(None, registry_values)
+        self.assertEqual(['Document'], utils.get_allowed_creation_types())
