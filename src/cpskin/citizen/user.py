@@ -4,7 +4,7 @@ from plone.app.users.browser.personalpreferences import UserDataPanelAdapter
 from plone.app.users.userdataschema import IUserDataSchema
 from plone.app.users.userdataschema import IUserDataSchemaProvider
 from zope.interface import implements
-from zope.schema import TextLine
+from zope import schema
 
 
 class UserDataSchemaProvider(object):
@@ -21,29 +21,29 @@ class IEnhancedUserDataSchema(IUserDataSchema):
     extra fields.
     """
 
-    street = TextLine(
+    street = schema.TextLine(
         title=_(u'Street', default=u'Rue'),
         description=_(u'help_street_description',
                       default=u"Indiquez le nom de votre rue, cette adresse sera utilisée dans le site pour géolocaliser ce qu'il se passe autour de chez vous."),
         required=False,
     )
 
-    number = TextLine(
+    number = schema.TextLine(
         title=_(u'Number', default=u'Numéro'),
         required=False,
     )
 
-    zip_code = TextLine(
+    zip_code = schema.TextLine(
         title=_(u'Post Code', default=u'Code postal'),
         required=False,
     )
 
-    location = TextLine(
+    location = schema.TextLine(
         title=_(u'City', default=u'Ville'),
         required=False,
     )
 
-    latitude = TextLine(
+    latitude = schema.Number(
         title=_(u'Latitude', default=u'Latitude'),
         description=_(u'help_street_description',
                       default=u"Indiquez le nom de votre rue"),
@@ -51,7 +51,7 @@ class IEnhancedUserDataSchema(IUserDataSchema):
         readonly=True
     )
 
-    longitude = TextLine(
+    longitude = schema.Number(
         title=_(u'Longitude', default=u'Longitude'),
         description=_(u'help_street_description',
                       default=u"Indiquez le nom de votre rue"),
@@ -64,50 +64,58 @@ class EnhancedUserDataPanelAdapter(UserDataPanelAdapter):
     """
     """
 
+    def _set_property(self, key, value):
+        return self.context.setMemberProperties({
+            key: value.encode('utf-8'),
+        })
+
+    def _get_property(self, key):
+        return self.context.getProperty(key, '').decode('utf-8')
+
     @property
     def street(self):
-        return self.context.getProperty('street', '')
+        return self._get_property('street')
 
     @street.setter
     def street(self, value):
-        return self.context.setMemberProperties({'street': value})
+        return self._set_property('street', value)
 
     @property
     def number(self):
-        return self.context.getProperty('number', '')
+        return self._get_property('number')
 
     @number.setter
     def number(self, value):
-        return self.context.setMemberProperties({'number': value})
+        return self._set_property('number', value)
 
     @property
     def zip_code(self):
-        return self.context.getProperty('zip_code', '')
+        return self._get_property('zip_code')
 
     @zip_code.setter
     def zip_code(self, value):
-        return self.context.setMemberProperties({'zip_code': value})
+        return self._set_property('zip_code', value)
 
     @property
     def location(self):
-        return self.context.getProperty('location', '')
+        return self._get_property('location')
 
     @location.setter
     def location(self, value):
-        return self.context.setMemberProperties({'location': value})
+        return self._set_property('location', value)
 
     @property
     def latitude(self):
-        return self.context.getProperty('latitude', '')
+        return self._get_property('latitude')
 
     @latitude.setter
     def latitude(self, value):
-        return self.context.setMemberProperties({'latitude': value})
+        return self._set_property('latitude', value)
 
     @property
     def longitude(self):
-        return self.context.getProperty('longitude', '')
+        return self._get_property('longitude')
 
     @longitude.setter
     def longitude(self, value):
-        return self.context.setMemberProperties({'longitude': value})
+        return self._set_property('longitude', value)
