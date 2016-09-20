@@ -98,7 +98,7 @@ def post_install(context):
             )
             setup_faceted_dashboard_config(
                 dashboard_folder[id],
-                ICitizenDashboard,
+                (ICitizenDashboard, ),
                 'faceted-map-view',
                 'dashboard/faceted_map_view_config.xml'
             )

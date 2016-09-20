@@ -130,6 +130,12 @@
     factory=".localrole.DashboardLocalRoleAdapter"
     />
 
+  <adapter
+    for=".interfaces.ICitizenDashboard"
+    provides="collective.geo.leaflet.interfaces.IGeoMap"
+    factory=".geomap.GeoMap"
+    />
+
   <!-- portlet -->
   <plone:portlet
     name="cpskin.citizen.portlets.DashboardPortlet"
@@ -140,5 +146,8 @@
     renderer=".portlet.DashboardPortletRenderer"
     addview=".portlet.DashboardPortletAddForm"
     />
+
+
+
 
 </configure>

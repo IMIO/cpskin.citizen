@@ -5,14 +5,16 @@ from plone import api
 import geocoder
 import logging
 
-logger = logging.getLogger('cpskin.citizen get lat lon')
+logger = logging.getLogger('cpskin.citizen get lat lng')
 
 
 def create_lat_lon(event):
     user = event.object
     if not is_citizen(user):
         return
-    geocode = get_lat_lon_from_address(
+    if user.getProperty('latitude', False):
+        return
+    geocode = get_lat_lng_from_address(
         user.getProperty('street'),
         user.getProperty('number'),
         user.getProperty('zip_code'),
@@ -26,7 +28,7 @@ def create_lat_lon(event):
         member.setMemberProperties(mapping={'longitude': str(geocode.lng)})
 
 
-def get_lat_lon_from_address(street, number, zip_code, city):
+def get_lat_lng_from_address(street, number, zip_code, city):
     if street is None or city is None:
         return
     if street is not None and city is not None:

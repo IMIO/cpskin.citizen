@@ -44,6 +44,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'borg.localrole',
+        'collective.geo.leaflet',
         'collective.monkeypatcher',
         'collective.z3cform.select2',
         'imio.dashboard',
@@ -54,8 +55,7 @@ setup(
         'plone.principalsource',
         'setuptools',
         'z3c.jbot',
-        'geocoder',  # find which is better between geocoder and geopy
-        'geopy',
+        'geocoder',
     ],
     extras_require={
         'test': [
