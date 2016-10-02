@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a4 (unreleased)
+1.0a4 (2016-10-02)
 ------------------
 
 - Fix the proposal of new content by citizens
