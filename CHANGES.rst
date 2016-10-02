@@ -5,7 +5,8 @@ Changelog
 1.0a4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix the proposal of new content by citizens
+  [mpeeters]
 
 
 1.0a3 (2016-09-20)
