@@ -7,6 +7,7 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
+from datetime import datetime
 from plone import api
 from plone.z3cform.layout import FormWrapper
 from z3c.form import button
@@ -15,6 +16,7 @@ from z3c.form.form import Form
 from zExceptions import Unauthorized
 from zope import schema
 from zope.interface import Interface
+from zope.schema.vocabulary import getVocabularyRegistry
 
 from cpskin.citizen import _
 from cpskin.citizen import utils
@@ -50,6 +52,16 @@ class ProposeCitizenForm(Form):
             self.request,
             data.get('type'),
         )
+        fields = self.get_required_fields(data.get('type'))
+        vr = getVocabularyRegistry()
+        default_values = {}
+        for k, f in fields:
+            if isinstance(f.field, schema.Datetime):
+                default_values[k] = datetime.now()
+            elif isinstance(f.field, schema.Choice):
+                voc = vr.get(container, f.field.vocabularyName)
+                default_values[k] = voc.by_value.values()[0].value
+        data.update(default_values)
         content = self.create_original(container, **data)
         self.create_draft(content)
         return
@@ -74,6 +86,14 @@ class ProposeCitizenForm(Form):
     def create_draft(self, content):
         url = '{0}/@@edit-citizen'.format(content.absolute_url())
         self.request.response.redirect(url)
+
+    def get_required_fields(self, portal_type):
+        ignored_fields = ('title', )
+
+        fields = utils.get_required_fields(portal_type)
+        fields = [(k, f) for k, f in fields if f.field.default is None and
+                  k not in ignored_fields]
+        return fields
 
 
 class ProposeCitizenView(FormWrapper):

@@ -88,6 +88,20 @@
     />
 
   <adapter
+    for="zope.interface.Interface"
+    provides=".interfaces.ICitizenDraftFolder"
+    name="default"
+    factory=".adapter.CitizenDraftFolderAdapter"
+    />
+
+  <adapter
+    for="zope.interface.Interface"
+    provides=".interfaces.ICitizenDraftFolder"
+    name="organization"
+    factory=".adapter.CitizenDraftOrganizationAdapter"
+    />
+
+  <adapter
     provides=".user.IEnhancedUserDataSchema"
     for="*"
     factory=".user.EnhancedUserDataPanelAdapter"

@@ -17,3 +17,11 @@ class ICpskinCitizenLayer(IDefaultBrowserLayer):
 
 class ICitizenCreationFolder(Interface):
     pass
+
+
+class ICitizenDraftFolder(Interface):
+    pass
+
+
+class IFacetedConfig(Interface):
+    pass

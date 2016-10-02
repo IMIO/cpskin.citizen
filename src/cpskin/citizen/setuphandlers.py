@@ -127,6 +127,9 @@ def post_install(context):
         'location'
     )
 
+    # Add extra versionable content types
+    add_allowed_versionable_contenttype('organization')
+
 
 def setup_faceted_dashboard_config(context,
                                    interfaces,
@@ -160,3 +163,11 @@ def disable_portlet_inheritance(context, column_name='plone.leftcolumn'):
     manager = getMultiAdapter(
         (context, column), ILocalPortletAssignmentManager)
     manager.setBlacklistStatus(CONTEXT_CATEGORY, True)
+
+
+def add_allowed_versionable_contenttype(portal_type):
+    portal_repository = api.portal.get_tool('portal_repository')
+    types = portal_repository.getVersionableContentTypes()
+    if portal_type not in types:
+        types.append(portal_type)
+    portal_repository.setVersionableContentTypes(types)

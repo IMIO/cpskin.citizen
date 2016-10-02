@@ -13,7 +13,9 @@ from AccessControl.SecurityManagement import setSecurityManager
 from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
 from persistent.dict import PersistentDict
 from plone import api
+from plone.dexterity import utils
 from plone.registry.interfaces import IRegistry
+from z3c.form import field
 from zope.annotation import IAnnotations
 from zope.component import getMultiAdapter
 from zope.component import getUtility
@@ -191,3 +193,13 @@ def get_annotations(context):
     if ANNOTATION_KEY not in annotations:
         annotations[ANNOTATION_KEY] = PersistentDict()
     return annotations[ANNOTATION_KEY]
+
+
+def get_required_fields(portal_type):
+    """Return the required fields for a given dexterity portal type"""
+    schemas = utils.iterSchemataForType(portal_type)
+    fields = []
+    for schema in schemas:
+        fields.extend([(k, f) for k, f in field.Fields(schema).items()
+                      if f.field.required])
+    return fields

@@ -7,6 +7,8 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
+from plone import api
+
 from cpskin.citizen import utils
 
 
@@ -20,3 +22,20 @@ class CitizenCreationFolderAdapter(object):
         settings = utils.get_settings()
         path = settings.proposal_folders.get(portal_type, '')
         return navigation_root.restrictedTraverse(str(path))
+
+
+class CitizenDraftFolderAdapter(object):
+
+    def __init__(self, context):
+        self.context = context
+
+    def get_folder(self):
+        navigation_root = api.portal.get_navigation_root(self.context)
+        return navigation_root['citizen-drafts']
+
+
+class CitizenDraftOrganizationAdapter(CitizenDraftFolderAdapter):
+
+    def get_folder(self):
+        navigation_root = api.portal.get_navigation_root(self.context)
+        return navigation_root['annuaire']
