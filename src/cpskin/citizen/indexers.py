@@ -7,8 +7,11 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
-from plone.indexer import indexer
+from collective.geo.geographer.interfaces import IGeoreferenced
 from plone.app.stagingbehavior.utils import get_working_copy
+from plone.indexer import indexer
+from zope.component import queryAdapter
+from zope.interface import Interface
 
 from cpskin.citizen import utils
 from cpskin.citizen.behavior import ICitizenAccess
@@ -45,3 +48,11 @@ def has_claim(obj):
     if obj != get_working_copy(obj):
         annotations = utils.get_annotations(obj)
         return len(annotations.get('claim', [])) > 0
+
+
+@indexer(Interface)
+def is_geolocated(obj):
+    geo_adapter = queryAdapter(obj, IGeoreferenced)
+    if geo_adapter:
+        return geo_adapter.geo.get('coordinates') is not None
+    return False

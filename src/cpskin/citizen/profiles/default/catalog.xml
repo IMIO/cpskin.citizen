@@ -24,4 +24,9 @@
     <indexed_attr value="has_claim"/>
   </index>
   <column value="has_claim"/>
+
+  <index name="is_geolocated" meta_type="BooleanIndex">
+    <indexed_attr value="is_geolocated"/>
+  </index>
+  <column value="is_geolocated"/>
 </object>

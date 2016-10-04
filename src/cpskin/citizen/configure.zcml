@@ -81,6 +81,11 @@
     />
 
   <adapter
+    name="is_geolocated"
+    factory=".indexers.is_geolocated"
+    />
+
+  <adapter
     for="zope.interface.Interface
          zope.interface.Interface"
     provides=".interfaces.ICitizenCreationFolder"
