@@ -62,6 +62,7 @@ class CitizenMapQueryFilters(DefaultQueryFilters):
     def apply_filters(self, query):
         citizen_map_portal_types = api.portal.get_registry_record(
             'cpskin.citizen.browser.settings.ISettings.map_view_types')
-        if citizen_map_portal_types:
+        if citizen_map_portal_types and 'portal_type' not in query:
             query['portal_type'] = citizen_map_portal_types
-            return query
+        query['is_geolocated'] = True
+        return query
