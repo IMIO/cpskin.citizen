@@ -5,7 +5,8 @@ Changelog
 1.0a5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix the index for portal type filter on citizen map dashboard
+  [mpeeters]
 
 
 1.0a4 (2016-10-02)
