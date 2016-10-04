@@ -5,6 +5,12 @@ Changelog
 1.0a5 (unreleased)
 ------------------
 
+- Fix the citizen map dashboard query filters
+  [mpeeters]
+
+- Add an index to identify geolocated contents
+  [mpeeters]
+
 - Fix the index for portal type filter on citizen map dashboard
   [mpeeters]
 
