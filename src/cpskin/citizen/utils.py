@@ -136,7 +136,9 @@ def can_claim(user, context):
     """Verify if the given user can claim the given context"""
     if can_edit_citizen(user, context) is True:
         return False
-    return is_citizen(user)
+    if not is_citizen(user):
+        return False
+    return context.portal_type in get_allowed_claim_types()
 
 
 def have_claimed(user, context):
@@ -186,6 +188,14 @@ def get_allowed_creation_types():
     if not allowed_types:
         allowed_types = citizen_access_portal_types()
     return allowed_types
+
+
+def get_allowed_claim_types():
+    settings = get_settings()
+    claim_types = settings.claim_types
+    if not claim_types:
+        claim_types = citizen_access_portal_types()
+    return claim_types
 
 
 def get_annotations(context):
