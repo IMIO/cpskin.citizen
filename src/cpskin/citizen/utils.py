@@ -154,7 +154,19 @@ def get_claim_users(context):
 def get_draft_folder(context):
     """Return the citizen draft folder for the given context"""
     navigation_root = api.portal.get_navigation_root(context)
-    return navigation_root['citizen-drafts']
+    folder = navigation_root['citizen-drafts']
+    if context.portal_type not in allowed_content_types(folder):
+        return context.aq_parent
+    return folder
+
+
+def allowed_content_types(context):
+    """Return the ids of the allowed content types for the given context"""
+    return [p.id for p in execute_under_unrestricted_user(
+        context,
+        context.allowedContentTypes,
+        '',
+    )]
 
 
 def dict_2_vocabulary(dictionary):
