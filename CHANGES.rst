@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a6 (unreleased)
+1.0a6 (2016-11-24)
 ------------------
 
 - Add a missing filter to allowed claim types
