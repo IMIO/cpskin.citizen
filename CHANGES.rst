@@ -5,7 +5,8 @@ Changelog
 1.0a6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add a missing filter to allowed claim types
+  [mpeeters]
 
 
 1.0a5 (2016-10-04)
