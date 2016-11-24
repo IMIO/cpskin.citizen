@@ -5,7 +5,8 @@ Changelog
 1.0a7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Avoid an error for non allowed content type on the draft folder
+  [mpeeters]
 
 
 1.0a6 (2016-11-24)
