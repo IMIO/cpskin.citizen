@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a7 (unreleased)
+1.0a7 (2016-11-24)
 ------------------
 
 - Avoid an error for non allowed content type on the draft folder
