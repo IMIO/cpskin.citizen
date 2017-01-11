@@ -5,7 +5,8 @@ Changelog
 1.0a8 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Hide dashboard and undo actions for citizen users
+  [mpeeters]
 
 
 1.0a7 (2016-11-24)

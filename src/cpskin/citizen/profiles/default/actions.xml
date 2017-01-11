@@ -68,6 +68,14 @@
       <property name="visible">True</property>
     </object>
 
+    <object name="undo" meta_type="CMF Action" i18n:domain="cpskin">
+      <property name="available_expr">python:member is not None and not path('context/@@citizen_control').is_citizen()</property>
+    </object>
+
+    <object name="dashboard" meta_type="CMF Action" i18n:domain="plone" insert-before="*">
+      <property name="available_expr">python:member is not None and not path('context/@@citizen_control').is_citizen()</property>
+    </object>
+
   </object>
 </object>
 
