@@ -21,21 +21,9 @@
   <object name="user" meta_type="CMF Action Category">
 
     <object name="citizen_content_dashboard" meta_type="CMF Action" i18n:domain="cpskin.citizen">
-      <property name="title" i18n:translate="">Citizen content dashboard</property>
+      <property name="title" i18n:translate="">Citizen Dashboard</property>
       <property name="description" i18n:translate=""></property>
       <property name="url_expr">string:${globals_view/navigationRootUrl}/citizen-dashboard/citizen-content</property>
-      <property name="icon_expr"></property>
-      <property name="available_expr">python:path('context/@@citizen_control').is_citizen()</property>
-      <property name="permissions">
-       <element value="View"/>
-      </property>
-      <property name="visible">True</property>
-    </object>
-
-    <object name="citizen_claim_dashboard" meta_type="CMF Action" i18n:domain="cpskin.citizen">
-      <property name="title" i18n:translate="">Citizen claims dashboard</property>
-      <property name="description" i18n:translate=""></property>
-      <property name="url_expr">string:${globals_view/navigationRootUrl}/citizen-dashboard/citizen-claims</property>
       <property name="icon_expr"></property>
       <property name="available_expr">python:path('context/@@citizen_control').is_citizen()</property>
       <property name="permissions">

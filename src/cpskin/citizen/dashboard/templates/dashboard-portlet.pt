@@ -4,7 +4,7 @@
     tal:condition="view/can_view">
 
   <dt class="portletHeader" i18n:translate="">
-    Citizen dashboards
+    Personal dashboards
   </dt>
   <dd class="portletItem">
     <ul class="navTree navTreeLevel0">

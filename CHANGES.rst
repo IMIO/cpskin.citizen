@@ -5,6 +5,9 @@ Changelog
 1.0a8 (unreleased)
 ------------------
 
+- Rename the citizen dashboard action and portlet title
+  [mpeeters]
+
 - Hide dashboard and undo actions for citizen users
   [mpeeters]
 
