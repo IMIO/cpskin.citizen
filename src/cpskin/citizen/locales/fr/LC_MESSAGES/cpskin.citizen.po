@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-09-15 13:57+0000\n"
+"POT-Creation-Date: 2017-01-11 13:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 msgid "Actions"
 msgstr "Actions"
 
-#: ../setuphandlers.py:51
+#: ../setuphandlers.py:54
 msgid "Admin Citizen Claims"
 msgstr "Administration revendications"
 
-#: ../setuphandlers.py:50
+#: ../setuphandlers.py:53
 msgid "Admin Citizen Content"
 msgstr "Administration contenus citoyen"
 
@@ -93,19 +93,20 @@ msgstr "Supprimer le brouillon"
 msgid "Citizen Administration"
 msgstr "Administration Citoyen"
 
-#: ../setuphandlers.py:49
+#: ../setuphandlers.py:52
 msgid "Citizen Claims"
 msgstr "Revendications de contenus"
 
-#: ../setuphandlers.py:48
+#: ../setuphandlers.py:50
 msgid "Citizen Content"
 msgstr "Mes contenus"
 
-#: ../setuphandlers.py:65
+#: ../profiles/default/actions.xml
+#: ../setuphandlers.py:68
 msgid "Citizen Dashboard"
 msgstr "Tableau de bord citoyen"
 
-#: ../setuphandlers.py:57
+#: ../setuphandlers.py:60
 msgid "Citizen Drafts"
 msgstr "Brouillons citoyens"
 
@@ -113,21 +114,13 @@ msgstr "Brouillons citoyens"
 msgid "Citizen Edition"
 msgstr "Accès Citoyen"
 
+#: ../setuphandlers.py:94
+msgid "Citizen Map"
+msgstr "Ma carte"
+
 #: ../behavior.py:29
 msgid "Citizen access"
 msgstr "Accès Citoyen"
-
-#: ../profiles/default/actions.xml
-msgid "Citizen claims dashboard"
-msgstr "Tableau de bord des revendications"
-
-#: ../profiles/default/actions.xml
-msgid "Citizen content dashboard"
-msgstr "Tableau de bord de mes contenus"
-
-#: ../dashboard/templates/dashboard-portlet.pt:6
-msgid "Citizen dashboards"
-msgstr "Tableau de bord"
 
 #: ../iterate/adapter.py:18
 msgid "Citizen draft folder"
@@ -136,6 +129,11 @@ msgstr "Dossier de brouillons"
 #: ../behavior.py:35
 msgid "Citizens users"
 msgstr "Utilisateurs citoyens"
+
+#. Default: "Ville"
+#: ../user.py:42
+msgid "City"
+msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:15
 msgid "Claim awaiting for approval"
@@ -166,7 +164,7 @@ msgstr "Commentaire"
 msgid "Comment on changes"
 msgstr "Commenter les changements"
 
-#: ../browser/propose.py:42
+#: ../browser/propose.py:44
 #: ../browser/templates/citizen-admin-viewlet.pt:25
 #: ../browser/templates/citizen-claim.pt:16
 msgid "Confirm"
@@ -217,6 +215,20 @@ msgstr "Est un éditeur citoyen"
 msgid "Keep checkout"
 msgstr "Garder le brouillon"
 
+#. Default: "Latitude"
+#: ../user.py:47
+msgid "Latitude"
+msgstr ""
+
+#. Default: "Longitude"
+#: ../user.py:55
+msgid "Longitude"
+msgstr ""
+
+#: ../browser/settings.py:65
+msgid "Map view content types"
+msgstr "Type de contenus pour la vue cartographique"
+
 #: ../dashboard/columns.py:28
 msgid "Modification state"
 msgstr "Etat des modifications"
@@ -225,13 +237,27 @@ msgstr "Etat des modifications"
 msgid "None"
 msgstr "Aucune"
 
+#. Default: "Numéro"
+#: ../user.py:32
+msgid "Number"
+msgstr ""
+
 #: ../browser/settings.py:34
 msgid "Path to the folder from the navigation root"
 msgstr "Chemin vers le dossier à partir de la racine de navigation"
 
-#: ../browser/propose.py:26
+#: ../dashboard/templates/dashboard-portlet.pt:6
+msgid "Personal dashboards"
+msgstr "Espace personnel"
+
+#: ../browser/propose.py:28
 msgid "Portal Type"
 msgstr "Type de contenu"
+
+#. Default: "Code postal"
+#: ../user.py:37
+msgid "Post Code"
+msgstr ""
 
 #: ../browser/settings.py:24
 msgid "Proposal default folders"
@@ -257,18 +283,42 @@ msgstr "Renvoyer ce document au citoyen pour lui demander des changements."
 msgid "Show citizen dashboards"
 msgstr "Affiche les tableaux de bords pour les citoyens"
 
+#. Default: "Rue"
+#: ../user.py:25
+msgid "Street"
+msgstr ""
+
 #: ../browser/settings.py:25
 msgid "The folders where (by default) new content proposed by citizens will be created"
 msgstr "Les dossiers ou (par défaut) les nouveaux contenus proposés par les citoyens seront créés"
 
-#: ../browser/propose.py:32
+#: ../browser/propose.py:34
 msgid "Title"
 msgstr "Titre"
+
+#: ../browser/settings.py:66
+msgid "Visibled content types for map view for citizens (by default no content types are allowed)"
+msgstr "Types de contenus visibles sur la vue cartographique pour les citoyens (par défaut aucun type n'est visible)"
 
 #. Default: "Canceling the draft will delete this working copy, and any modifications made to it will be lost."
 #: ../browser/templates/citizen-cancel.pt:12
 msgid "description_cancel"
 msgstr "Supprimer ce brouillon entrainera la suppression de cette copie de travail et de toutes ces modifications."
+
+#. Default: "Indiquez le nom de votre rue"
+#: ../user.py:48
+msgid "help_latitude_description"
+msgstr ""
+
+#. Default: "Indiquez le nom de votre rue"
+#: ../user.py:56
+msgid "help_longitude_description"
+msgstr ""
+
+#. Default: "Indiquez le nom de votre rue, cette adresse sera utilisée dans le site pour géolocaliser ce qu'il se passe autour de chez vous."
+#: ../user.py:26
+msgid "help_street_description"
+msgstr ""
 
 #. Default: "Cancel modifications of ${object_title}."
 #: ../browser/templates/citizen-cancel.pt:9

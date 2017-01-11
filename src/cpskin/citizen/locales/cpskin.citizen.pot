@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-09-15 13:57+0000\n"
+"POT-Creation-Date: 2017-01-11 13:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: ../setuphandlers.py:51
+#: ../setuphandlers.py:54
 msgid "Admin Citizen Claims"
 msgstr ""
 
-#: ../setuphandlers.py:50
+#: ../setuphandlers.py:53
 msgid "Admin Citizen Content"
 msgstr ""
 
@@ -93,19 +93,20 @@ msgstr ""
 msgid "Citizen Administration"
 msgstr ""
 
-#: ../setuphandlers.py:49
+#: ../setuphandlers.py:52
 msgid "Citizen Claims"
 msgstr ""
 
-#: ../setuphandlers.py:48
+#: ../setuphandlers.py:50
 msgid "Citizen Content"
 msgstr ""
 
-#: ../setuphandlers.py:65
+#: ../profiles/default/actions.xml
+#: ../setuphandlers.py:68
 msgid "Citizen Dashboard"
 msgstr ""
 
-#: ../setuphandlers.py:57
+#: ../setuphandlers.py:60
 msgid "Citizen Drafts"
 msgstr ""
 
@@ -113,20 +114,12 @@ msgstr ""
 msgid "Citizen Edition"
 msgstr ""
 
+#: ../setuphandlers.py:94
+msgid "Citizen Map"
+msgstr ""
+
 #: ../behavior.py:29
 msgid "Citizen access"
-msgstr ""
-
-#: ../profiles/default/actions.xml
-msgid "Citizen claims dashboard"
-msgstr ""
-
-#: ../profiles/default/actions.xml
-msgid "Citizen content dashboard"
-msgstr ""
-
-#: ../dashboard/templates/dashboard-portlet.pt:6
-msgid "Citizen dashboards"
 msgstr ""
 
 #: ../iterate/adapter.py:18
@@ -135,6 +128,11 @@ msgstr ""
 
 #: ../behavior.py:35
 msgid "Citizens users"
+msgstr ""
+
+#. Default: "Ville"
+#: ../user.py:42
+msgid "City"
 msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:15
@@ -166,7 +164,7 @@ msgstr ""
 msgid "Comment on changes"
 msgstr ""
 
-#: ../browser/propose.py:42
+#: ../browser/propose.py:44
 #: ../browser/templates/citizen-admin-viewlet.pt:25
 #: ../browser/templates/citizen-claim.pt:16
 msgid "Confirm"
@@ -217,6 +215,20 @@ msgstr ""
 msgid "Keep checkout"
 msgstr ""
 
+#. Default: "Latitude"
+#: ../user.py:47
+msgid "Latitude"
+msgstr ""
+
+#. Default: "Longitude"
+#: ../user.py:55
+msgid "Longitude"
+msgstr ""
+
+#: ../browser/settings.py:65
+msgid "Map view content types"
+msgstr ""
+
 #: ../dashboard/columns.py:28
 msgid "Modification state"
 msgstr ""
@@ -225,12 +237,26 @@ msgstr ""
 msgid "None"
 msgstr ""
 
+#. Default: "Numéro"
+#: ../user.py:32
+msgid "Number"
+msgstr ""
+
 #: ../browser/settings.py:34
 msgid "Path to the folder from the navigation root"
 msgstr ""
 
-#: ../browser/propose.py:26
+#: ../dashboard/templates/dashboard-portlet.pt:6
+msgid "Personal dashboards"
+msgstr ""
+
+#: ../browser/propose.py:28
 msgid "Portal Type"
+msgstr ""
+
+#. Default: "Code postal"
+#: ../user.py:37
+msgid "Post Code"
 msgstr ""
 
 #: ../browser/settings.py:24
@@ -257,17 +283,41 @@ msgstr ""
 msgid "Show citizen dashboards"
 msgstr ""
 
+#. Default: "Rue"
+#: ../user.py:25
+msgid "Street"
+msgstr ""
+
 #: ../browser/settings.py:25
 msgid "The folders where (by default) new content proposed by citizens will be created"
 msgstr ""
 
-#: ../browser/propose.py:32
+#: ../browser/propose.py:34
 msgid "Title"
+msgstr ""
+
+#: ../browser/settings.py:66
+msgid "Visibled content types for map view for citizens (by default no content types are allowed)"
 msgstr ""
 
 #. Default: "Canceling the draft will delete this working copy, and any modifications made to it will be lost."
 #: ../browser/templates/citizen-cancel.pt:12
 msgid "description_cancel"
+msgstr ""
+
+#. Default: "Indiquez le nom de votre rue"
+#: ../user.py:48
+msgid "help_latitude_description"
+msgstr ""
+
+#. Default: "Indiquez le nom de votre rue"
+#: ../user.py:56
+msgid "help_longitude_description"
+msgstr ""
+
+#. Default: "Indiquez le nom de votre rue, cette adresse sera utilisée dans le site pour géolocaliser ce qu'il se passe autour de chez vous."
+#: ../user.py:26
+msgid "help_street_description"
 msgstr ""
 
 #. Default: "Cancel modifications of ${object_title}."
