@@ -1,4 +1,4 @@
-<dl class="portlet dashboard-portlet"
+<dl class="portlet dashboard-portlet portletNavigationTree"
     xmlns:tal="http://xml.zope.org/namespaces/tal"
     i18n:domain="cpskin.citizen"
     tal:condition="view/can_view">
@@ -8,7 +8,7 @@
   </dt>
   <dd class="portletItem">
     <ul class="navTree navTreeLevel0">
-      <li class="navTreeItem visualNoMarker" tal:repeat="dashboard view/dashboards">
+      <li class="navTreeItem visualNoMarker navTreeFolderish" tal:repeat="dashboard view/dashboards">
         <a href="#"
            tal:attributes="href dashboard/absolute_url"
            tal:content="dashboard/Title"></a>
