@@ -20,7 +20,7 @@ msgstr "Actions"
 
 #: ../setuphandlers.py:54
 msgid "Admin Citizen Claims"
-msgstr "Administration revendications"
+msgstr "Administration demandes de gestion"
 
 #: ../setuphandlers.py:53
 msgid "Admin Citizen Content"
@@ -28,11 +28,11 @@ msgstr "Administration contenus citoyen"
 
 #: ../profiles/default/actions.xml
 msgid "Admin citizen claims dashboard"
-msgstr "Tableau de bord revendications citoyen"
+msgstr "Gestions demandées"
 
 #: ../profiles/default/actions.xml
 msgid "Admin citizen content dashboard"
-msgstr "Tableau de bord contenus citoyen"
+msgstr "Contenus citoyen"
 
 #: ../browser/settings.py:54
 msgid "Allowed content types for creation by citizens (by default all content types are allowed)"
@@ -40,7 +40,7 @@ msgstr "Types de contenus autorisés pour la création par les citoyens (par dé
 
 #: ../browser/settings.py:43
 msgid "Allowed content types for the claim procedure"
-msgstr "Types de contenus autorisés pour la revendication par un citoyen"
+msgstr "Types de contenus autorisés pour la demande de gestion par un citoyen"
 
 #: ../browser/templates/citizen-return-checkout.pt:8
 msgid "Ask for changes on ${object_title}."
@@ -60,7 +60,7 @@ msgstr "Demander la validation de ce document enverra une demande aux administra
 
 #: ../browser/templates/citizen-admin-viewlet.pt:15
 msgid "Awaiting claims"
-msgstr "Revendications en attente"
+msgstr "Demande de gestion en attente"
 
 #: ../dashboard/columns.py:44
 msgid "Awaiting for changes"
@@ -95,7 +95,7 @@ msgstr "Administration Citoyen"
 
 #: ../setuphandlers.py:52
 msgid "Citizen Claims"
-msgstr "Revendications de contenus"
+msgstr "Gestion demandée"
 
 #: ../setuphandlers.py:50
 msgid "Citizen Content"
@@ -104,7 +104,7 @@ msgstr "Mes contenus"
 #: ../profiles/default/actions.xml
 #: ../setuphandlers.py:68
 msgid "Citizen Dashboard"
-msgstr "Tableau de bord citoyen"
+msgstr "Mon espace personnel"
 
 #: ../setuphandlers.py:60
 msgid "Citizen Drafts"
@@ -116,7 +116,7 @@ msgstr "Accès Citoyen"
 
 #: ../setuphandlers.py:94
 msgid "Citizen Map"
-msgstr "Ma carte"
+msgstr "Près de chez moi"
 
 #: ../behavior.py:29
 msgid "Citizen access"
@@ -137,23 +137,23 @@ msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:15
 msgid "Claim awaiting for approval"
-msgstr "Revendications en attente de confirmation"
+msgstr "Demandes de gestion en attente de confirmation"
 
 #: ../browser/settings.py:42
 msgid "Claim content types"
-msgstr "Types de contenus revendicables"
+msgstr "Types de contenus pour la demande de gestion"
 
 #: ../browser/templates/citizen-claim.pt:8
 msgid "Claim modifications of ${object_title}."
-msgstr "Revendication de modifications de"
+msgstr "Gestion demandée de"
 
 #: ../browser/templates/citizen-edition-viewlet.pt:36
 msgid "Claim this content"
-msgstr "Revendiquer ce contenu"
+msgstr "Demander la gestion"
 
 #: ../browser/templates/citizen-claim.pt:11
 msgid "Claiming this document will ask to administrators to give you the possibility to propose modifications."
-msgstr "Revendiquer ce document enverra une demande aux administrateurs pour vous donner la possibilité de proposer des modifications."
+msgstr "Demander la gestion de ce document enverra une demande aux administrateurs pour vous donner la possibilité de proposer des modifications."
 
 #: ../browser/templates/citizen-admin-viewlet.pt:9
 #: ../browser/templates/citizen-edition-viewlet.pt:9
