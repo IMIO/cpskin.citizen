@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-01-11 13:35+0000\n"
+"POT-Creation-Date: 2017-03-01 13:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -307,12 +307,7 @@ msgstr ""
 
 #. Default: "Indiquez le nom de votre rue"
 #: ../user.py:48
-msgid "help_latitude_description"
-msgstr ""
-
-#. Default: "Indiquez le nom de votre rue"
-#: ../user.py:56
-msgid "help_longitude_description"
+msgid "help_coordinates_description"
 msgstr ""
 
 #. Default: "Indiquez le nom de votre rue, cette adresse sera utilisée dans le site pour géolocaliser ce qu'il se passe autour de chez vous."
