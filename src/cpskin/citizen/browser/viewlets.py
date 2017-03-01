@@ -93,3 +93,18 @@ class CitizenAdminViewlet(CitizenBaseViewlet):
 
 class CitizenProposeContentViewlet(CitizenBaseViewlet):
     pass
+
+
+class CitizenInfoViewlet(CitizenBaseViewlet):
+
+    @property
+    def can_view(self):
+        if api.user.is_anonymous() is True:
+            return False
+        return utils.is_citizen(self.current_user)
+
+    @property
+    def url(self):
+        return '{0}/citizen-dashboard/'.format(
+            api.portal.get_navigation_root(self.context).absolute_url()
+        )

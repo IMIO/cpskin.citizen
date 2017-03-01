@@ -96,11 +96,6 @@
     permission="cmf.ModifyPortalContent"
     />
 
-  <subscriber
-    for="Products.PlonePAS.events.UserLoggedInEvent"
-    handler=".citizen_first_login.create_lat_lon"
-    />
-
   <browser:viewlet
     name="citizen-propose-viewlet"
     for="cpskin.citizen.dashboard.interfaces.ICitizenMyContent"
@@ -108,6 +103,22 @@
     class=".viewlets.CitizenProposeContentViewlet"
     template="templates/citizen-propose-viewlet.pt"
     permission="zope2.View"
+    />
+
+  <browser:viewlet
+    name="citizen-info-viewlet"
+    for="*"
+    manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+    class=".viewlets.CitizenInfoViewlet"
+    template="templates/citizen-info-viewlet.pt"
+    permission="zope2.View"
+    />
+
+  <!-- events -->
+
+  <subscriber
+    for="Products.PlonePAS.events.UserLoggedInEvent"
+    handler=".citizen_first_login.create_lat_lon"
     />
 
 </configure>
