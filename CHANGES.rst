@@ -5,6 +5,18 @@ Changelog
 1.0a8 (unreleased)
 ------------------
 
+- Refactor actions for citizens : #16438
+  [mpeeters]
+
+- Add a viewlet for citizen to access their personal space : #16438
+  [mpeeters]
+
+- Add missing css classes for dashboard navigation portlet : #16438
+  [mpeeters]
+
+- Update translations : #16438
+  [mpeeters]
+
 - Rename the citizen dashboard action and portlet title
   [mpeeters]
 
