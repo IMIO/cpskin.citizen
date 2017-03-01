@@ -19,7 +19,7 @@ long_description = (
 
 setup(
     name='cpskin.citizen',
-    version='1.0a8.dev0',
+    version='1.0a8',
     description="An add-on for Plone",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
