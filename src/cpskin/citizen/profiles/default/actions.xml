@@ -20,10 +20,10 @@
 
   <object name="user" meta_type="CMF Action Category">
 
-    <object name="citizen_content_dashboard" meta_type="CMF Action" i18n:domain="cpskin.citizen">
-      <property name="title" i18n:translate="">Citizen Dashboard</property>
+    <object name="citizen_dashboard" meta_type="CMF Action" i18n:domain="cpskin.citizen">
+      <property name="title" i18n:translate="">Citizen dashboard</property>
       <property name="description" i18n:translate=""></property>
-      <property name="url_expr">string:${globals_view/navigationRootUrl}/citizen-dashboard/citizen-content</property>
+      <property name="url_expr">string:${globals_view/navigationRootUrl}/citizen-dashboard/</property>
       <property name="icon_expr"></property>
       <property name="available_expr">python:path('context/@@citizen_control').is_citizen()</property>
       <property name="permissions">
@@ -54,14 +54,6 @@
        <element value="View"/>
       </property>
       <property name="visible">True</property>
-    </object>
-
-    <object name="undo" meta_type="CMF Action" i18n:domain="cpskin">
-      <property name="available_expr">python:member is not None and not path('context/@@citizen_control').is_citizen()</property>
-    </object>
-
-    <object name="dashboard" meta_type="CMF Action" i18n:domain="plone" insert-before="*">
-      <property name="available_expr">python:member is not None and not path('context/@@citizen_control').is_citizen()</property>
     </object>
 
   </object>
