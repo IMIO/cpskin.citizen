@@ -66,7 +66,7 @@ class EnhancedUserDataPanelAdapter(UserDataPanelAdapter):
 
     def _set_property(self, key, value):
         return self.context.setMemberProperties({
-            key: value.encode('utf-8'),
+            key: value and value.encode('utf-8') or value,
         })
 
     def _get_property(self, key):

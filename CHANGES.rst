@@ -5,7 +5,8 @@ Changelog
 1.0a9 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix traceback when setting None value
+  [laulaz]
 
 
 1.0a8 (2017-03-01)
