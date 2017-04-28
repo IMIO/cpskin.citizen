@@ -17,20 +17,29 @@
 
   <!-- citizen content -->
   <adapter
-    name="draft-state-column"
+    name="citizen-title-column"
     for="zope.interface.Interface
          zope.interface.Interface
          .interfaces.IFacetedDashboardCitizenContentTable"
-    factory=".columns.DraftStateColumn"
+    factory=".columns.CitizenTitleColumn"
     provides="z3c.table.interfaces.IColumn"
     />
 
   <adapter
-    name="citizen-actions"
+    name="citizen-state-column"
+    for="zope.interface.Interface
+         zope.interface.Interface
+         .interfaces.IFacetedDashboardCitizenContentTable"
+    factory=".columns.CitizenStateColumn"
+    provides="z3c.table.interfaces.IColumn"
+    />
+
+  <adapter
+    name="citizen-online-version"
     for="zope.interface.Interface
          cpskin.citizen.interfaces.ICpskinCitizenLayer
          .interfaces.IFacetedDashboardCitizenContentTable"
-    factory=".columns.ActionsColumn"
+    factory=".columns.OnlineColumn"
     provides="z3c.table.interfaces.IColumn"
     />
 

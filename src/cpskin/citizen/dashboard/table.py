@@ -29,7 +29,11 @@ class DashboardTable(Table):
         'select_row',
         'Creator',
         'getText',
+        'ModificationDate',
+        'CreationDate',
+        'review_state',
         'actions',
+        'pretty_link',
     )
 
     def setUpColumns(self):

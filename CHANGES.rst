@@ -5,6 +5,9 @@ Changelog
 1.0a9 (unreleased)
 ------------------
 
+- Change columns of the citizen contents table
+  [laulaz]
+
 - Fix traceback when setting None value
   [laulaz]
 
