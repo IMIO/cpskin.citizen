@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a9 (unreleased)
+1.0a9 (2017-05-03)
 ------------------
 
 - Change columns of the citizen contents table
