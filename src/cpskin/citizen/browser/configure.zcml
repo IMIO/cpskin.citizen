@@ -121,4 +121,12 @@
     handler=".citizen_first_login.create_lat_lon"
     />
 
+  <!-- resources -->
+
+  <browser:resource
+    file="resources/citizen.css"
+    name="cpskin.citizen.css"
+    />
+
+
 </configure>
