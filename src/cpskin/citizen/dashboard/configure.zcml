@@ -95,6 +95,12 @@
   <utility
     provides=".interfaces.ICitizenDashboardQuery"
     factory=".utility.CitizenContentQueryFilters"
+    name="citizen-propose-content"
+    />
+
+  <utility
+    provides=".interfaces.ICitizenDashboardQuery"
+    factory=".utility.CitizenContentQueryFilters"
     name="citizen-content"
     />
 

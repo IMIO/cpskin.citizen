@@ -24,6 +24,9 @@ from zope.i18n import translate
 import os
 
 from cpskin.citizen import _
+from cpskin.citizen.interfaces import ICitizenContentSubMenu
+from cpskin.citizen.interfaces import ICitizenDashboardFolder
+from cpskin.citizen.interfaces import ICitizenProposeContentFolder
 from cpskin.citizen.dashboard.interfaces import ICitizenDashboard
 from cpskin.citizen.dashboard.interfaces import IAdminDashboard
 from cpskin.citizen.dashboard.interfaces import ICitizenMyContent
@@ -48,8 +51,9 @@ def post_install(context):
         )]
     dashboards = (
         (u'citizen-content', _(u'Citizen Content'),
-         (ICitizenDashboard, ICitizenMyContent)),
-        (u'citizen-claims', _(u'Citizen Claims'), (ICitizenDashboard, )),
+         (ICitizenDashboard, ICitizenMyContent, ICitizenContentSubMenu)),
+        (u'citizen-claims', _(u'Citizen Claims'),
+         (ICitizenDashboard, ICitizenContentSubMenu)),
         (u'admin-content', _(u'Admin Citizen Content'), (IAdminDashboard, )),
         (u'admin-claims', _(u'Admin Citizen Claims'), (IAdminDashboard, )),
     )
@@ -74,19 +78,8 @@ def post_install(context):
                         assignment=DashboardPortletAssignment())
 
         dashboard_folder = folder[u'citizen-dashboard']
-        for id, title, interfaces in dashboards:
-            if id not in dashboard_folder:
-                api.content.create(
-                    type='Folder',
-                    title=translate(title, target_language=lng),
-                    id=id,
-                    container=dashboard_folder,
-                    exclude_from_nav=True,
-                )
-                setup_faceted_dashboard_config(
-                    dashboard_folder[id], interfaces)
+        alsoProvides(dashboard_folder, ICitizenDashboardFolder)
 
-        # adding citizen map dashboard
         id = u'citizen-map'
         if id not in dashboard_folder:
             api.content.create(
@@ -101,6 +94,43 @@ def post_install(context):
                 (ICitizenDashboard, ),
                 'faceted-map-view',
                 'dashboard/faceted_map_view_config.xml'
+            )
+
+        id = u'citizen-propose-content'
+        if id not in dashboard_folder:
+            api.content.create(
+                type='Folder',
+                title=translate(_(u'Citizen propose'), target_language=lng),
+                id=id,
+                container=dashboard_folder,
+                exclude_from_nav=True
+            )
+        alsoProvides(dashboard_folder[id], ICitizenProposeContentFolder)
+        alsoProvides(dashboard_folder[id], ICitizenContentSubMenu)
+
+        for id, title, interfaces in dashboards:
+            if id not in dashboard_folder:
+                api.content.create(
+                    type='Folder',
+                    title=translate(title, target_language=lng),
+                    id=id,
+                    container=dashboard_folder,
+                    exclude_from_nav=True,
+                )
+                setup_faceted_dashboard_config(
+                    dashboard_folder[id], interfaces)
+
+        id = u'my-profile'
+        if id not in dashboard_folder:
+            folder_url = folder.absolute_url()
+            personal_url = u'{0}/@@personal-information'.format(folder_url)
+            api.content.create(
+                type='Link',
+                title=translate(_(u'My profile'), target_language=lng),
+                id=id,
+                remoteUrl=personal_url,
+                container=dashboard_folder,
+                exclude_from_nav=True,
             )
 
         disable_portlet_inheritance(folder[u'citizen-dashboard'])

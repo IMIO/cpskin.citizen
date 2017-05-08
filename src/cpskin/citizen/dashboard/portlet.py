@@ -17,8 +17,9 @@ from zope.interface import implements
 from zope.security import checkPermission
 
 from cpskin.citizen import utils
+from cpskin.citizen.interfaces import ICitizenContentSubMenu
+from cpskin.citizen.interfaces import ICitizenDashboardFolder
 from cpskin.citizen.dashboard.interfaces import IAdminDashboard
-from cpskin.citizen.dashboard.interfaces import ICitizenDashboard
 
 
 class IDashboardPortlet(IPortletDataProvider):
@@ -42,32 +43,48 @@ class DashboardPortletRenderer(base.Renderer):
 
     def update(self, *args, **kwargs):
         super(DashboardPortletRenderer, self).update(*args, **kwargs)
-        self.dashboards = self.get_dashboards()
+        self.items = self.get_items()
 
     @property
     def can_view(self):
-        return len(self.dashboards) > 0
+        return len(self.items) > 0
 
     @property
-    def dashboard_folder(self):
-        if ICitizenDashboard.providedBy(self.context):
-            return aq_parent(aq_inner(self.context))
-        return self.context
+    def base_folder(self):
+        context = aq_inner(self.context)
+        while not ICitizenDashboardFolder.providedBy(context):
+            context = aq_parent(context)
+        return context
 
-    def get_dashboards(self):
-        return [d for i, d in self.dashboard_folder.contentItems()
-                if self.check_dashboard(d)]
-
-    def check_dashboard(self, dashboard):
-        if api.user.is_anonymous():
-            return False
+    def is_citizen(self):
         current_user = api.user.get_current()
-        if utils.is_citizen(current_user):
-            return (ICitizenDashboard.providedBy(dashboard) and
-                    IAdminDashboard.providedBy(dashboard) is False and
-                    checkPermission('zope2.View', dashboard))
-        return (IAdminDashboard.providedBy(dashboard) and
-                checkPermission('zope2.View', dashboard))
+        return utils.is_citizen(current_user)
+
+    def is_sub_menu(self, obj):
+        return ICitizenContentSubMenu.providedBy(obj)
+
+    def get_admin_dashboards(self):
+        return [d for i, d in self.base_folder.contentItems() \
+                if IAdminDashboard.providedBy(d) and
+                   checkPermission('zope2.View', d)]
+
+    def get_citizen_items(self):
+        items = []
+        for i, d in self.base_folder.contentItems():
+            if IAdminDashboard.providedBy(d):
+                continue
+            if not checkPermission('zope2.View', d):
+                continue
+            items.append(d)
+        return items
+
+    def get_items(self):
+        if api.user.is_anonymous():
+            return []
+        if self.is_citizen():
+            return self.get_citizen_items()
+        else:
+            return self.get_admin_dashboards()
 
 
 class DashboardPortletAddForm(base.NullAddForm):

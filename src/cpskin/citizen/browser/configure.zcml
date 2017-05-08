@@ -98,7 +98,7 @@
 
   <browser:viewlet
     name="citizen-propose-viewlet"
-    for="cpskin.citizen.dashboard.interfaces.ICitizenMyContent"
+    for="cpskin.citizen.interfaces.ICitizenProposeContentFolder"
     manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
     class=".viewlets.CitizenProposeContentViewlet"
     template="templates/citizen-propose-viewlet.pt"

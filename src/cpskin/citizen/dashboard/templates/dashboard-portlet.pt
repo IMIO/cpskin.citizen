@@ -8,10 +8,14 @@
   </dt>
   <dd class="portletItem">
     <ul class="navTree navTreeLevel0">
-      <li class="navTreeItem visualNoMarker navTreeFolderish" tal:repeat="dashboard view/dashboards">
+      <li class="navTreeItem visualNoMarker navTreeFolderish"
+          tal:repeat="item view/items">
         <a href="#"
-           tal:attributes="href dashboard/absolute_url"
-           tal:content="dashboard/Title"></a>
+           class=""
+           tal:define="submenu python: view.is_sub_menu(item)"
+           tal:attributes="href item/absolute_url;
+                           class python: submenu and 'citizen-content-submenu' or ''"
+           tal:content="item/Title"></a>
       </li>
     </ul>
   </dd>

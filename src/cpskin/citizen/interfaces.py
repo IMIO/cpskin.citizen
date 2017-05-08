@@ -15,11 +15,23 @@ class ICpskinCitizenLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 
+class ICitizenContentSubMenu(Interface):
+    pass
+
+
+class ICitizenProposeContentFolder(Interface):
+    pass
+
+
 class ICitizenCreationFolder(Interface):
     pass
 
 
 class ICitizenDraftFolder(Interface):
+    pass
+
+
+class ICitizenDashboardFolder(Interface):
     pass
 
 
