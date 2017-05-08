@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a10 (unreleased)
+1.0a10 (2017-05-08)
 -------------------
 
 - Complete refactoring of citizen menu
