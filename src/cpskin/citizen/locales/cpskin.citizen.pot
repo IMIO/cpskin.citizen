@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-03-01 13:39+0000\n"
+"POT-Creation-Date: 2017-05-08 10:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,15 +14,19 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../dashboard/columns.py:49
+#: ../browser/templates/citizen-info-viewlet.pt:9
+msgid "Access to my personal space"
+msgstr ""
+
+#: ../dashboard/columns.py:132
 msgid "Actions"
 msgstr ""
 
-#: ../setuphandlers.py:54
+#: ../setuphandlers.py:58
 msgid "Admin Citizen Claims"
 msgstr ""
 
-#: ../setuphandlers.py:53
+#: ../setuphandlers.py:57
 msgid "Admin Citizen Content"
 msgstr ""
 
@@ -62,12 +66,12 @@ msgstr ""
 msgid "Awaiting claims"
 msgstr ""
 
-#: ../dashboard/columns.py:44
+#: ../dashboard/columns.py:57
 msgid "Awaiting for changes"
 msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:20
-#: ../dashboard/columns.py:42
+#: ../dashboard/columns.py:55
 msgid "Awaiting for validation"
 msgstr ""
 
@@ -93,20 +97,19 @@ msgstr ""
 msgid "Citizen Administration"
 msgstr ""
 
-#: ../setuphandlers.py:52
+#: ../setuphandlers.py:55
 msgid "Citizen Claims"
 msgstr ""
 
-#: ../setuphandlers.py:50
+#: ../setuphandlers.py:53
 msgid "Citizen Content"
 msgstr ""
 
-#: ../profiles/default/actions.xml
-#: ../setuphandlers.py:68
+#: ../setuphandlers.py:72
 msgid "Citizen Dashboard"
 msgstr ""
 
-#: ../setuphandlers.py:60
+#: ../setuphandlers.py:64
 msgid "Citizen Drafts"
 msgstr ""
 
@@ -114,7 +117,7 @@ msgstr ""
 msgid "Citizen Edition"
 msgstr ""
 
-#: ../setuphandlers.py:94
+#: ../setuphandlers.py:87
 msgid "Citizen Map"
 msgstr ""
 
@@ -122,8 +125,16 @@ msgstr ""
 msgid "Citizen access"
 msgstr ""
 
+#: ../profiles/default/actions.xml
+msgid "Citizen dashboard"
+msgstr ""
+
 #: ../iterate/adapter.py:18
 msgid "Citizen draft folder"
+msgstr ""
+
+#: ../setuphandlers.py:103
+msgid "Citizen propose"
 msgstr ""
 
 #: ../behavior.py:35
@@ -186,7 +197,7 @@ msgstr ""
 msgid "Default folder"
 msgstr ""
 
-#: ../dashboard/columns.py:45
+#: ../dashboard/columns.py:58
 #: ../dashboard/templates/actions_panel_citizen.pt:5
 msgid "Draft"
 msgstr ""
@@ -229,17 +240,29 @@ msgstr ""
 msgid "Map view content types"
 msgstr ""
 
-#: ../dashboard/columns.py:28
+#: ../dashboard/columns.py:44
 msgid "Modification state"
 msgstr ""
 
-#: ../dashboard/columns.py:39
+#: ../setuphandlers.py:129
+msgid "My profile"
+msgstr ""
+
+#: ../dashboard/columns.py:124
+msgid "No"
+msgstr ""
+
+#: ../dashboard/columns.py:52
 msgid "None"
 msgstr ""
 
 #. Default: "Numéro"
 #: ../user.py:32
 msgid "Number"
+msgstr ""
+
+#: ../dashboard/columns.py:103
+msgid "Online version"
 msgstr ""
 
 #: ../browser/settings.py:34
@@ -267,6 +290,10 @@ msgstr ""
 msgid "Propose content"
 msgstr ""
 
+#: ../dashboard/columns.py:96
+msgid "Published"
+msgstr ""
+
 #: ../browser/templates/citizen-admin-viewlet.pt:29
 msgid "Refuse"
 msgstr ""
@@ -283,6 +310,10 @@ msgstr ""
 msgid "Show citizen dashboards"
 msgstr ""
 
+#: ../dashboard/columns.py:62
+msgid "State"
+msgstr ""
+
 #. Default: "Rue"
 #: ../user.py:25
 msgid "Street"
@@ -293,11 +324,16 @@ msgid "The folders where (by default) new content proposed by citizens will be c
 msgstr ""
 
 #: ../browser/propose.py:34
+#: ../dashboard/columns.py:36
 msgid "Title"
 msgstr ""
 
 #: ../browser/settings.py:66
 msgid "Visibled content types for map view for citizens (by default no content types are allowed)"
+msgstr ""
+
+#: ../dashboard/columns.py:127
+msgid "Yes"
 msgstr ""
 
 #. Default: "Canceling the draft will delete this working copy, and any modifications made to it will be lost."

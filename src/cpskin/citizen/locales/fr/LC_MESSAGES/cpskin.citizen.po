@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-03-01 13:39+0000\n"
+"POT-Creation-Date: 2017-05-08 10:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,15 +14,19 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../dashboard/columns.py:49
+#: ../browser/templates/citizen-info-viewlet.pt:9
+msgid "Access to my personal space"
+msgstr "Accéder à Mon Compte"
+
+#: ../dashboard/columns.py:132
 msgid "Actions"
 msgstr "Actions"
 
-#: ../setuphandlers.py:54
+#: ../setuphandlers.py:58
 msgid "Admin Citizen Claims"
 msgstr "Administration demandes de gestion"
 
-#: ../setuphandlers.py:53
+#: ../setuphandlers.py:57
 msgid "Admin Citizen Content"
 msgstr "Administration contenus citoyen"
 
@@ -62,12 +66,12 @@ msgstr "Demander la validation de ce document enverra une demande aux administra
 msgid "Awaiting claims"
 msgstr "Demande de gestion en attente"
 
-#: ../dashboard/columns.py:44
+#: ../dashboard/columns.py:57
 msgid "Awaiting for changes"
 msgstr "En attente de modifications"
 
 #: ../browser/templates/citizen-edition-viewlet.pt:20
-#: ../dashboard/columns.py:42
+#: ../dashboard/columns.py:55
 msgid "Awaiting for validation"
 msgstr "En attente de validation"
 
@@ -93,20 +97,19 @@ msgstr "Supprimer le brouillon"
 msgid "Citizen Administration"
 msgstr "Administration Citoyen"
 
-#: ../setuphandlers.py:52
+#: ../setuphandlers.py:55
 msgid "Citizen Claims"
 msgstr "Gestion demandée"
 
-#: ../setuphandlers.py:50
+#: ../setuphandlers.py:53
 msgid "Citizen Content"
-msgstr "Mes contenus"
+msgstr "Gérer mes contenus"
 
-#: ../profiles/default/actions.xml
-#: ../setuphandlers.py:68
+#: ../setuphandlers.py:72
 msgid "Citizen Dashboard"
-msgstr "Mon espace personnel"
+msgstr "Mon compte"
 
-#: ../setuphandlers.py:60
+#: ../setuphandlers.py:64
 msgid "Citizen Drafts"
 msgstr "Brouillons citoyens"
 
@@ -114,7 +117,7 @@ msgstr "Brouillons citoyens"
 msgid "Citizen Edition"
 msgstr "Accès Citoyen"
 
-#: ../setuphandlers.py:94
+#: ../setuphandlers.py:87
 msgid "Citizen Map"
 msgstr "Près de chez moi"
 
@@ -122,9 +125,17 @@ msgstr "Près de chez moi"
 msgid "Citizen access"
 msgstr "Accès Citoyen"
 
+#: ../profiles/default/actions.xml
+msgid "Citizen dashboard"
+msgstr "Mon compte"
+
 #: ../iterate/adapter.py:18
 msgid "Citizen draft folder"
 msgstr "Dossier de brouillons"
+
+#: ../setuphandlers.py:103
+msgid "Citizen propose"
+msgstr "Créer un contenu"
 
 #: ../behavior.py:35
 msgid "Citizens users"
@@ -186,7 +197,7 @@ msgstr "Portlet pour les tableaux de bords"
 msgid "Default folder"
 msgstr "Dossier par défaut"
 
-#: ../dashboard/columns.py:45
+#: ../dashboard/columns.py:58
 #: ../dashboard/templates/actions_panel_citizen.pt:5
 msgid "Draft"
 msgstr "Brouillon"
@@ -229,11 +240,19 @@ msgstr ""
 msgid "Map view content types"
 msgstr "Types de contenu pour la vue cartographique"
 
-#: ../dashboard/columns.py:28
+#: ../dashboard/columns.py:44
 msgid "Modification state"
 msgstr "Etat des modifications"
 
-#: ../dashboard/columns.py:39
+#: ../setuphandlers.py:129
+msgid "My profile"
+msgstr "Mon profil"
+
+#: ../dashboard/columns.py:124
+msgid "No"
+msgstr "Non"
+
+#: ../dashboard/columns.py:52
 msgid "None"
 msgstr "Aucune"
 
@@ -242,13 +261,17 @@ msgstr "Aucune"
 msgid "Number"
 msgstr ""
 
+#: ../dashboard/columns.py:103
+msgid "Online version"
+msgstr "Version en ligne"
+
 #: ../browser/settings.py:34
 msgid "Path to the folder from the navigation root"
 msgstr "Chemin vers le dossier à partir de la racine de navigation"
 
 #: ../dashboard/templates/dashboard-portlet.pt:6
 msgid "Personal dashboards"
-msgstr "Espace personnel"
+msgstr "Mon compte"
 
 #: ../browser/propose.py:28
 msgid "Portal Type"
@@ -267,6 +290,10 @@ msgstr "Dossiers par défauts pour les proposition citoyennes"
 msgid "Propose content"
 msgstr "Proposer un contenu"
 
+#: ../dashboard/columns.py:96
+msgid "Published"
+msgstr "Public"
+
 #: ../browser/templates/citizen-admin-viewlet.pt:29
 msgid "Refuse"
 msgstr "Refuser"
@@ -283,6 +310,10 @@ msgstr "Renvoyer ce document au citoyen pour lui demander des changements."
 msgid "Show citizen dashboards"
 msgstr "Affiche les tableaux de bords pour les citoyens"
 
+#: ../dashboard/columns.py:62
+msgid "State"
+msgstr "Etat"
+
 #. Default: "Rue"
 #: ../user.py:25
 msgid "Street"
@@ -293,12 +324,17 @@ msgid "The folders where (by default) new content proposed by citizens will be c
 msgstr "Les dossiers ou (par défaut) les nouveaux contenus proposés par les citoyens seront créés"
 
 #: ../browser/propose.py:34
+#: ../dashboard/columns.py:36
 msgid "Title"
 msgstr "Titre"
 
 #: ../browser/settings.py:66
 msgid "Visibled content types for map view for citizens (by default no content types are allowed)"
 msgstr "Types de contenu visibles pour la vue cartographique des citoyens (par défaut aucun type de contenu n'est autorisé)"
+
+#: ../dashboard/columns.py:127
+msgid "Yes"
+msgstr "Oui"
 
 #. Default: "Canceling the draft will delete this working copy, and any modifications made to it will be lost."
 #: ../browser/templates/citizen-cancel.pt:12
