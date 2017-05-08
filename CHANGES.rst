@@ -5,7 +5,11 @@ Changelog
 1.0a10 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Complete refactoring of citizen menu
+  [laulaz]
+
+- Fix translations
+  [laulaz]
 
 
 1.0a9 (2017-05-03)
