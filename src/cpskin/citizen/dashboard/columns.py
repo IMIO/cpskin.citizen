@@ -121,10 +121,10 @@ class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
         working_copy = get_working_copy(obj)
         if working_copy:
             self.params['isViewable'] = False
-            self.params['contentValue'] = self._translate(_(u'Non'))
+            self.params['contentValue'] = self._translate(_(u'No'))
         else:
             self.params['isViewable'] = True
-            self.params['contentValue'] = self._translate(_(u'Oui'))
+            self.params['contentValue'] = self._translate(_(u'Yes'))
         return self.getPrettyLink(online_obj)
 
 
