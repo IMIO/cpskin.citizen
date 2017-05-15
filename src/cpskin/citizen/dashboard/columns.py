@@ -48,13 +48,14 @@ class DraftStateColumn(BaseCitizenColumn):
     def renderCell(self, obj):
         obj = obj.getObject()
         working_copy = get_working_copy(obj)
-        if not working_copy:
+        if working_copy:
+            annotations = utils.get_annotations(working_copy)
+            if annotations.get('validation_required', False):
+                return self._translate(_(u'Awaiting for validation'))
+            if annotations.get('comment', None):
+                return self._translate(_(u'Awaiting for changes'))
+        else:
             return self._translate(_(u'None'))
-        annotations = utils.get_annotations(working_copy)
-        if annotations.get('validation_required', False):
-            return self._translate(_(u'Awaiting for validation'))
-        if annotations.get('comment', None):
-            return self._translate(_(u'Awaiting for changes'))
         return self._translate(_(u'Draft'))
 
 
@@ -73,14 +74,15 @@ class CitizenStateColumn(BaseCitizenColumn):
         obj = obj.getObject()
         working_copy = get_working_copy(obj)
         draft = submitted = published = False
-        if not working_copy:
+        if working_copy:
+            annotations = utils.get_annotations(working_copy)
+            if annotations.get('validation_required', False):
+                submitted = True
+            if annotations.get('comment', None):
+                # XXX doit-on refléter que des changements sont attendus ?
+                submitted = True
+        else:
             published = True
-        annotations = utils.get_annotations(working_copy)
-        if annotations.get('validation_required', False):
-            submitted = True
-        if annotations.get('comment', None):
-            # XXX doit-on refléter que des changements sont attendus ?
-            submitted = True
         if not submitted and not published:
             draft = True
         return "{}{}{}".format(
@@ -125,6 +127,9 @@ class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
         else:
             self.params['isViewable'] = True
             self.params['contentValue'] = self._translate(_(u'Yes'))
+        if not online_obj:
+            # special case where content was assigned by admin without edit
+            online_obj = obj
         return self.getPrettyLink(online_obj)
 
 

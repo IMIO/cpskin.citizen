@@ -5,6 +5,9 @@ Changelog
 1.0a11 (unreleased)
 -------------------
 
+- Fix special cases generating tracebacks
+  [laulaz]
+
 - Never show an empty "Citizen Edition" fieldset
   [laulaz]
 
