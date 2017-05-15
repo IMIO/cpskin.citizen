@@ -5,7 +5,8 @@ Changelog
 1.0a11 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Fix translation
+  [laulaz]
 
 
 1.0a10 (2017-05-08)

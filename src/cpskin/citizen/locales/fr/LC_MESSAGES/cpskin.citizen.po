@@ -148,7 +148,7 @@ msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:15
 msgid "Claim awaiting for approval"
-msgstr "Demandes de gestion en attente de confirmation"
+msgstr "Demande de gestion en attente de confirmation"
 
 #: ../browser/settings.py:42
 msgid "Claim content types"
