@@ -5,6 +5,9 @@ Changelog
 1.0a11 (unreleased)
 -------------------
 
+- Never show an empty "Citizen Edition" fieldset
+  [laulaz]
+
 - Fix translation
   [laulaz]
 

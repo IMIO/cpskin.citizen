@@ -86,6 +86,14 @@ class CitizenEditionViewlet(CitizenBaseViewlet):
             return False
         return not self.validation_required
 
+    @property
+    def show_fieldset(self):
+        if self.can_edit or self.can_cancel or self.can_ask_validation:
+            return True
+        if self.can_claim and not self.have_claimed:
+            return True
+        return False
+
 
 class CitizenAdminViewlet(CitizenBaseViewlet):
     pass
