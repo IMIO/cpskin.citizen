@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a11 (unreleased)
+1.0a11 (2017-05-17)
 -------------------
 
 - Add missing columns in citizen content tables
