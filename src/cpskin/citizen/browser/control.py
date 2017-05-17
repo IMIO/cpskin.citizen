@@ -11,6 +11,7 @@ from Products.Five import BrowserView
 from plone import api
 
 from cpskin.citizen import utils
+from cpskin.citizen.behavior import ICitizenAccess
 
 
 class CitizenControl(BrowserView):
@@ -33,3 +34,7 @@ class CitizenControl(BrowserView):
         allowed_roles = ['Editor', 'Manager', 'Reviewer', 'Site Administrator']
         user_roles = api.user.get_roles(user=self.current_user)
         return len([r for r in user_roles if r in allowed_roles]) > 0
+
+    def is_citizen_content(self):
+        """Check if the current content can be administrated by citizen"""
+        return ICitizenAccess.providedBy(self.context)

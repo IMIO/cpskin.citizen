@@ -5,7 +5,8 @@ Changelog
 1.0a12 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Fix traceback when using iterate on a non-citizen content : #17422
+  [laulaz]
 
 
 1.0a11 (2017-05-17)
