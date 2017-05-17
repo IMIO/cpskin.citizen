@@ -60,7 +60,7 @@ msgstr "Demander la validation de ce document enverra une demande aux administra
 
 #: ../browser/templates/citizen-admin-viewlet.pt:15
 msgid "Awaiting claims"
-msgstr "Demande de gestion en attente"
+msgstr "Demande(s) de gestion en attente"
 
 #: ../dashboard/columns.py:57
 msgid "Awaiting for changes"
