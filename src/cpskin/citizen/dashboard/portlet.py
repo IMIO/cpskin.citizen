@@ -64,9 +64,9 @@ class DashboardPortletRenderer(base.Renderer):
         return ICitizenContentSubMenu.providedBy(obj)
 
     def get_admin_dashboards(self):
-        return [d for i, d in self.base_folder.contentItems() \
-                if IAdminDashboard.providedBy(d) and
-                   checkPermission('zope2.View', d)]
+        return [d for i, d in self.base_folder.contentItems()
+                if IAdminDashboard.providedBy(d)
+                and checkPermission('zope2.View', d)]
 
     def get_citizen_items(self):
         items = []
