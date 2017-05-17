@@ -5,6 +5,9 @@ Changelog
 1.0a11 (unreleased)
 -------------------
 
+- Change faceted views fields / positions
+  [laulaz]
+
 - Remove useless citizen-info-viewlet
   [laulaz]
 
