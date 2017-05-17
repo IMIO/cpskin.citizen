@@ -5,6 +5,9 @@ Changelog
 1.0a11 (unreleased)
 -------------------
 
+- Remove useless citizen-info-viewlet
+  [laulaz]
+
 - Fix special cases generating tracebacks
   [laulaz]
 

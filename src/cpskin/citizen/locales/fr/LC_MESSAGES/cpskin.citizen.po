@@ -14,10 +14,6 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../browser/templates/citizen-info-viewlet.pt:9
-msgid "Access to my personal space"
-msgstr "Accéder à Mon Compte"
-
 #: ../dashboard/columns.py:132
 msgid "Actions"
 msgstr "Actions"
