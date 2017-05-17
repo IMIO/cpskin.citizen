@@ -11,6 +11,7 @@ from imio.dashboard import columns
 from imio.prettylink.interfaces import IPrettyLink
 from collective.eeafaceted.z3ctable.columns import BaseColumn
 from collective.eeafaceted.z3ctable.columns import BaseColumnHeader
+from plone import api
 from plone.app.stagingbehavior.utils import get_baseline
 from plone.app.stagingbehavior.utils import get_working_copy
 from zope.i18n import translate
@@ -32,6 +33,19 @@ class DashboardColumnHeader(BaseColumnHeader):
         return '/'.join(self.request.get('URL').split('/')[:-1])
 
 
+class CitizenDraftColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
+    header = _(u'Title')
+    weight = 5
+    params = {
+        'target': '_blank',
+    }
+
+    def renderCell(self, item):
+        obj = self._getObject(item)
+        working_copy = get_working_copy(obj)
+        return self.getPrettyLink(working_copy)
+
+
 class CitizenTitleColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
     header = _(u'Title')
     weight = 5
@@ -40,9 +54,14 @@ class CitizenTitleColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
     }
 
 
+class CitizenTitleNoLinkColumn(BaseCitizenColumn):
+    header = _(u'Title')
+    weight = 5
+    attrName = 'Title'
+
+
 class DraftStateColumn(BaseCitizenColumn):
     header = _(u'Modification state')
-    attrName = 'title'
     weight = 10
 
     def renderCell(self, obj):
@@ -136,3 +155,19 @@ class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
 class ActionsColumn(columns.ActionsColumn):
     header = _(u'Actions')
     weight = 100
+
+
+class CitizenClaimingUsersColumn(BaseCitizenColumn):
+    header = _(u'Citizen Users')
+    weight = 20
+
+    def renderCell(self, obj):
+        obj = self._getObject(obj)
+        claims = []
+        annotations = utils.get_annotations(obj)
+        for claim in annotations.get('claim', []):
+            user = api.user.get(userid=claim)
+            if user:
+                claims.append(user.getProperty('fullname'))
+        claims.sort()
+        return ', '.join(claims)

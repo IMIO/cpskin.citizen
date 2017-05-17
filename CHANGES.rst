@@ -5,6 +5,9 @@ Changelog
 1.0a11 (unreleased)
 -------------------
 
+- Add missing columns in citizen content tables
+  [laulaz]
+
 - Change faceted views fields / positions
   [laulaz]
 

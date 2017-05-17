@@ -21,7 +21,7 @@
     for="zope.interface.Interface
          zope.interface.Interface
          .interfaces.IFacetedDashboardCitizenContentTable"
-    factory=".columns.CitizenTitleColumn"
+    factory=".columns.CitizenDraftColumn"
     provides="z3c.table.interfaces.IColumn"
     />
 
@@ -44,8 +44,25 @@
     />
 
   <!-- citizen claims -->
+  <adapter
+    name="citizen-title-column"
+    for="zope.interface.Interface
+         zope.interface.Interface
+         .interfaces.IFacetedDashboardCitizenClaimTable"
+    factory=".columns.CitizenTitleColumn"
+    provides="z3c.table.interfaces.IColumn"
+    />
 
   <!-- admin content -->
+  <adapter
+    name="citizen-title-no-link-column"
+    for="zope.interface.Interface
+         zope.interface.Interface
+         .interfaces.IFacetedDashboardAdminContentTable"
+    factory=".columns.CitizenTitleNoLinkColumn"
+    provides="z3c.table.interfaces.IColumn"
+    />
+
   <adapter
     name="draft-state-column"
     for="zope.interface.Interface
@@ -65,5 +82,22 @@
     />
 
   <!-- admin claims -->
+  <adapter
+    name="citizen-title-column"
+    for="zope.interface.Interface
+         zope.interface.Interface
+         .interfaces.IFacetedDashboardAdminClaimTable"
+    factory=".columns.CitizenTitleColumn"
+    provides="z3c.table.interfaces.IColumn"
+    />
+
+  <adapter
+    name="citizen-claiming-users-column"
+    for="zope.interface.Interface
+         zope.interface.Interface
+         .interfaces.IFacetedDashboardAdminClaimTable"
+    factory=".columns.CitizenClaimingUsersColumn"
+    provides="z3c.table.interfaces.IColumn"
+    />
 
 </configure>
