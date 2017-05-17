@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a12 (unreleased)
+1.0a12 (2017-05-17)
 -------------------
 
 - Fix traceback when using iterate on a non-citizen content : #17422
