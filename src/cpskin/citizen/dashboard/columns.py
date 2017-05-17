@@ -64,8 +64,8 @@ class DraftStateColumn(BaseCitizenColumn):
     header = _(u'Modification state')
     weight = 10
 
-    def renderCell(self, obj):
-        obj = obj.getObject()
+    def renderCell(self, item):
+        obj = self._getObject(item)
         working_copy = get_working_copy(obj)
         if working_copy:
             annotations = utils.get_annotations(working_copy)
@@ -89,8 +89,8 @@ class CitizenStateColumn(BaseCitizenColumn):
         )
         return html
 
-    def renderCell(self, obj):
-        obj = obj.getObject()
+    def renderCell(self, item):
+        obj = self._getObject(item)
         working_copy = get_working_copy(obj)
         draft = submitted = published = False
         if working_copy:
@@ -136,8 +136,8 @@ class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
         pl.notViewableHelpMessage = ""
         return pl.getLink()
 
-    def renderCell(self, obj):
-        obj = obj.getObject()
+    def renderCell(self, item):
+        obj = self._getObject(item)
         online_obj = get_baseline(obj)
         working_copy = get_working_copy(obj)
         if working_copy:
@@ -161,8 +161,8 @@ class CitizenClaimingUsersColumn(BaseCitizenColumn):
     header = _(u'Citizen Users')
     weight = 20
 
-    def renderCell(self, obj):
-        obj = self._getObject(obj)
+    def renderCell(self, item):
+        obj = self._getObject(item)
         claims = []
         annotations = utils.get_annotations(obj)
         for claim in annotations.get('claim', []):
