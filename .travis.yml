@@ -13,6 +13,7 @@ before_install:
   - echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
 install:
   - python bootstrap.py -c travis.cfg --setuptools-version=33.1.0 --version=2.9.3
+  - cat bin/buildout
   - bin/buildout -Nc travis.cfg annotate
   - bin/buildout -Nc travis.cfg
 script:
