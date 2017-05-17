@@ -12,8 +12,8 @@ before_install:
   - echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg
   - echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
 install:
-  - bin/pip install setuptools==33.1.0 --upgrade
-  - bin/pip list
+  - pip install setuptools==33.1.0 --upgrade
+  - pip list
   - python bootstrap.py -c travis.cfg --setuptools-version=33.1.0 --version=2.9.3
   - bin/buildout -Nc travis.cfg annotate
   - bin/buildout -Nc travis.cfg
