@@ -69,7 +69,7 @@ msgstr "En attente de modifications"
 #: ../browser/templates/citizen-edition-viewlet.pt:20
 #: ../dashboard/columns.py:73
 msgid "Awaiting for validation"
-msgstr "En attente de validation"
+msgstr "Attente de validation"
 
 #: ../profiles/default/controlpanel.xml
 msgid "CPSkin Citizen Settings"
