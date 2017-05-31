@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a13 (unreleased)
+1.0a13 (2017-05-31)
 -------------------
 
 - Fix error when rendering content table with no working copy
