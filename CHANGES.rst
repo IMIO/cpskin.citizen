@@ -5,7 +5,8 @@ Changelog
 1.0a13 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Display content type description in citizen choices and use radios
+  [laulaz]
 
 
 1.0a12 (2017-05-17)

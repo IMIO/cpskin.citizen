@@ -12,6 +12,7 @@ from plone import api
 from plone.z3cform.layout import FormWrapper
 from z3c.form import button
 from z3c.form import field
+from z3c.form.browser.radio import RadioFieldWidget
 from z3c.form.form import Form
 from zExceptions import Unauthorized
 from zope import schema
@@ -40,6 +41,7 @@ class ProposeCitizenForm(Form):
     fields = field.Fields(IProposeCitizenContent)
     action = '@@propose-citizen'
     ignoreContext = True
+    fields['type'].widgetFactory = RadioFieldWidget
 
     @button.buttonAndHandler(_(u'Confirm'))
     def handleApply(self, action):

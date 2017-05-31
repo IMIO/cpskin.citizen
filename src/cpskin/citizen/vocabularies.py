@@ -54,8 +54,14 @@ class CitizensAllowedCreationTypesVocabularyFactory(object):
 
     def __call__(self, context):
         portal_types = api.portal.get_tool('portal_types')
-        content = {k: v.title for k, v in portal_types.items()
-                   if k in utils.get_allowed_creation_types()}
+        content = {}
+        for k, v in portal_types.items():
+            if not k in utils.get_allowed_creation_types():
+                continue
+            if v.description:
+                content[k] = "{0}  ({1})".format(v.title, v.description)
+            else:
+                content[k] = v.title
         return utils.dict_2_vocabulary(content)
 
 
