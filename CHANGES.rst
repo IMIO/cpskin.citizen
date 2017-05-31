@@ -5,6 +5,9 @@ Changelog
 1.0a13 (unreleased)
 -------------------
 
+- Fix error when rendering content table with no working copy
+  [laulaz]
+
 - Display content type description in citizen choices and use radios
   [laulaz]
 

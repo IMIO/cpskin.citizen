@@ -43,7 +43,9 @@ class CitizenDraftColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
     def renderCell(self, item):
         obj = self._getObject(item)
         working_copy = get_working_copy(obj)
-        return self.getPrettyLink(working_copy)
+        if working_copy:
+            return self.getPrettyLink(working_copy)
+        return self.getPrettyLink(obj)
 
 
 class CitizenTitleColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
