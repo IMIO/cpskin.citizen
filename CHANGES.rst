@@ -5,7 +5,8 @@ Changelog
 1.0a14 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Replace fieldsets by divs & remove useless title : #17660
+  [laulaz]
 
 
 1.0a13 (2017-05-31)

@@ -5,9 +5,8 @@
       i18n:domain="cpskin.citizen" lang="en">
 
   <tal:if condition="view/can_view">
-  <fieldset class="citizen-propose">
-    <legend i18n:translate="">Propose content</legend>
+  <div class="citizen-propose">
     <tal:block content="structure context/@@propose-citizen"></tal:block>
-  </fieldset>
+  </div>
   </tal:if>
 </html>

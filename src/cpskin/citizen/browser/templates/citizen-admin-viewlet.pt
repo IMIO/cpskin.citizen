@@ -9,8 +9,8 @@
     <dt i18n:translate="">Comment</dt>
     <dd tal:content="view/comment"></dd>
   </dl>
-  <fieldset class="citizen">
-    <legend i18n:translate="">Citizen Administration</legend>
+  <div class="citizen">
+    <h3 i18n:translate="">Citizen Administration</h3>
     <div tal:condition="view/awaiting_claims">
       <div class="title" i18n:translate="">Awaiting claims</div>
       <tal:for repeat="claim view/awaiting_claims">
@@ -35,6 +35,6 @@
       </form>
       </tal:for>
     </div>
-  </fieldset>
+  </div>
   </tal:if>
 </html>
