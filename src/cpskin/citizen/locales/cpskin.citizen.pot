@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-05-17 13:01+0000\n"
+"POT-Creation-Date: 2017-06-14 09:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../dashboard/columns.py:156
+#: ../dashboard/columns.py:158
 msgid "Actions"
 msgstr ""
 
@@ -62,12 +62,12 @@ msgstr ""
 msgid "Awaiting claims"
 msgstr ""
 
-#: ../dashboard/columns.py:75
+#: ../dashboard/columns.py:77
 msgid "Awaiting for changes"
 msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:20
-#: ../dashboard/columns.py:73
+#: ../dashboard/columns.py:75
 msgid "Awaiting for validation"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Citizen Map"
 msgstr ""
 
-#: ../dashboard/columns.py:161
+#: ../dashboard/columns.py:163
 msgid "Citizen Users"
 msgstr ""
 
@@ -175,7 +175,7 @@ msgstr ""
 msgid "Comment on changes"
 msgstr ""
 
-#: ../browser/propose.py:44
+#: ../browser/propose.py:46
 #: ../browser/templates/citizen-admin-viewlet.pt:25
 #: ../browser/templates/citizen-claim.pt:16
 msgid "Confirm"
@@ -197,7 +197,7 @@ msgstr ""
 msgid "Default folder"
 msgstr ""
 
-#: ../dashboard/columns.py:78
+#: ../dashboard/columns.py:80
 #: ../dashboard/templates/actions_panel_citizen.pt:5
 msgid "Draft"
 msgstr ""
@@ -212,6 +212,12 @@ msgstr ""
 
 #: ../browser/templates/citizen-return-checkout.pt:17
 msgid "Enter a message for the citizen to specify what changes need to be made."
+msgstr ""
+
+msgid "Event"
+msgstr ""
+
+msgid "Events can be shown in calendars."
 msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:14
@@ -240,7 +246,7 @@ msgstr ""
 msgid "Map view content types"
 msgstr ""
 
-#: ../dashboard/columns.py:64
+#: ../dashboard/columns.py:66
 msgid "Modification state"
 msgstr ""
 
@@ -248,11 +254,11 @@ msgstr ""
 msgid "My profile"
 msgstr ""
 
-#: ../dashboard/columns.py:145
+#: ../dashboard/columns.py:147
 msgid "No"
 msgstr ""
 
-#: ../dashboard/columns.py:77
+#: ../dashboard/columns.py:79
 msgid "None"
 msgstr ""
 
@@ -261,8 +267,14 @@ msgstr ""
 msgid "Number"
 msgstr ""
 
-#: ../dashboard/columns.py:124
+#: ../dashboard/columns.py:126
 msgid "Online version"
+msgstr ""
+
+msgid "Organization"
+msgstr ""
+
+msgid "Organization can be shown in directory."
 msgstr ""
 
 #: ../browser/settings.py:34
@@ -273,7 +285,7 @@ msgstr ""
 msgid "Personal dashboards"
 msgstr ""
 
-#: ../browser/propose.py:28
+#: ../browser/propose.py:29
 msgid "Portal Type"
 msgstr ""
 
@@ -286,11 +298,7 @@ msgstr ""
 msgid "Proposal default folders"
 msgstr ""
 
-#: ../browser/templates/citizen-propose-viewlet.pt:9
-msgid "Propose content"
-msgstr ""
-
-#: ../dashboard/columns.py:117
+#: ../dashboard/columns.py:119
 msgid "Published"
 msgstr ""
 
@@ -310,7 +318,7 @@ msgstr ""
 msgid "Show citizen dashboards"
 msgstr ""
 
-#: ../dashboard/columns.py:82
+#: ../dashboard/columns.py:84
 msgid "State"
 msgstr ""
 
@@ -323,7 +331,7 @@ msgstr ""
 msgid "The folders where (by default) new content proposed by citizens will be created"
 msgstr ""
 
-#: ../browser/propose.py:34
+#: ../browser/propose.py:35
 #: ../dashboard/columns.py:37
 msgid "Title"
 msgstr ""
@@ -332,7 +340,7 @@ msgstr ""
 msgid "Visibled content types for map view for citizens (by default no content types are allowed)"
 msgstr ""
 
-#: ../dashboard/columns.py:148
+#: ../dashboard/columns.py:150
 msgid "Yes"
 msgstr ""
 

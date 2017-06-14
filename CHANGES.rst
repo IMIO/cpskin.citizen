@@ -5,6 +5,9 @@ Changelog
 1.0a14 (unreleased)
 -------------------
 
+- Add / handle translations for content types & update translations : #17660
+  [laulaz]
+
 - Replace fieldsets by divs & remove useless title : #17660
   [laulaz]
 

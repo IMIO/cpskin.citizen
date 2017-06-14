@@ -13,3 +13,16 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+
+
+msgid "Organization"
+msgstr ""
+
+msgid "Event"
+msgstr ""
+
+msgid "Events can be shown in calendars."
+msgstr ""
+
+msgid "Organization can be shown in directory."
+msgstr ""

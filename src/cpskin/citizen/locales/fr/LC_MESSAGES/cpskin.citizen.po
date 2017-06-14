@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-05-17 13:01+0000\n"
+"POT-Creation-Date: 2017-06-14 09:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../dashboard/columns.py:156
+#: ../dashboard/columns.py:158
 msgid "Actions"
 msgstr "Actions"
 
@@ -62,12 +62,12 @@ msgstr "Demander la validation de ce document enverra une demande aux administra
 msgid "Awaiting claims"
 msgstr "Demande(s) de gestion en attente"
 
-#: ../dashboard/columns.py:75
+#: ../dashboard/columns.py:77
 msgid "Awaiting for changes"
 msgstr "En attente de modifications"
 
 #: ../browser/templates/citizen-edition-viewlet.pt:20
-#: ../dashboard/columns.py:73
+#: ../dashboard/columns.py:75
 msgid "Awaiting for validation"
 msgstr "Attente de validation"
 
@@ -117,7 +117,7 @@ msgstr "Accès Citoyen"
 msgid "Citizen Map"
 msgstr "Près de chez moi"
 
-#: ../dashboard/columns.py:161
+#: ../dashboard/columns.py:163
 msgid "Citizen Users"
 msgstr "Utilisateurs citoyens"
 
@@ -175,7 +175,7 @@ msgstr "Commentaire"
 msgid "Comment on changes"
 msgstr "Commenter les changements"
 
-#: ../browser/propose.py:44
+#: ../browser/propose.py:46
 #: ../browser/templates/citizen-admin-viewlet.pt:25
 #: ../browser/templates/citizen-claim.pt:16
 msgid "Confirm"
@@ -197,7 +197,7 @@ msgstr "Portlet pour les tableaux de bords"
 msgid "Default folder"
 msgstr "Dossier par défaut"
 
-#: ../dashboard/columns.py:78
+#: ../dashboard/columns.py:80
 #: ../dashboard/templates/actions_panel_citizen.pt:5
 msgid "Draft"
 msgstr "Brouillon"
@@ -213,6 +213,12 @@ msgstr "Editer ce contenu"
 #: ../browser/templates/citizen-return-checkout.pt:17
 msgid "Enter a message for the citizen to specify what changes need to be made."
 msgstr "Veuillez entrer un message pour indiquer au citoyen les changements devant être réalisés"
+
+msgid "Event"
+msgstr "Evénement"
+
+msgid "Events can be shown in calendars."
+msgstr "Fiche permettant d'ajouter un événement à l'Agenda."
 
 #: ../browser/templates/citizen-edition-viewlet.pt:14
 msgid "Info"
@@ -240,7 +246,7 @@ msgstr ""
 msgid "Map view content types"
 msgstr "Types de contenu pour la vue cartographique"
 
-#: ../dashboard/columns.py:64
+#: ../dashboard/columns.py:66
 msgid "Modification state"
 msgstr "Etat des modifications"
 
@@ -248,11 +254,11 @@ msgstr "Etat des modifications"
 msgid "My profile"
 msgstr "Mon profil"
 
-#: ../dashboard/columns.py:145
+#: ../dashboard/columns.py:147
 msgid "No"
 msgstr "Non"
 
-#: ../dashboard/columns.py:77
+#: ../dashboard/columns.py:79
 msgid "None"
 msgstr "Aucune"
 
@@ -261,9 +267,15 @@ msgstr "Aucune"
 msgid "Number"
 msgstr ""
 
-#: ../dashboard/columns.py:124
+#: ../dashboard/columns.py:126
 msgid "Online version"
 msgstr "Version en ligne"
+
+msgid "Organization"
+msgstr "Organisation"
+
+msgid "Organization can be shown in directory."
+msgstr "Fiche permettant de présenter un commerce, un club sportif, une association, ... dans l'annuaire."
 
 #: ../browser/settings.py:34
 msgid "Path to the folder from the navigation root"
@@ -273,9 +285,9 @@ msgstr "Chemin vers le dossier à partir de la racine de navigation"
 msgid "Personal dashboards"
 msgstr "Mon compte"
 
-#: ../browser/propose.py:28
+#: ../browser/propose.py:29
 msgid "Portal Type"
-msgstr "Type de contenu"
+msgstr "Sélectionnez le type de contenu que vous souhaitez créer"
 
 #. Default: "Code postal"
 #: ../user.py:37
@@ -286,11 +298,7 @@ msgstr ""
 msgid "Proposal default folders"
 msgstr "Dossiers par défauts pour les proposition citoyennes"
 
-#: ../browser/templates/citizen-propose-viewlet.pt:9
-msgid "Propose content"
-msgstr "Proposer un contenu"
-
-#: ../dashboard/columns.py:117
+#: ../dashboard/columns.py:119
 msgid "Published"
 msgstr "Public"
 
@@ -310,7 +318,7 @@ msgstr "Renvoyer ce document au citoyen pour lui demander des changements."
 msgid "Show citizen dashboards"
 msgstr "Affiche les tableaux de bords pour les citoyens"
 
-#: ../dashboard/columns.py:82
+#: ../dashboard/columns.py:84
 msgid "State"
 msgstr "Etat"
 
@@ -323,7 +331,7 @@ msgstr ""
 msgid "The folders where (by default) new content proposed by citizens will be created"
 msgstr "Les dossiers ou (par défaut) les nouveaux contenus proposés par les citoyens seront créés"
 
-#: ../browser/propose.py:34
+#: ../browser/propose.py:35
 #: ../dashboard/columns.py:37
 msgid "Title"
 msgstr "Titre"
@@ -332,7 +340,7 @@ msgstr "Titre"
 msgid "Visibled content types for map view for citizens (by default no content types are allowed)"
 msgstr "Types de contenu visibles pour la vue cartographique des citoyens (par défaut aucun type de contenu n'est autorisé)"
 
-#: ../dashboard/columns.py:148
+#: ../dashboard/columns.py:150
 msgid "Yes"
 msgstr "Oui"
 

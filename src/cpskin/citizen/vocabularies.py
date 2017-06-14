@@ -9,9 +9,12 @@ Created by mpeeters
 
 from plone import api
 from plone.principalsource.source import PrincipalSource
+from zope.globalrequest import getRequest
+from zope.i18n import translate
 from zope.interface import implements
 from zope.schema.interfaces import IContextSourceBinder
 
+from cpskin.citizen import _
 from cpskin.citizen import utils
 
 
@@ -52,16 +55,23 @@ CitizensPortalTypesVocabulary = CitizensPortalTypesVocabularyFactory()
 
 class CitizensAllowedCreationTypesVocabularyFactory(object):
 
+    def _translate(self, msgid):
+        request = getRequest()
+        translation = translate(msgid, context=request)
+        return translation.encode('utf-8')
+
     def __call__(self, context):
         portal_types = api.portal.get_tool('portal_types')
         content = {}
         for k, v in portal_types.items():
             if not k in utils.get_allowed_creation_types():
                 continue
+            title = self._translate(_(v.title))
             if v.description:
-                content[k] = "{0}  ({1})".format(v.title, v.description)
+                description = self._translate(_(v.description))
+                content[k] = "{0}  ({1})".format(title, description)
             else:
-                content[k] = v.title
+                content[k] = title
         return utils.dict_2_vocabulary(content)
 
 
