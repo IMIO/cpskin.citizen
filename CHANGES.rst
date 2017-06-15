@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a14 (unreleased)
+1.0a14 (2017-06-15)
 -------------------
 
 - Add / handle translations for content types & update translations : #17660
