@@ -24,7 +24,11 @@ from cpskin.citizen import utils
 
 
 class EditCitizenForm(DefaultEditForm):
-    _allowed_fieldsets = ['schedule']
+    _allowed_fieldsets = [
+        'address',
+        'contact_details',
+        'schedule',
+    ]
 
     @button.buttonAndHandler(DX_MF(u'Save'), name='save')
     def handleApply(self, action):

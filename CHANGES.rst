@@ -5,6 +5,9 @@ Changelog
 1.0a15 (unreleased)
 -------------------
 
+- Add missing schematas for citizen on organization : #18059
+  [laulaz]
+
 - Fix Unicode Decode Error on title column : #18058
   [laulaz]
 
