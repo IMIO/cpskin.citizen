@@ -5,7 +5,8 @@ Changelog
 1.0a15 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Fix Unicode Decode Error on title column : #18058
+  [laulaz]
 
 
 1.0a14 (2017-06-15)

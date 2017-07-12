@@ -59,7 +59,9 @@ class CitizenTitleColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
 class CitizenTitleNoLinkColumn(BaseCitizenColumn):
     header = _(u'Title')
     weight = 5
-    attrName = 'Title'
+
+    def renderCell(self, item):
+        return item.Title.decode('utf8')
 
 
 class DraftStateColumn(BaseCitizenColumn):
