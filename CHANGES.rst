@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a15 (unreleased)
+1.0a15 (2017-07-17)
 -------------------
 
 - Add missing schematas for citizen on organization : #18059
