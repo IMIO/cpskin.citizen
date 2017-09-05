@@ -5,6 +5,10 @@ Changelog
 1.0a16 (unreleased)
 -------------------
 
+- Add a subscriber to remove automatically drafts when the original
+  content is removed
+  [mpeeters]
+
 - Avoid and error if the original document was removed
   [mpeeters]
 

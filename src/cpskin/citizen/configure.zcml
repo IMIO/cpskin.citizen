@@ -112,4 +112,10 @@
     factory=".user.EnhancedUserDataPanelAdapter"
     />
 
+  <subscriber
+    for=".behavior.ICitizenAccess
+         zope.lifecycleevent.interfaces.IObjectRemovedEvent"
+    handler=".subscriber.citizen_content_removed"
+    />
+
 </configure>
