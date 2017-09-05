@@ -142,8 +142,12 @@ class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
 
     def renderCell(self, item):
         obj = self._getObject(item)
-        online_obj = get_baseline(obj)
         working_copy = get_working_copy(obj)
+        try:
+            online_obj = get_baseline(obj)
+        except KeyError:
+            # This append when the original document was deleted
+            return self._translate(_(u'Removed'))
         if working_copy:
             self.params['isViewable'] = False
             self.params['contentValue'] = self._translate(_(u'No'))
