@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-06-14 09:25+0000\n"
+"POT-Creation-Date: 2017-09-05 09:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../dashboard/columns.py:158
+#: ../dashboard/columns.py:164
 msgid "Actions"
 msgstr ""
 
@@ -62,12 +62,12 @@ msgstr ""
 msgid "Awaiting claims"
 msgstr ""
 
-#: ../dashboard/columns.py:77
+#: ../dashboard/columns.py:79
 msgid "Awaiting for changes"
 msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:20
-#: ../dashboard/columns.py:75
+#: ../dashboard/columns.py:77
 msgid "Awaiting for validation"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Citizen Map"
 msgstr ""
 
-#: ../dashboard/columns.py:163
+#: ../dashboard/columns.py:169
 msgid "Citizen Users"
 msgstr ""
 
@@ -197,7 +197,7 @@ msgstr ""
 msgid "Default folder"
 msgstr ""
 
-#: ../dashboard/columns.py:80
+#: ../dashboard/columns.py:82
 #: ../dashboard/templates/actions_panel_citizen.pt:5
 msgid "Draft"
 msgstr ""
@@ -246,7 +246,7 @@ msgstr ""
 msgid "Map view content types"
 msgstr ""
 
-#: ../dashboard/columns.py:66
+#: ../dashboard/columns.py:68
 msgid "Modification state"
 msgstr ""
 
@@ -254,11 +254,11 @@ msgstr ""
 msgid "My profile"
 msgstr ""
 
-#: ../dashboard/columns.py:147
+#: ../dashboard/columns.py:153
 msgid "No"
 msgstr ""
 
-#: ../dashboard/columns.py:79
+#: ../dashboard/columns.py:81
 msgid "None"
 msgstr ""
 
@@ -267,7 +267,7 @@ msgstr ""
 msgid "Number"
 msgstr ""
 
-#: ../dashboard/columns.py:126
+#: ../dashboard/columns.py:128
 msgid "Online version"
 msgstr ""
 
@@ -298,12 +298,16 @@ msgstr ""
 msgid "Proposal default folders"
 msgstr ""
 
-#: ../dashboard/columns.py:119
+#: ../dashboard/columns.py:121
 msgid "Published"
 msgstr ""
 
 #: ../browser/templates/citizen-admin-viewlet.pt:29
 msgid "Refuse"
+msgstr ""
+
+#: ../dashboard/columns.py:150
+msgid "Removed"
 msgstr ""
 
 #: ../profiles/default/actions.xml
@@ -318,7 +322,7 @@ msgstr ""
 msgid "Show citizen dashboards"
 msgstr ""
 
-#: ../dashboard/columns.py:84
+#: ../dashboard/columns.py:86
 msgid "State"
 msgstr ""
 
@@ -340,7 +344,7 @@ msgstr ""
 msgid "Visibled content types for map view for citizens (by default no content types are allowed)"
 msgstr ""
 
-#: ../dashboard/columns.py:150
+#: ../dashboard/columns.py:156
 msgid "Yes"
 msgstr ""
 
