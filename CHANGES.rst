@@ -5,7 +5,8 @@ Changelog
 1.0a16 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Avoid and error if the original document was removed
+  [mpeeters]
 
 
 1.0a15 (2017-07-17)
