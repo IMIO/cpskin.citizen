@@ -5,6 +5,9 @@ Changelog
 1.0a16 (unreleased)
 -------------------
 
+- Automatically redirect on login citizen users to their dashboards : #18710
+  [mpeeters]
+
 - Add a subscriber to remove automatically drafts when the original
   content is removed
   [mpeeters]

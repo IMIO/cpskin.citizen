@@ -118,4 +118,9 @@
     handler=".subscriber.citizen_content_removed"
     />
 
+  <subscriber
+    for="Products.PlonePAS.events.UserLoggedInEvent"
+    handler=".subscriber.user_logged_in"
+    />
+
 </configure>
