@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a16 (unreleased)
+1.0a16 (2017-09-12)
 -------------------
 
 - Automatically redirect on login citizen users to their dashboards : #18710
