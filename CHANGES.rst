@@ -5,7 +5,8 @@ Changelog
 1.0a17 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Fix redirect for citizen users : #18710
+  [mpeeters]
 
 
 1.0a16 (2017-09-12)

@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from plone.app.stagingbehavior.utils import get_working_copy
 from plone import api
+from plone.app.stagingbehavior.utils import get_working_copy
+from zExceptions import Redirect
+from zope.globalrequest import getRequest
 
 from cpskin.citizen import utils
 
@@ -30,4 +32,7 @@ def user_logged_in(event):
         )
     else:
         url = '{0}/citizen-dashboard/'.format(portal.absolute_url())
+    if request.get('came_from'):
+        request['came_from'] = url
+        request.form['came_from'] = url
     request.RESPONSE.redirect(url)
