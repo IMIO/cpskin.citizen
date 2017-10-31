@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a17 (unreleased)
+1.0a17 (2017-10-31)
 -------------------
 
 - Fix redirect for citizen users : #18710
