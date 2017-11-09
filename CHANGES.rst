@@ -5,7 +5,9 @@ Changelog
 1.0a18 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Fix the redirect on checkout for non citizen users when then does not
+  have the `Modify Portal Content` permission : #19492
+  [mpeeters]
 
 
 1.0a17 (2017-10-31)

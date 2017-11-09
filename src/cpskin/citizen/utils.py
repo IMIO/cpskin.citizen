@@ -105,6 +105,10 @@ def can_edit(user, context):
         'Modify portal content',
         user=user,
         obj=context,
+    ) or api.user.has_permission(
+        'Copy or Move',
+        user=user,
+        obj=context,
     )
 
 
