@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a18 (unreleased)
+1.0a18 (2017-11-09)
 -------------------
 
 - Fix the redirect on checkout for non citizen users when then does not
