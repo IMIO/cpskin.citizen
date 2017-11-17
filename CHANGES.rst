@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a19 (unreleased)
+1.0a19 (2017-11-17)
 -------------------
 
 - Avoid weird behaviors since citizen users does not have `edit` permission
