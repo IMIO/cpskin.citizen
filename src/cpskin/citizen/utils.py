@@ -101,6 +101,8 @@ def can_edit(user, context):
     """
     if api.user.is_anonymous():
         return False
+    if is_citizen(user):
+        return False
     return api.user.has_permission(
         'Modify portal content',
         user=user,

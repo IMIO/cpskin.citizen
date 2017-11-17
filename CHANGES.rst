@@ -5,7 +5,9 @@ Changelog
 1.0a19 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Avoid weird behaviors since citizen users does not have `edit` permission
+  : #19647
+  [mpeeters]
 
 
 1.0a18 (2017-11-09)
