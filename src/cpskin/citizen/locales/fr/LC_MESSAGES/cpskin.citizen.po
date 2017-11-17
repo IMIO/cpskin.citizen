@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-09-05 09:12+0000\n"
+"POT-Creation-Date: 2017-11-17 14:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,11 +34,11 @@ msgstr "Gestions demandées"
 msgid "Admin citizen content dashboard"
 msgstr "Contenus citoyen"
 
-#: ../browser/settings.py:54
+#: ../browser/settings.py:55
 msgid "Allowed content types for creation by citizens (by default all content types are allowed)"
 msgstr "Types de contenus autorisés pour la création par les citoyens (par défaut tous les types de contenus sont autorisés)"
 
-#: ../browser/settings.py:43
+#: ../browser/settings.py:44
 msgid "Allowed content types for the claim procedure"
 msgstr "Types de contenus autorisés pour la demande de gestion par un citoyen"
 
@@ -150,7 +150,7 @@ msgstr ""
 msgid "Claim awaiting for approval"
 msgstr "Demande de gestion en attente de confirmation"
 
-#: ../browser/settings.py:42
+#: ../browser/settings.py:43
 msgid "Claim content types"
 msgstr "Types de contenus pour la demande de gestion"
 
@@ -185,7 +185,7 @@ msgstr "Confirmer"
 msgid "Content type"
 msgstr "Type de contenu"
 
-#: ../browser/settings.py:53
+#: ../browser/settings.py:54
 msgid "Creation content types"
 msgstr "Types de contenus créables"
 
@@ -242,7 +242,7 @@ msgstr ""
 msgid "Longitude"
 msgstr ""
 
-#: ../browser/settings.py:65
+#: ../browser/settings.py:66
 msgid "Map view content types"
 msgstr "Types de contenu pour la vue cartographique"
 
@@ -278,8 +278,8 @@ msgid "Organization can be shown in directory."
 msgstr "Fiche permettant de présenter un commerce, un club sportif, une association, ... dans l'annuaire."
 
 #: ../browser/settings.py:34
-msgid "Path to the folder from the navigation root"
-msgstr "Chemin vers le dossier à partir de la racine de navigation"
+msgid "Path to the folder from the navigation root (should not contains the language folder)"
+msgstr "Chemin vers le dossier à partir de la racine de navigation (sans le dossier de langue)"
 
 #: ../dashboard/templates/dashboard-portlet.pt:6
 msgid "Personal dashboards"
@@ -340,7 +340,7 @@ msgstr "Les dossiers ou (par défaut) les nouveaux contenus proposés par les ci
 msgid "Title"
 msgstr "Titre"
 
-#: ../browser/settings.py:66
+#: ../browser/settings.py:67
 msgid "Visibled content types for map view for citizens (by default no content types are allowed)"
 msgstr "Types de contenu visibles pour la vue cartographique des citoyens (par défaut aucun type de contenu n'est autorisé)"
 

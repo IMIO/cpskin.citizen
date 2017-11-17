@@ -31,7 +31,8 @@ class ISettings(Interface):
         ),
         value_type=schema.TextLine(
             title=_(u'Default folder'),
-            description=_(u'Path to the folder from the navigation root'),
+            description=_(u'Path to the folder from the navigation root '
+                          u'(should not contains the language folder)'),
             required=True,
         ),
         required=False,

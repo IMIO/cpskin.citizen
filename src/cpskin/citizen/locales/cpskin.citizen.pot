@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-09-05 09:12+0000\n"
+"POT-Creation-Date: 2017-11-17 14:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,11 +34,11 @@ msgstr ""
 msgid "Admin citizen content dashboard"
 msgstr ""
 
-#: ../browser/settings.py:54
+#: ../browser/settings.py:55
 msgid "Allowed content types for creation by citizens (by default all content types are allowed)"
 msgstr ""
 
-#: ../browser/settings.py:43
+#: ../browser/settings.py:44
 msgid "Allowed content types for the claim procedure"
 msgstr ""
 
@@ -150,7 +150,7 @@ msgstr ""
 msgid "Claim awaiting for approval"
 msgstr ""
 
-#: ../browser/settings.py:42
+#: ../browser/settings.py:43
 msgid "Claim content types"
 msgstr ""
 
@@ -185,7 +185,7 @@ msgstr ""
 msgid "Content type"
 msgstr ""
 
-#: ../browser/settings.py:53
+#: ../browser/settings.py:54
 msgid "Creation content types"
 msgstr ""
 
@@ -242,7 +242,7 @@ msgstr ""
 msgid "Longitude"
 msgstr ""
 
-#: ../browser/settings.py:65
+#: ../browser/settings.py:66
 msgid "Map view content types"
 msgstr ""
 
@@ -278,7 +278,7 @@ msgid "Organization can be shown in directory."
 msgstr ""
 
 #: ../browser/settings.py:34
-msgid "Path to the folder from the navigation root"
+msgid "Path to the folder from the navigation root (should not contains the language folder)"
 msgstr ""
 
 #: ../dashboard/templates/dashboard-portlet.pt:6
@@ -340,7 +340,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ../browser/settings.py:66
+#: ../browser/settings.py:67
 msgid "Visibled content types for map view for citizens (by default no content types are allowed)"
 msgstr ""
 
