@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.0a110 (unreleased)
---------------------
+1.0b1 (2017-11-23)
+------------------
 
 - Update the description for citizen content creation folder to specify
   that the path should not contains the language folder : #19647
