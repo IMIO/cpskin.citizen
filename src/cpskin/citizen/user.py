@@ -48,7 +48,6 @@ class IEnhancedUserDataSchema(IUserDataSchema):
         description=_(u'help_coordinates_description',
                       default=u"Indiquez le nom de votre rue"),
         required=False,
-        readonly=True
     )
 
     longitude = schema.TextLine(
@@ -56,7 +55,6 @@ class IEnhancedUserDataSchema(IUserDataSchema):
         description=_(u'help_coordinates_description',
                       default=u"Indiquez le nom de votre rue"),
         required=False,
-        readonly=True
     )
 
 

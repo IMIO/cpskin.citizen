@@ -5,7 +5,8 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Allow users to update latitude and longitude : #19930
+  [mpeeters]
 
 
 1.0b1 (2017-11-23)
