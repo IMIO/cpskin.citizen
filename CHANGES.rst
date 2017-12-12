@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0b2 (unreleased)
+1.0b2 (2017-12-12)
 ------------------
 
 - Allow users to update latitude and longitude : #19930
