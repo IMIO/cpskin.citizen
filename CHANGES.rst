@@ -5,7 +5,9 @@ Changelog
 1.0b3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add `cleanup_iterate` view to remove broken relations that induce an
+  error with iterate behavior : #19972
+  [mpeeters]
 
 
 1.0b2 (2017-12-12)
