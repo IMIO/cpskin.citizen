@@ -64,7 +64,7 @@ class CitizensAllowedCreationTypesVocabularyFactory(object):
         portal_types = api.portal.get_tool('portal_types')
         content = {}
         for k, v in portal_types.items():
-            if not k in utils.get_allowed_creation_types():
+            if k not in utils.get_allowed_creation_types():
                 continue
             title = self._translate(_(v.title))
             if v.description:

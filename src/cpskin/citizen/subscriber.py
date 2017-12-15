@@ -2,8 +2,6 @@
 
 from plone import api
 from plone.app.stagingbehavior.utils import get_working_copy
-from zExceptions import Redirect
-from zope.globalrequest import getRequest
 
 from cpskin.citizen import utils
 
