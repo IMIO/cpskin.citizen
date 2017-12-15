@@ -59,13 +59,14 @@ def post_install(context):
     )
     for folder, lng in lrfs:
         if u'citizen-drafts' not in folder:
-            api.content.create(
+            draft_folder = api.content.create(
                 type='Folder',
                 title=translate(_(u'Citizen Drafts'), target_language=lng),
                 id=u'citizen-drafts',
                 container=folder,
                 exclude_from_nav=True,
             )
+            api.content.disable_roles_acquisition(obj=draft_folder)
         if u'citizen-dashboard' not in folder:
             api.content.create(
                 type='Folder',

@@ -5,6 +5,9 @@ Changelog
 1.0b3 (unreleased)
 ------------------
 
+- Disable role inheritance on citizen draft folders : #19973
+  [mpeeters]
+
 - Add `cleanup_iterate` view to remove broken relations that induce an
   error with iterate behavior : #19972
   [mpeeters]
