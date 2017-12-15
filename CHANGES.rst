@@ -5,6 +5,10 @@ Changelog
 1.0b3 (unreleased)
 ------------------
 
+- Add an upgrade step to disable role inheritance on citizen draft folders
+  : #19973
+  [mpeeters]
+
 - Disable role inheritance on citizen draft folders : #19973
   [mpeeters]
 

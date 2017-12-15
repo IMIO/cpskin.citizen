@@ -20,6 +20,7 @@
   <include file="permissions.zcml" />
   <include file="vocabularies.zcml" />
   <include file="monkey.zcml" />
+  <include file="upgrades.zcml" />
 
   <include package=".browser" />
   <include package=".dashboard" />
