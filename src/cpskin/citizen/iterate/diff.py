@@ -20,7 +20,9 @@ class DiffView(diff.DiffView):
     def __init__(self, context, request):
         self.context = context
         self.request = request
-
+        # if context.portal_type == 'Event':
+        #     if not getattr(context, 'location', False):
+        #         context.location = None
         catalog = queryUtility(ICatalog)
         intids = queryUtility(IIntIds)
         if IBaseline.providedBy(self.context):

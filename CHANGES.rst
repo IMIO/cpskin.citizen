@@ -5,6 +5,9 @@ Changelog
 1.0b3 (unreleased)
 ------------------
 
+- Fix cancel_allowed & checkout_allowed views when user isn't citizen : #20189
+  [bsuttor]
+
 - Add an upgrade step to disable role inheritance on citizen draft folders
   : #19973
   [mpeeters]
