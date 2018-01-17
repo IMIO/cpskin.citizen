@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.0b3 (unreleased)
-------------------
+1.0 (2018-01-17)
+----------------
 
 - Fix cancel_allowed & checkout_allowed views when user isn't citizen : #20189
   [bsuttor]
