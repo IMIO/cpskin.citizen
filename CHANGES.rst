@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.1 (unreleased)
+1.0.1 (2018-02-26)
 ------------------
 
 - Fix an encoding issue with user names : #20670
