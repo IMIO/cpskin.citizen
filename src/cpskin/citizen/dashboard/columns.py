@@ -178,4 +178,4 @@ class CitizenClaimingUsersColumn(BaseCitizenColumn):
             if user:
                 claims.append(user.getProperty('fullname'))
         claims.sort()
-        return ', '.join(claims)
+        return u', '.join([e.decode('utf8') for e in claims])

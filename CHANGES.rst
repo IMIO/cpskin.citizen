@@ -5,7 +5,8 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix an encoding issue with user names : #20670
+  [mpeeters]
 
 
 1.0 (2018-01-17)
