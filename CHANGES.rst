@@ -5,7 +5,8 @@ Changelog
 1.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Avoir an error on other packages when this package is not installed
+  [mpeeters]
 
 
 1.0.1 (2018-02-26)
