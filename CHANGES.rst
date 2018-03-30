@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.2 (unreleased)
+1.0.2 (2018-03-30)
 ------------------
 
 - Avoir an error on other packages when this package is not installed
