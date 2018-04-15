@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.3 (unreleased)
+1.0.3 (2018-04-15)
 ------------------
 
 - Remove the unworking redirect on login for citizen users since that can
