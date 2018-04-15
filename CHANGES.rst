@@ -5,13 +5,15 @@ Changelog
 1.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove the unworking redirect on login for citizen users since that can
+  not work with overlays
+  [mpeeters]
 
 
 1.0.2 (2018-03-30)
 ------------------
 
-- Avoir an error on other packages when this package is not installed
+- Avoid an error on other packages when this package is not installed
   [mpeeters]
 
 
