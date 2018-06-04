@@ -214,12 +214,6 @@ msgstr "Editer ce contenu"
 msgid "Enter a message for the citizen to specify what changes need to be made."
 msgstr "Veuillez entrer un message pour indiquer au citoyen les changements devant être réalisés"
 
-msgid "Event"
-msgstr "Evénement"
-
-msgid "Events can be shown in calendars."
-msgstr "Fiche permettant d'ajouter un événement à l'Agenda."
-
 #: ../browser/templates/citizen-edition-viewlet.pt:14
 msgid "Info"
 msgstr "Info"
@@ -270,12 +264,6 @@ msgstr ""
 #: ../dashboard/columns.py:128
 msgid "Online version"
 msgstr "Version en ligne"
-
-msgid "Organization"
-msgstr "Organisation"
-
-msgid "Organization can be shown in directory."
-msgstr "Fiche permettant de présenter un commerce, un club sportif, une association, ... dans l'annuaire."
 
 #: ../browser/settings.py:34
 msgid "Path to the folder from the navigation root (should not contains the language folder)"

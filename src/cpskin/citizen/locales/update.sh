@@ -9,7 +9,7 @@
 
 domain=cpskin.citizen
 
-i18ndude rebuild-pot --pot $domain.pot --merge ./manual.pot --create $domain ../
+i18ndude rebuild-pot --pot $domain.pot --create $domain ../
 
 declare -a languages=("fr")
 for lang in "${languages[@]}"; do

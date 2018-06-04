@@ -214,12 +214,6 @@ msgstr ""
 msgid "Enter a message for the citizen to specify what changes need to be made."
 msgstr ""
 
-msgid "Event"
-msgstr ""
-
-msgid "Events can be shown in calendars."
-msgstr ""
-
 #: ../browser/templates/citizen-edition-viewlet.pt:14
 msgid "Info"
 msgstr ""
@@ -269,12 +263,6 @@ msgstr ""
 
 #: ../dashboard/columns.py:128
 msgid "Online version"
-msgstr ""
-
-msgid "Organization"
-msgstr ""
-
-msgid "Organization can be shown in directory."
 msgstr ""
 
 #: ../browser/settings.py:34
