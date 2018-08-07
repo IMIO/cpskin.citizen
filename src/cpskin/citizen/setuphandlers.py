@@ -6,7 +6,14 @@ cpskin.citizen
 Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
-
+from cpskin.citizen import _
+from cpskin.citizen.dashboard.interfaces import IAdminDashboard
+from cpskin.citizen.dashboard.interfaces import ICitizenDashboard
+from cpskin.citizen.dashboard.interfaces import ICitizenMyContent
+from cpskin.citizen.dashboard.portlet import DashboardPortletAssignment
+from cpskin.citizen.interfaces import ICitizenContentSubMenu
+from cpskin.citizen.interfaces import ICitizenDashboardFolder
+from cpskin.citizen.interfaces import ICitizenProposeContentFolder
 from eea.facetednavigation.layout.interfaces import IFacetedLayout
 from plone import api
 from plone.app.controlpanel.security import ISecuritySchema
@@ -18,19 +25,10 @@ from zope.component import getAdapter
 from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.container.interfaces import INameChooser
-from zope.interface import alsoProvides
 from zope.i18n import translate
+from zope.interface import alsoProvides
 
 import os
-
-from cpskin.citizen import _
-from cpskin.citizen.interfaces import ICitizenContentSubMenu
-from cpskin.citizen.interfaces import ICitizenDashboardFolder
-from cpskin.citizen.interfaces import ICitizenProposeContentFolder
-from cpskin.citizen.dashboard.interfaces import ICitizenDashboard
-from cpskin.citizen.dashboard.interfaces import IAdminDashboard
-from cpskin.citizen.dashboard.interfaces import ICitizenMyContent
-from cpskin.citizen.dashboard.portlet import DashboardPortletAssignment
 
 
 def post_install(context):
