@@ -28,6 +28,7 @@ class EditCitizenForm(DefaultEditForm):
         'address',
         'contact_details',
         'schedule',
+        'images',
     ]
 
     @button.buttonAndHandler(DX_MF(u'Save'), name='save')
