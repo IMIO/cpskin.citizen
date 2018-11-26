@@ -5,7 +5,8 @@ Changelog
 1.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- citizen can now add their own image.
+  [cboulanger]
 
 
 1.0.3 (2018-04-15)
