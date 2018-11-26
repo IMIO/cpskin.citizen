@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.4 (unreleased)
+1.0.4 (2018-11-26)
 ------------------
 
 - citizen can now add their own image.
