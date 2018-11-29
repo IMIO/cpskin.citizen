@@ -13,7 +13,7 @@ bin/buildout: bootstrap.py buildout.cfg bin/python
 	touch $@
 
 buildout: bin/buildout
-	./bin/buildout -t 7
+	./bin/buildout -t 60
 
 test: buildout
 	./bin/test
