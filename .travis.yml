@@ -16,7 +16,7 @@ install:
   - pip list
   - python bootstrap.py -c travis.cfg --setuptools-version=33.1.0 --version=2.9.3
   - bin/buildout -Nc travis.cfg annotate
-  - bin/buildout -Nc travis.cfg
+  - bin/buildout -Nc travis.cfg -t 60
 script:
   - bin/code-analysis
   - bin/test
