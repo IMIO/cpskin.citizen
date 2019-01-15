@@ -61,12 +61,17 @@ def execute_under_unrestricted_user(portal, function, user, *args, **kwargs):
 
     Example how to call::
 
-        execute_under_unrestricted_user(portal, "Manager",
+        execute_under_unrestricted_user(
+            portal,
             doSomeNormallyNotAllowedStuff,
-            source_folder, target_folder)
+            "admin",
+            source_folder,
+            target_folder,
+        )
 
     @param portal: Reference to ISiteRoot object whose access controls we are using
     @param function: Method to be called with special privileges
+    @param user: User to use for special privileges
     @param args: Passed to the function
     @param kwargs: Passed to the function
     """

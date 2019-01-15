@@ -5,7 +5,8 @@ Changelog
 1.0.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix documentation of execute_under_unrestricted_user
+  [laulaz]
 
 
 1.0.4 (2018-11-26)
