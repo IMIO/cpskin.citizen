@@ -5,6 +5,9 @@ Changelog
 1.0.5 (unreleased)
 ------------------
 
+- Fix, do not raise exception on execute_under_unrestricted_user, but pass it. There is a starting loop/error with arlon when exception is raised.
+  [bsuttor]
+
 - Fix documentation of execute_under_unrestricted_user
   [laulaz]
 

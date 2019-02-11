@@ -93,7 +93,7 @@ def execute_under_unrestricted_user(portal, function, user, *args, **kwargs):
 
         except:  # noqa
             # If special exception handlers are needed, run them here
-            raise
+            pass
     finally:
         # Restore the old security manager
         setSecurityManager(sm)
