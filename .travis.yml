@@ -13,8 +13,8 @@ before_install:
   - echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
 install:
   - pip install -r requirements.txt
-  - bin/buildout -Nc travis.cfg annotate
-  - bin/buildout -Nc travis.cfg -t 60
+  - buildout -Nc travis.cfg annotate
+  - buildout -Nc travis.cfg -t 60
 script:
   - bin/code-analysis
   - bin/test
