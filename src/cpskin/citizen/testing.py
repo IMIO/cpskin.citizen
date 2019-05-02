@@ -86,12 +86,13 @@ class CpskinCitizenLayer(PloneSandboxLayer):
         annotations[ANNOTATION_KEY] = PersistentDict()
         annotations[ANNOTATION_KEY]['claim'] = ['citizen']
 
-        api.content.create(
+        obj = api.content.create(
             type='Folder',
             id='documents',
             title='Documents',
             container=portal,
         )
+        api.content.transition(obj=obj, transition='publish')
 
         api.portal.set_registry_record(
             name='creation_types',
