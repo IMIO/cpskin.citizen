@@ -21,7 +21,12 @@ class CitizenCreationFolderAdapter(object):
     def get_folder(self, navigation_root, portal_type):
         settings = utils.get_settings()
         path = settings.proposal_folders.get(portal_type, '')
-        return navigation_root.restrictedTraverse(str(path))
+        if path.startswith('/'):
+            path = path[1:]
+        try:
+            return navigation_root.restrictedTraverse(str(path))
+        except KeyError:
+            raise KeyError('unknown creation folder: {0}'.format(str(path)))
 
 
 class CitizenDraftFolderAdapter(object):
