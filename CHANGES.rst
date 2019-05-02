@@ -5,6 +5,9 @@ Changelog
 1.0.6 (unreleased)
 ------------------
 
+- Add a view to ensure that security and permissions are correctly defined for citizen related folders
+  [mpeeters]
+
 - Add a missing profile dependencies
   [mpeeters]
 

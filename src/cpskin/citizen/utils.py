@@ -28,6 +28,18 @@ from cpskin.citizen.browser.settings import ISettings
 from cpskin.citizen.interfaces import ICitizenCreationFolder
 
 
+DRAFT_FOLDER_ID = 'citizen-drafts'
+DASHBOARD_FOLDER_ID = 'citizen-dashboard'
+DASHBOARD_FOLDERS_IDS = (
+    'citizen-content',
+    'citizen-claims',
+    'citizen-map',
+    'citizen-propose-content',
+    'admin-content',
+    'admin-claims',
+)
+
+
 def citizen_access_portal_types():
     """Return the portal types where the CitizenAccess is active"""
     portal_types = api.portal.get_tool('portal_types')
@@ -163,9 +175,9 @@ def get_claim_users(context):
 
 
 def get_draft_folder(context):
-    """Return the citizen draft folder for the given context"""
+    """Return the citizen draft folder for the given context (object)"""
     navigation_root = api.portal.get_navigation_root(context)
-    folder = navigation_root['citizen-drafts']
+    folder = navigation_root[DRAFT_FOLDER_ID]
     if context.portal_type not in allowed_content_types(folder):
         return context.aq_parent
     return folder

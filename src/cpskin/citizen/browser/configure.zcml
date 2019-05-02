@@ -77,6 +77,17 @@
     allowed_attributes="is_citizen is_admin is_citizen_content"
     />
 
+  <!-- tools view -->
+
+  <browser:page
+    for="*"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    name="citizen-security-migrator"
+    class=".tools.CitizenSecurityMigrateView"
+    permission="cmf.ManagePortal"
+    template="templates/security_migrator.pt"
+    />
+
   <!-- viewlets -->
   <browser:viewlet
     name="citizen-edition-viewlet"
