@@ -5,6 +5,9 @@ Changelog
 1.0.6 (unreleased)
 ------------------
 
+- Ensure that security is correctly defined after install
+  [mpeeters]
+
 - Adapt french translation
   [mpeeters]
 

@@ -7,6 +7,7 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 from cpskin.citizen import _
+from cpskin.citizen import security
 from cpskin.citizen.dashboard.interfaces import IAdminDashboard
 from cpskin.citizen.dashboard.interfaces import ICitizenDashboard
 from cpskin.citizen.dashboard.interfaces import ICitizenMyContent
@@ -25,6 +26,7 @@ from zope.component import getAdapter
 from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.container.interfaces import INameChooser
+from zope.globalrequest import getRequest
 from zope.i18n import translate
 from zope.interface import alsoProvides
 
@@ -158,6 +160,9 @@ def post_install(context):
 
     # Add extra versionable content types
     add_allowed_versionable_contenttype('organization')
+
+    # Adapt security
+    security.ManageSecurity(getRequest()).migrate()
 
 
 def setup_faceted_dashboard_config(context,
