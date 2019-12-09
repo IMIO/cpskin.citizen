@@ -37,6 +37,7 @@ class CpskinCitizenLayer(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         self.loadZCML(package=cpskin.citizen, name='testing.zcml')
         z2.installProduct(app, 'imio.dashboard')
+        z2.installProduct(app, 'Products.DateRecurringIndex')
 
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'Products.CMFPlone:plone')
@@ -106,6 +107,7 @@ class CpskinCitizenLayer(PloneSandboxLayer):
     def tearDownZope(self, app):
         """Tear down Zope."""
         z2.uninstallProduct(app, 'imio.dashboard')
+        z2.uninstallProduct(app, 'Products.DateRecurringIndex')
 
 
 CPSKIN_CITIZEN_FIXTURE = CpskinCitizenLayer()
@@ -158,6 +160,10 @@ class BaseTestCase(unittest.TestCase):
     @property
     def dashboards(self):
         return self.portal['citizen-dashboard']
+
+    @property
+    def drafts(self):
+        return self.portal['citizen-drafts']
 
 
 class TestCreationFolderAdapter(CitizenCreationFolderAdapter):
