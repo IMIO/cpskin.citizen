@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
-   <dependencies>
-    <dependency>profile-plone.app.relationfield:default</dependency>
+  <dependencies>
     <dependency>profile-cpskin.citizen:default</dependency>
    </dependencies>
   <version>1</version>

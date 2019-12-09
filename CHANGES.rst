@@ -5,6 +5,9 @@ Changelog
 1.0.6 (unreleased)
 ------------------
 
+- Update package dependencies to include plone.app.contenttypes and plone.app.stagingbehavior
+  [mpeeters]
+
 - Ensure that security is correctly defined after install
   [mpeeters]
 

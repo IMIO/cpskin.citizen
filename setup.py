@@ -49,6 +49,7 @@ setup(
         'collective.z3cform.select2',
         'imio.dashboard',
         'plone.api',
+        'plone.app.contenttypes',
         'plone.app.dexterity',
         'plone.app.iterate',
         'plone.app.stagingbehavior',
