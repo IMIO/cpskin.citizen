@@ -5,6 +5,9 @@ Changelog
 1.0.6 (unreleased)
 ------------------
 
+- Add `Event` and `News Item` content types for tests
+  [mpeeters]
+
 - Update package dependencies to include plone.app.contenttypes and plone.app.stagingbehavior
   [mpeeters]
 

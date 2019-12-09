@@ -36,7 +36,7 @@ class TestUtils(testing.BaseTestCase):
     def test_citizen_access_portal_types(self):
         """Test 'citizen_access_portal_types' function"""
         types = utils.citizen_access_portal_types()
-        self.assertListEqual(['Document'], types)
+        self.assertListEqual(sorted(['Document', 'News Item', 'Event']), sorted(types))
 
     def test_cls_fullpath(self):
         """Test 'cls_fullpath' function"""
@@ -176,4 +176,7 @@ class TestUtils(testing.BaseTestCase):
             interface=ISettings,
         )
         self.assertEqual(None, registry_values)
-        self.assertEqual(['Document'], utils.get_allowed_creation_types())
+        self.assertListEqual(
+            sorted(['Document', 'News Item', 'Event']),
+            sorted(utils.get_allowed_creation_types()),
+        )
