@@ -5,6 +5,9 @@ Changelog
 1.0.6 (unreleased)
 ------------------
 
+- Add tests for checkout mecanism
+  [mpeeters]
+
 - Fix an adapter issue due to order of implementing behavior interfaces
   [mpeeters]
 
