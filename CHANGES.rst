@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.6 (unreleased)
+1.1.0 (2019-12-09)
 ------------------
 
 - WEB-2937: Fix an issue where some citizen groups are `None` and break security checks
