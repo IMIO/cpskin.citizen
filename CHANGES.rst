@@ -5,6 +5,9 @@ Changelog
 1.0.6 (unreleased)
 ------------------
 
+- Adapt french translation
+  [mpeeters]
+
 - Add tests for creation folder adapter
   [mpeeters]
 

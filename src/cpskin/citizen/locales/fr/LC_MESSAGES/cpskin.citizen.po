@@ -83,7 +83,7 @@ msgstr "Annuler"
 
 #: ../browser/templates/citizen-edition-viewlet.pt:29
 msgid "Cancel changes"
-msgstr "Annuler les changements"
+msgstr "Supprimer le brouillon"
 
 #: ../browser/templates/citizen-cancel.pt:18
 msgid "Cancel checkout"
