@@ -5,6 +5,9 @@ Changelog
 1.0.6 (unreleased)
 ------------------
 
+- Fix an adapter issue due to order of implementing behavior interfaces
+  [mpeeters]
+
 - Add `Event` and `News Item` content types for tests
   [mpeeters]
 

@@ -8,13 +8,13 @@ Created by mpeeters
 """
 
 from collective.z3cform.select2.widget.widget import MultiSelect2FieldWidget
+from plone.app.stagingbehavior.interfaces import IStagingSupport
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent
 from plone.supermodel.directives import fieldset
 from zope import schema
 from zope.component import adapter
-from zope.interface import Interface
 from zope.interface import implementer
 from zope.interface import provider
 
@@ -22,7 +22,7 @@ from cpskin.citizen import _
 
 
 @provider(IFormFieldProvider)
-class ICitizenAccess(Interface):
+class ICitizenAccess(IStagingSupport):
 
     fieldset(
         'citizen_access',
