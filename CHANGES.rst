@@ -5,6 +5,9 @@ Changelog
 1.0.6 (unreleased)
 ------------------
 
+- WEB-2937: Fix an issue where some citizen groups are `None` and break security checks
+  [mpeeters]
+
 - Add tests for checkout mecanism
   [mpeeters]
 

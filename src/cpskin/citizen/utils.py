@@ -152,7 +152,8 @@ def is_citizen(user):
     if api.user.is_anonymous():
         return False
     user_groups = api.group.get_groups(user=user)
-    return 'Citizens' in [g.id for g in user_groups]
+    # In some usecase, the group can be `None`
+    return 'Citizens' in [g.id for g in user_groups if g]
 
 
 def can_claim(user, context):
