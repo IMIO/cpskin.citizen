@@ -164,7 +164,7 @@ msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:15
 msgid "Claim awaiting for approval"
-msgstr "Votre demande de gestion a été envoyée au webmaster. Vous recevrez un email lorsque la demande aura été traitée."
+msgstr "Votre demande de gestion a été envoyée au webmaster."
 
 #: ../browser/settings.py:43
 msgid "Claim content types"
