@@ -1,7 +1,10 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-17 14:45+0000\n"
+"POT-Creation-Date: 2019-12-11 15:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,10 +15,14 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: cpskin.citizen\n"
 
 #: ../dashboard/columns.py:164
 msgid "Actions"
+msgstr ""
+
+#: ../security.py:91
+msgid "Add local roles for user {0}"
 msgstr ""
 
 #: ../setuphandlers.py:58
@@ -71,11 +78,15 @@ msgstr ""
 msgid "Awaiting for validation"
 msgstr ""
 
+#: ../browser/templates/propose-citizen.pt:6
+msgid "Before creating a new content, please check that he does not exist in ${links}. You can ask for content management to apply your changes."
+msgstr ""
+
 #: ../profiles/default/controlpanel.xml
 msgid "CPSkin Citizen Settings"
 msgstr ""
 
-#: ../browser/templates/citizen-claim.pt:23
+#: ../browser/claim.py:57
 #: ../browser/templates/citizen-return-checkout.pt:34
 #: ../browser/templates/citizen-validation-required.pt:23
 msgid "Cancel"
@@ -87,6 +98,10 @@ msgstr ""
 
 #: ../browser/templates/citizen-cancel.pt:18
 msgid "Cancel checkout"
+msgstr ""
+
+#: ../configure.zcml:51
+msgid "Citizen Access"
 msgstr ""
 
 #: ../browser/templates/citizen-admin-viewlet.pt:13
@@ -101,7 +116,7 @@ msgstr ""
 msgid "Citizen Content"
 msgstr ""
 
-#: ../setuphandlers.py:72
+#: ../setuphandlers.py:73
 msgid "Citizen Dashboard"
 msgstr ""
 
@@ -113,7 +128,7 @@ msgstr ""
 msgid "Citizen Edition"
 msgstr ""
 
-#: ../setuphandlers.py:87
+#: ../setuphandlers.py:88
 msgid "Citizen Map"
 msgstr ""
 
@@ -129,11 +144,15 @@ msgstr ""
 msgid "Citizen dashboard"
 msgstr ""
 
+#: ../dashboard/configure.zcml:32
+msgid "Citizen dashboard faceted table items"
+msgstr ""
+
 #: ../iterate/adapter.py:18
 msgid "Citizen draft folder"
 msgstr ""
 
-#: ../setuphandlers.py:103
+#: ../setuphandlers.py:104
 msgid "Citizen propose"
 msgstr ""
 
@@ -154,15 +173,15 @@ msgstr ""
 msgid "Claim content types"
 msgstr ""
 
-#: ../browser/templates/citizen-claim.pt:8
-msgid "Claim modifications of ${object_title}."
+#: ../browser/templates/citizen-claim.pt:12
+msgid "Claim modifications of \"${object_title}\""
 msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:37
 msgid "Claim this content"
 msgstr ""
 
-#: ../browser/templates/citizen-claim.pt:11
+#: ../browser/templates/citizen-claim.pt:14
 msgid "Claiming this document will ask to administrators to give you the possibility to propose modifications."
 msgstr ""
 
@@ -175,9 +194,9 @@ msgstr ""
 msgid "Comment on changes"
 msgstr ""
 
+#: ../browser/claim.py:39
 #: ../browser/propose.py:46
-#: ../browser/templates/citizen-admin-viewlet.pt:25
-#: ../browser/templates/citizen-claim.pt:16
+#: ../browser/templates/citizen-admin-viewlet.pt:26
 msgid "Confirm"
 msgstr ""
 
@@ -214,8 +233,16 @@ msgstr ""
 msgid "Enter a message for the citizen to specify what changes need to be made."
 msgstr ""
 
+#: ../configure.zcml:51
+msgid "Give access to citizen users to specific contents"
+msgstr ""
+
 #: ../browser/templates/citizen-edition-viewlet.pt:14
 msgid "Info"
+msgstr ""
+
+#: ../configure.zcml:35
+msgid "Installs the cpskin.citizen add-on."
 msgstr ""
 
 #: ../profiles/default/sharing.xml
@@ -232,7 +259,7 @@ msgid "Latitude"
 msgstr ""
 
 #. Default: "Longitude"
-#: ../user.py:55
+#: ../user.py:54
 msgid "Longitude"
 msgstr ""
 
@@ -240,11 +267,15 @@ msgstr ""
 msgid "Map view content types"
 msgstr ""
 
+#: ../browser/templates/security_migrator.pt:11
+msgid "Migration result"
+msgstr ""
+
 #: ../dashboard/columns.py:68
 msgid "Modification state"
 msgstr ""
 
-#: ../setuphandlers.py:129
+#: ../setuphandlers.py:130
 msgid "My profile"
 msgstr ""
 
@@ -290,8 +321,12 @@ msgstr ""
 msgid "Published"
 msgstr ""
 
-#: ../browser/templates/citizen-admin-viewlet.pt:29
+#: ../browser/templates/citizen-admin-viewlet.pt:30
 msgid "Refuse"
+msgstr ""
+
+#: ../security.py:81
+msgid "Remove local roles for user {0}"
 msgstr ""
 
 #: ../dashboard/columns.py:150
@@ -306,12 +341,36 @@ msgstr ""
 msgid "Return this document to the citizen and ask for changes."
 msgstr ""
 
+#: ../security.py:60
+msgid "Role acquisition already disabled"
+msgstr ""
+
+#: ../security.py:65
+msgid "Role acquisition already enabled"
+msgstr ""
+
+#: ../security.py:59
+msgid "Role acquisition was disabled"
+msgstr ""
+
+#: ../security.py:64
+msgid "Role acquisition was enabled"
+msgstr ""
+
+#: ../browser/templates/security_migrator.pt:9
+msgid "Security migration results"
+msgstr ""
+
 #: ../profiles/default/portlets.xml
 msgid "Show citizen dashboards"
 msgstr ""
 
 #: ../dashboard/columns.py:86
 msgid "State"
+msgstr ""
+
+#: ../testing.zcml:15
+msgid "Steps to ease tests of cpskin.citizen"
 msgstr ""
 
 #. Default: "Rue"
@@ -336,6 +395,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
+#: ../configure.zcml:35
+msgid "cpskin.citizen"
+msgstr ""
+
+#: ../testing.zcml:15
+msgid "cpskin.citizen tests"
+msgstr ""
+
 #. Default: "Canceling the draft will delete this working copy, and any modifications made to it will be lost."
 #: ../browser/templates/citizen-cancel.pt:12
 msgid "description_cancel"
@@ -351,8 +418,15 @@ msgstr ""
 msgid "help_street_description"
 msgstr ""
 
+#: ../security.py:106
+msgid "local roles are correct for user {0}"
+msgstr ""
+
 #. Default: "Cancel modifications of ${object_title}."
 #: ../browser/templates/citizen-cancel.pt:9
 msgid "title_cancel"
 msgstr ""
 
+#: ../security.py:100
+msgid "update local roles for user {0}"
+msgstr ""

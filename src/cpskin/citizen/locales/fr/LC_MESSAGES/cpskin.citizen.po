@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-17 14:45+0000\n"
+"POT-Creation-Date: 2019-12-11 15:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,10 @@ msgstr ""
 #: ../dashboard/columns.py:164
 msgid "Actions"
 msgstr "Actions"
+
+#: ../security.py:91
+msgid "Add local roles for user {0}"
+msgstr "Ajout des rôles locaux pour l'utilisateur {0}"
 
 #: ../setuphandlers.py:58
 msgid "Admin Citizen Claims"
@@ -71,11 +75,15 @@ msgstr "En attente de modifications"
 msgid "Awaiting for validation"
 msgstr "Attente de validation"
 
+#: ../browser/templates/propose-citizen.pt:6
+msgid "Before creating a new content, please check that he does not exist in ${links}. You can ask for content management to apply your changes."
+msgstr "Avant de créer un contenu, veuillez vérifier qu'il n'est pas déjà existant dans la section ${links}. Vous pouvez demander la gestion d'un contenu afin de pouvoir y apporter vos demandes de modifications."
+
 #: ../profiles/default/controlpanel.xml
 msgid "CPSkin Citizen Settings"
 msgstr "CPSkin Citizen Configuration"
 
-#: ../browser/templates/citizen-claim.pt:23
+#: ../browser/claim.py:57
 #: ../browser/templates/citizen-return-checkout.pt:34
 #: ../browser/templates/citizen-validation-required.pt:23
 msgid "Cancel"
@@ -89,6 +97,10 @@ msgstr "Supprimer le brouillon"
 msgid "Cancel checkout"
 msgstr "Supprimer le brouillon"
 
+#: ../configure.zcml:51
+msgid "Citizen Access"
+msgstr "Accès citoyen"
+
 #: ../browser/templates/citizen-admin-viewlet.pt:13
 msgid "Citizen Administration"
 msgstr "Administration Citoyen"
@@ -99,9 +111,9 @@ msgstr "Gestion demandée"
 
 #: ../setuphandlers.py:53
 msgid "Citizen Content"
-msgstr "Gérer mes contenus"
+msgstr "Voir, éditer mes contenus"
 
-#: ../setuphandlers.py:72
+#: ../setuphandlers.py:73
 msgid "Citizen Dashboard"
 msgstr "Mon compte"
 
@@ -113,7 +125,7 @@ msgstr "Brouillons citoyens"
 msgid "Citizen Edition"
 msgstr "Accès Citoyen"
 
-#: ../setuphandlers.py:87
+#: ../setuphandlers.py:88
 msgid "Citizen Map"
 msgstr "Près de chez moi"
 
@@ -129,13 +141,17 @@ msgstr "Accès Citoyen"
 msgid "Citizen dashboard"
 msgstr "Mon compte"
 
+#: ../dashboard/configure.zcml:32
+msgid "Citizen dashboard faceted table items"
+msgstr ""
+
 #: ../iterate/adapter.py:18
 msgid "Citizen draft folder"
 msgstr "Dossier de brouillons"
 
-#: ../setuphandlers.py:103
+#: ../setuphandlers.py:104
 msgid "Citizen propose"
-msgstr "Créer un contenu"
+msgstr "Créer un nouveau contenu"
 
 #: ../behavior.py:35
 msgid "Citizens users"
@@ -148,21 +164,21 @@ msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:15
 msgid "Claim awaiting for approval"
-msgstr "Demande de gestion en attente de confirmation"
+msgstr "Votre demande de gestion a été envoyée au webmaster. Vous recevrez un email lorsque la demande aura été traitée."
 
 #: ../browser/settings.py:43
 msgid "Claim content types"
 msgstr "Types de contenus pour la demande de gestion"
 
-#: ../browser/templates/citizen-claim.pt:8
-msgid "Claim modifications of ${object_title}."
-msgstr "Gestion demandée de"
+#: ../browser/templates/citizen-claim.pt:12
+msgid "Claim modifications of \"${object_title}\""
+msgstr "Gestion demandée de \"${object_title}\""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:37
 msgid "Claim this content"
 msgstr "Demander la gestion"
 
-#: ../browser/templates/citizen-claim.pt:11
+#: ../browser/templates/citizen-claim.pt:14
 msgid "Claiming this document will ask to administrators to give you the possibility to propose modifications."
 msgstr "Demander la gestion de ce document enverra une demande aux administrateurs pour vous donner la possibilité de proposer des modifications."
 
@@ -175,9 +191,9 @@ msgstr "Commentaire"
 msgid "Comment on changes"
 msgstr "Commenter les changements"
 
+#: ../browser/claim.py:39
 #: ../browser/propose.py:46
-#: ../browser/templates/citizen-admin-viewlet.pt:25
-#: ../browser/templates/citizen-claim.pt:16
+#: ../browser/templates/citizen-admin-viewlet.pt:26
 msgid "Confirm"
 msgstr "Confirmer"
 
@@ -214,9 +230,17 @@ msgstr "Editer ce contenu"
 msgid "Enter a message for the citizen to specify what changes need to be made."
 msgstr "Veuillez entrer un message pour indiquer au citoyen les changements devant être réalisés"
 
+#: ../configure.zcml:51
+msgid "Give access to citizen users to specific contents"
+msgstr "Donne accès aux citoyens à certains contenus"
+
 #: ../browser/templates/citizen-edition-viewlet.pt:14
 msgid "Info"
 msgstr "Info"
+
+#: ../configure.zcml:35
+msgid "Installs the cpskin.citizen add-on."
+msgstr ""
 
 #: ../profiles/default/sharing.xml
 msgid "Is a citizen editor"
@@ -232,7 +256,7 @@ msgid "Latitude"
 msgstr ""
 
 #. Default: "Longitude"
-#: ../user.py:55
+#: ../user.py:54
 msgid "Longitude"
 msgstr ""
 
@@ -240,11 +264,15 @@ msgstr ""
 msgid "Map view content types"
 msgstr "Types de contenu pour la vue cartographique"
 
+#: ../browser/templates/security_migrator.pt:11
+msgid "Migration result"
+msgstr "Résultats de la migration"
+
 #: ../dashboard/columns.py:68
 msgid "Modification state"
 msgstr "Etat des modifications"
 
-#: ../setuphandlers.py:129
+#: ../setuphandlers.py:130
 msgid "My profile"
 msgstr "Mon profil"
 
@@ -290,9 +318,13 @@ msgstr "Dossiers par défauts pour les proposition citoyennes"
 msgid "Published"
 msgstr "Public"
 
-#: ../browser/templates/citizen-admin-viewlet.pt:29
+#: ../browser/templates/citizen-admin-viewlet.pt:30
 msgid "Refuse"
 msgstr "Refuser"
+
+#: ../security.py:81
+msgid "Remove local roles for user {0}"
+msgstr "Supprime les rôles locaux pour l'utilisateur {0}"
 
 #: ../dashboard/columns.py:150
 msgid "Removed"
@@ -306,6 +338,26 @@ msgstr "Renvoyer le brouillon"
 msgid "Return this document to the citizen and ask for changes."
 msgstr "Renvoyer ce document au citoyen pour lui demander des changements."
 
+#: ../security.py:60
+msgid "Role acquisition already disabled"
+msgstr "L'acquisition des rôles est déjà désactivée"
+
+#: ../security.py:65
+msgid "Role acquisition already enabled"
+msgstr "L'acquisition des rôles est activée"
+
+#: ../security.py:59
+msgid "Role acquisition was disabled"
+msgstr "L'acquisition des rôles a été désactivée"
+
+#: ../security.py:64
+msgid "Role acquisition was enabled"
+msgstr "L'acquisition des rôles a été désactivée"
+
+#: ../browser/templates/security_migrator.pt:9
+msgid "Security migration results"
+msgstr "Résultats de la migration de la sécurité"
+
 #: ../profiles/default/portlets.xml
 msgid "Show citizen dashboards"
 msgstr "Affiche les tableaux de bords pour les citoyens"
@@ -313,6 +365,10 @@ msgstr "Affiche les tableaux de bords pour les citoyens"
 #: ../dashboard/columns.py:86
 msgid "State"
 msgstr "Etat"
+
+#: ../testing.zcml:15
+msgid "Steps to ease tests of cpskin.citizen"
+msgstr ""
 
 #. Default: "Rue"
 #: ../user.py:25
@@ -336,10 +392,18 @@ msgstr "Types de contenu visibles pour la vue cartographique des citoyens (par d
 msgid "Yes"
 msgstr "Oui"
 
+#: ../configure.zcml:35
+msgid "cpskin.citizen"
+msgstr ""
+
+#: ../testing.zcml:15
+msgid "cpskin.citizen tests"
+msgstr ""
+
 #. Default: "Canceling the draft will delete this working copy, and any modifications made to it will be lost."
 #: ../browser/templates/citizen-cancel.pt:12
 msgid "description_cancel"
-msgstr "Supprimer ce brouillon entrainera la suppression de cette copie de travail et de toutes ces modifications."
+msgstr "Supprimer ce brouillon entrainera la suppression de cette copie de travail et de toutes ses modifications."
 
 #. Default: "Indiquez le nom de votre rue"
 #: ../user.py:48
@@ -351,8 +415,15 @@ msgstr ""
 msgid "help_street_description"
 msgstr ""
 
+#: ../security.py:106
+msgid "local roles are correct for user {0}"
+msgstr "Les rôles locaux sont corrects pour l'utilisateur {0}"
+
 #. Default: "Cancel modifications of ${object_title}."
 #: ../browser/templates/citizen-cancel.pt:9
 msgid "title_cancel"
 msgstr "Supprimer les modifications de ${object_title}."
 
+#: ../security.py:100
+msgid "update local roles for user {0}"
+msgstr "Mise à jour des rôles locaux pour l'utilisateur {0}"
