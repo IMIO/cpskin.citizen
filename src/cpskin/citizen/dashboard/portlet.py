@@ -86,6 +86,12 @@ class DashboardPortletRenderer(base.Renderer):
         else:
             return self.get_admin_dashboards()
 
+    def css_class(self, item):
+        base = ""
+        if self.is_sub_menu(item):
+            base = "citizen-content-submenu"
+        return "{0} {1}".format(base, item.id)
+
 
 class DashboardPortletAddForm(base.NullAddForm):
 

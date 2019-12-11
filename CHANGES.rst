@@ -5,6 +5,9 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
+- WEB-3242: Add a css class on dashboard menu items
+  [mpeeters]
+
 - WEB-3242: Add a message on propose content view
   [mpeeters]
 

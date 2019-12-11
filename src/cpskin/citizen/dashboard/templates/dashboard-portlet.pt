@@ -12,9 +12,8 @@
           tal:repeat="item view/items">
         <a href="#"
            class=""
-           tal:define="submenu python: view.is_sub_menu(item)"
            tal:attributes="href item/absolute_url;
-                           class python: submenu and 'citizen-content-submenu' or ''"
+                           class python: view.css_class(item)"
            tal:content="item/Title"></a>
       </li>
     </ul>
