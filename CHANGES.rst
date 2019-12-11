@@ -5,6 +5,9 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
+- WEB-2999: Add a reason field for claiming content form and user email on claims administration view
+  [mpeeters]
+
 - WEB-3242: Add a css class on dashboard menu items
   [mpeeters]
 

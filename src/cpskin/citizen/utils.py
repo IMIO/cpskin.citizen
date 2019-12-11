@@ -172,7 +172,8 @@ def have_claimed(user, context):
 
 def get_claim_users(context):
     """Return the users that have claimed the given context"""
-    return get_annotations(context).get('claim', [])
+    claims = get_annotations(context).get('claim', [])
+    return [isinstance(e, str) and e or e[0] for e in claims]
 
 
 def get_draft_folder(context):

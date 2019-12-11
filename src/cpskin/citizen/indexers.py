@@ -34,8 +34,7 @@ def validation_required_indexer(obj):
 @indexer(ICitizenAccess)
 def citizen_claim_indexer(obj):
     if obj != get_working_copy(obj):
-        annotations = utils.get_annotations(obj)
-        return annotations.get('claim', [])
+        return utils.get_claim_users(obj)
 
 
 @indexer(ICitizenAccess)

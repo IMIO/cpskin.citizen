@@ -8,35 +8,65 @@ Created by mpeeters
 """
 
 from Products.Five import BrowserView
-from plone import api
-from zExceptions import Unauthorized
-
+from cpskin.citizen import _
 from cpskin.citizen import utils
+from plone import api
+from plone.z3cform.layout import FormWrapper
+from z3c.form import button
+from z3c.form.field import Fields
+from z3c.form.form import Form
+from zExceptions import Unauthorized
+from zope import schema
+from zope.interface import Interface
 
 
-class ClaimCitizenView(BrowserView):
+class ClaimSchema(Interface):
+    reason = schema.Text(
+        title=u"Explain briefly why you are asking the management of this content",
+        required=True,
+    )
 
-    def __call__(self):
+
+class ClaimForm(Form):
+    fields = Fields(ClaimSchema)
+    ignoreContext = True
+
+    def update(self):
         self.current_user = api.user.get_current()
+        super(ClaimForm, self).update()
+
+    @button.buttonAndHandler(_(u"Confirm"), name="confirm")
+    def handleConfirm(self, action):
+        data, errors = self.extractData()
+        if self.can_claim is False:
+            raise Unauthorized('Cannot claim this content')
+        if errors:
+            self.status = self.formErrorsMessage
+            return
+        view_url = self.context.absolute_url()
+        annotations = utils.get_annotations(self.context)
+        if 'claim' not in annotations:
+            annotations['claim'] = []
+        if self.current_user.id not in [e[0] for e in annotations['claim']]:
+            annotations['claim'].append((self.current_user.id, data["reason"]))
+            annotations._p_changed = True
+            self.context.reindexObject()
+        self.request.response.redirect(view_url)
+
+    @button.buttonAndHandler(_(u"Cancel"), name="cancel")
+    def handleCancel(self, action):
         if self.can_claim is False:
             raise Unauthorized('Cannot claim this content')
         view_url = self.context.absolute_url()
-        if 'form.button.Confirm' in self.request.form:
-            annotations = utils.get_annotations(self.context)
-            if 'claim' not in annotations:
-                annotations['claim'] = []
-            if self.current_user.id not in annotations['claim']:
-                annotations['claim'].append(self.current_user.id)
-                annotations._p_changed = True
-                self.context.reindexObject()
-            self.request.response.redirect(view_url)
-        elif 'form.button.Cancel' in self.request.form:
-            self.request.response.redirect(view_url)
-        return self.index()
+        self.request.response.redirect(view_url)
 
     @property
     def can_claim(self):
         return utils.can_claim(self.current_user, self.context)
+
+
+class ClaimCitizenView(FormWrapper):
+    form = ClaimForm
 
 
 class ClaimCitizenApprovalView(BrowserView):

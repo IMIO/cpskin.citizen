@@ -17,7 +17,8 @@
       <form action="" tal:attributes="action string: ${view/context/absolute_url}/@@claim-citizen-approval" method="post">
       <ul>
         <li>
-          <span tal:replace="claim/username"></span>
+          <span tal:replace="claim/username"></span> -
+          <span tal:replace="claim/email"></span>
           <input type="hidden"
                  name="userid"
                  value=""
@@ -30,6 +31,7 @@
                  name="form.button.Refuse"
                  value="Refuse"
                  i18n:attributes="value" />
+          <p class="reason" tal:condition="claim/reason" tal:content="claim/reason"></p>
         </li>
       </ul>
       </form>
