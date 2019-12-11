@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.1.1 (unreleased)
+1.2.0 (2019-12-11)
 ------------------
 
 - WEB-2999: Add a reason field for claiming content form and user email on claims administration view
