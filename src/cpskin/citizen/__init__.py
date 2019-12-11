@@ -3,6 +3,6 @@
 
 from zope.i18nmessageid import MessageFactory
 
-_ = MessageFactory('cpskin.citizen')
+_ = MessageFactory("cpskin.citizen")
 
-ANNOTATION_KEY = 'cpskin.citizen'
+ANNOTATION_KEY = "cpskin.citizen"

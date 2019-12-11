@@ -19,17 +19,17 @@ class LocalRoleAdapter(object):
 
     def getRoles(self, principal):
         """Grant permission for principal"""
-        citizens = getattr(self.context, 'citizens', []) or []
+        citizens = getattr(self.context, "citizens", []) or []
         if principal in citizens:
-            return ('Reader', 'Citizen Editor')
+            return ("Reader", "Citizen Editor")
         return []
 
     def getAllRoles(self):
         """Grant permissions"""
-        if not getattr(self.context, 'citizens', None):
-            yield ('', ('', ))
+        if not getattr(self.context, "citizens", None):
+            yield ("", ("",))
             raise StopIteration
         else:
-            permissions = ('Reader', 'Citizen Editor')
+            permissions = ("Reader", "Citizen Editor")
             for citizen in self.context.citizens:
                 yield (citizen, permissions)

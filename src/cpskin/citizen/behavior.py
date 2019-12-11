@@ -24,18 +24,13 @@ from cpskin.citizen import _
 @provider(IFormFieldProvider)
 class ICitizenAccess(IStagingSupport):
 
-    fieldset(
-        'citizen_access',
-        label=_(u'Citizen access'),
-        fields=['citizens'],
-    )
+    fieldset("citizen_access", label=_(u"Citizen access"), fields=["citizens"])
 
     form.widget(citizens=MultiSelect2FieldWidget)
     citizens = schema.List(
-        title=_(u'Citizens users'),
+        title=_(u"Citizens users"),
         value_type=schema.Choice(
-            title=_(u'Citizens users'),
-            vocabulary='cpskin.citizen.citizens',
+            title=_(u"Citizens users"), vocabulary="cpskin.citizen.citizens"
         ),
         required=False,
     )
@@ -44,13 +39,12 @@ class ICitizenAccess(IStagingSupport):
 @implementer(ICitizenAccess)
 @adapter(IDexterityContent)
 class CitizenAccess(object):
-
     def __init__(self, context):
         self.context = context
 
     @property
     def citizens(self):
-        return getattr(self.context, 'citizens', [])
+        return getattr(self.context, "citizens", [])
 
     @citizens.setter
     def citizens(self, value):

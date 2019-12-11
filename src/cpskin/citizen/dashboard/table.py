@@ -16,24 +16,24 @@ from cpskin.citizen.dashboard import interfaces
 class DashboardTable(Table):
     implements(interfaces.IFacetedDashboardTable)
 
-    cssClassEven = u'even'
-    cssClassOdd = u'odd'
-    cssClasses = {'table': 'listing dashboard-listing'}
+    cssClassEven = u"even"
+    cssClassOdd = u"odd"
+    cssClasses = {"table": "listing dashboard-listing"}
 
     batchSize = 20
     startBatchingAt = 30
     results = []
 
     _ignored_columns = (
-        'Title',
-        'select_row',
-        'Creator',
-        'getText',
-        'ModificationDate',
-        'CreationDate',
-        'review_state',
-        'actions',
-        'pretty_link',
+        "Title",
+        "select_row",
+        "Creator",
+        "getText",
+        "ModificationDate",
+        "CreationDate",
+        "review_state",
+        "actions",
+        "pretty_link",
     )
 
     def setUpColumns(self):

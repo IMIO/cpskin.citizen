@@ -15,7 +15,6 @@ from cpskin.citizen import utils
 
 
 class ContentCopierAdapter(copier.ContentCopier):
-
     def copyTo(self, container):
         current_user = api.user.get_current()
         if utils.can_edit(current_user, self.context):
@@ -24,9 +23,9 @@ class ContentCopierAdapter(copier.ContentCopier):
             elements = utils.execute_under_unrestricted_user(
                 api.portal.get(),
                 super(ContentCopierAdapter, self).copyTo,
-                'admin',
+                "admin",
                 container,
             )
-            elements[0].creators = (current_user.id, )
+            elements[0].creators = (current_user.id,)
             return elements
-        raise Unauthorized(u'Cannot edit this content')
+        raise Unauthorized(u"Cannot edit this content")

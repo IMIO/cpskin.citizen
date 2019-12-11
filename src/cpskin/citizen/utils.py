@@ -28,35 +28,32 @@ from cpskin.citizen.browser.settings import ISettings
 from cpskin.citizen.interfaces import ICitizenCreationFolder
 
 
-DRAFT_FOLDER_ID = 'citizen-drafts'
-DASHBOARD_FOLDER_ID = 'citizen-dashboard'
+DRAFT_FOLDER_ID = "citizen-drafts"
+DASHBOARD_FOLDER_ID = "citizen-dashboard"
 DASHBOARD_FOLDERS_IDS = (
-    'citizen-content',
-    'citizen-claims',
-    'citizen-map',
-    'citizen-propose-content',
-    'admin-content',
-    'admin-claims',
+    "citizen-content",
+    "citizen-claims",
+    "citizen-map",
+    "citizen-propose-content",
+    "admin-content",
+    "admin-claims",
 )
 
 
 def citizen_access_portal_types():
     """Return the portal types where the CitizenAccess is active"""
-    portal_types = api.portal.get_tool('portal_types')
+    portal_types = api.portal.get_tool("portal_types")
     types = []
     cls = cls_fullpath(ICitizenAccess)
     for portal_type in portal_types:
-        if cls in getattr(portal_types[portal_type], 'behaviors', []):
+        if cls in getattr(portal_types[portal_type], "behaviors", []):
             types.append(portal_type)
     return types
 
 
 def cls_fullpath(cls):
     """Return the complete path of a class"""
-    return u'{module}.{classname}'.format(
-        module=cls.__module__,
-        classname=cls.__name__,
-    )
+    return u"{module}.{classname}".format(module=cls.__module__, classname=cls.__name__)
 
 
 class UnrestrictedUser(BaseUnrestrictedUser):
@@ -94,9 +91,7 @@ def execute_under_unrestricted_user(portal, function, user, *args, **kwargs):
             # Note that the username (getId()) is left in exception
             # tracebacks in the error_log,
             # so it is an important thing to store.
-            tmp_user = UnrestrictedUser(
-                user, '', [''], ''
-            )
+            tmp_user = UnrestrictedUser(user, "", [""], "")
             # Wrap the user in the acquisition context of the portal
             tmp_user = tmp_user.__of__(portal.acl_users)
             newSecurityManager(None, tmp_user)
@@ -121,14 +116,8 @@ def can_edit(user, context):
     if is_citizen(user):
         return False
     return api.user.has_permission(
-        'Modify portal content',
-        user=user,
-        obj=context,
-    ) or api.user.has_permission(
-        'Copy or Move',
-        user=user,
-        obj=context,
-    )
+        "Modify portal content", user=user, obj=context
+    ) or api.user.has_permission("Copy or Move", user=user, obj=context)
 
 
 def can_edit_citizen(user, context):
@@ -138,11 +127,7 @@ def can_edit_citizen(user, context):
     """
     if api.user.is_anonymous():
         return False
-    return api.user.has_permission(
-        'Modify citizen content',
-        user=user,
-        obj=context,
-    )
+    return api.user.has_permission("Modify citizen content", user=user, obj=context)
 
 
 def is_citizen(user):
@@ -153,7 +138,7 @@ def is_citizen(user):
         return False
     user_groups = api.group.get_groups(user=user)
     # In some usecase, the group can be `None`
-    return 'Citizens' in [g.id for g in user_groups if g]
+    return "Citizens" in [g.id for g in user_groups if g]
 
 
 def can_claim(user, context):
@@ -172,7 +157,7 @@ def have_claimed(user, context):
 
 def get_claim_users(context):
     """Return the users that have claimed the given context"""
-    claims = get_annotations(context).get('claim', [])
+    claims = get_annotations(context).get("claim", [])
     return [isinstance(e, str) and e or e[0] for e in claims]
 
 
@@ -187,17 +172,17 @@ def get_draft_folder(context):
 
 def allowed_content_types(context):
     """Return the ids of the allowed content types for the given context"""
-    return [p.id for p in execute_under_unrestricted_user(
-        context,
-        context.allowedContentTypes,
-        '',
-    )]
+    return [
+        p.id
+        for p in execute_under_unrestricted_user(
+            context, context.allowedContentTypes, ""
+        )
+    ]
 
 
 def dict_2_vocabulary(dictionary):
     """Transform a dictionary into a vocabulary"""
-    terms = [SimpleVocabulary.createTerm(k, k, v)
-             for k, v in dictionary.items()]
+    terms = [SimpleVocabulary.createTerm(k, k, v) for k, v in dictionary.items()]
     return SimpleVocabulary(terms)
 
 
@@ -209,9 +194,7 @@ def get_creation_folder(context, request, portal_type):
     """Return the creation folder for a proposal from a citizen"""
     navigation_root = api.portal.get_navigation_root(context)
     adapter = queryMultiAdapter(
-        (context, request),
-        ICitizenCreationFolder,
-        name=portal_type,
+        (context, request), ICitizenCreationFolder, name=portal_type
     )
     if adapter:
         return adapter.get_folder(navigation_root, portal_type)
@@ -247,6 +230,7 @@ def get_required_fields(portal_type):
     schemas = utils.iterSchemataForType(portal_type)
     fields = []
     for schema in schemas:
-        fields.extend([(k, f) for k, f in field.Fields(schema).items()
-                      if f.field.required])
+        fields.extend(
+            [(k, f) for k, f in field.Fields(schema).items() if f.field.required]
+        )
     return fields

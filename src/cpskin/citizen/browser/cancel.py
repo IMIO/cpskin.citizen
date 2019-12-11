@@ -14,9 +14,8 @@ from cpskin.citizen import utils
 
 
 class CancelCitizenView(Cancel):
-
     def __call__(self):
-        if 'form.button.Cancel' in self.request.form:
+        if "form.button.Cancel" in self.request.form:
             current_user = api.user.get_current()
             if utils.can_edit(current_user, self.context):
                 return super(CancelCitizenView, self).__call__()

@@ -22,38 +22,35 @@ class IEnhancedUserDataSchema(IUserDataSchema):
     """
 
     street = schema.TextLine(
-        title=_(u'Street', default=u'Rue'),
-        description=_(u'help_street_description',
-                      default=u"Indiquez le nom de votre rue, cette adresse sera utilisée dans le site pour géolocaliser ce qu'il se passe autour de chez vous."),
+        title=_(u"Street", default=u"Rue"),
+        description=_(
+            u"help_street_description",
+            default=u"Indiquez le nom de votre rue, cette adresse sera utilisée dans le site pour géolocaliser ce qu'il se passe autour de chez vous.",
+        ),
         required=False,
     )
 
-    number = schema.TextLine(
-        title=_(u'Number', default=u'Numéro'),
-        required=False,
-    )
+    number = schema.TextLine(title=_(u"Number", default=u"Numéro"), required=False)
 
     zip_code = schema.TextLine(
-        title=_(u'Post Code', default=u'Code postal'),
-        required=False,
+        title=_(u"Post Code", default=u"Code postal"), required=False
     )
 
-    location = schema.TextLine(
-        title=_(u'City', default=u'Ville'),
-        required=False,
-    )
+    location = schema.TextLine(title=_(u"City", default=u"Ville"), required=False)
 
     latitude = schema.TextLine(
-        title=_(u'Latitude', default=u'Latitude'),
-        description=_(u'help_coordinates_description',
-                      default=u"Indiquez le nom de votre rue"),
+        title=_(u"Latitude", default=u"Latitude"),
+        description=_(
+            u"help_coordinates_description", default=u"Indiquez le nom de votre rue"
+        ),
         required=False,
     )
 
     longitude = schema.TextLine(
-        title=_(u'Longitude', default=u'Longitude'),
-        description=_(u'help_coordinates_description',
-                      default=u"Indiquez le nom de votre rue"),
+        title=_(u"Longitude", default=u"Longitude"),
+        description=_(
+            u"help_coordinates_description", default=u"Indiquez le nom de votre rue"
+        ),
         required=False,
     )
 
@@ -63,57 +60,57 @@ class EnhancedUserDataPanelAdapter(UserDataPanelAdapter):
     """
 
     def _set_property(self, key, value):
-        return self.context.setMemberProperties({
-            key: value and value.encode('utf-8') or value,
-        })
+        return self.context.setMemberProperties(
+            {key: value and value.encode("utf-8") or value}
+        )
 
     def _get_property(self, key):
-        return self.context.getProperty(key, '').decode('utf-8')
+        return self.context.getProperty(key, "").decode("utf-8")
 
     @property
     def street(self):
-        return self._get_property('street')
+        return self._get_property("street")
 
     @street.setter
     def street(self, value):
-        return self._set_property('street', value)
+        return self._set_property("street", value)
 
     @property
     def number(self):
-        return self._get_property('number')
+        return self._get_property("number")
 
     @number.setter
     def number(self, value):
-        return self._set_property('number', value)
+        return self._set_property("number", value)
 
     @property
     def zip_code(self):
-        return self._get_property('zip_code')
+        return self._get_property("zip_code")
 
     @zip_code.setter
     def zip_code(self, value):
-        return self._set_property('zip_code', value)
+        return self._set_property("zip_code", value)
 
     @property
     def location(self):
-        return self._get_property('location')
+        return self._get_property("location")
 
     @location.setter
     def location(self, value):
-        return self._set_property('location', value)
+        return self._set_property("location", value)
 
     @property
     def latitude(self):
-        return self._get_property('latitude')
+        return self._get_property("latitude")
 
     @latitude.setter
     def latitude(self, value):
-        return self._set_property('latitude', value)
+        return self._set_property("latitude", value)
 
     @property
     def longitude(self):
-        return self._get_property('longitude')
+        return self._get_property("longitude")
 
     @longitude.setter
     def longitude(self, value):
-        return self._set_property('longitude', value)
+        return self._set_property("longitude", value)

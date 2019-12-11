@@ -16,18 +16,14 @@ from cpskin.citizen import utils
 
 
 class CheckinView(checkin.Checkin):
-
     def __call__(self):
         context = aq_inner(self.context)
 
-        if 'form.button.Checkin' in self.request.form:
-            control = getMultiAdapter(
-                (context, self.request),
-                name=u'iterate_control',
-            )
+        if "form.button.Checkin" in self.request.form:
+            control = getMultiAdapter((context, self.request), name=u"iterate_control")
             if not control.checkin_allowed():
-                raise CheckinException(u'Not a checkout')
+                raise CheckinException(u"Not a checkout")
             annotations = utils.get_annotations(context)
-            annotations['comment'] = None
-            annotations['validation_required'] = False
+            annotations["comment"] = None
+            annotations["validation_required"] = False
         return super(CheckinView, self).__call__()

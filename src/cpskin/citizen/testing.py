@@ -32,73 +32,55 @@ import cpskin.citizen
 
 class CpskinCitizenLayer(PloneSandboxLayer):
 
-    defaultBases = (PLONE_FIXTURE, )
+    defaultBases = (PLONE_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
-        self.loadZCML(package=cpskin.citizen, name='testing.zcml')
-        z2.installProduct(app, 'imio.dashboard')
-        z2.installProduct(app, 'Products.DateRecurringIndex')
+        self.loadZCML(package=cpskin.citizen, name="testing.zcml")
+        z2.installProduct(app, "imio.dashboard")
+        z2.installProduct(app, "Products.DateRecurringIndex")
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'Products.CMFPlone:plone')
-        applyProfile(portal, 'cpskin.citizen:testing')
+        applyProfile(portal, "Products.CMFPlone:plone")
+        applyProfile(portal, "cpskin.citizen:testing")
 
         manager = api.user.create(
-            email='manager@manager.com',
-            username='manager',
-            password='manager',
+            email="manager@manager.com", username="manager", password="manager"
         )
-        api.user.grant_roles(
-            user=manager,
-            roles=('Manager', ),
-        )
+        api.user.grant_roles(user=manager, roles=("Manager",))
 
         citizen = api.user.create(
-            email='citizen@citizen.com',
-            username='citizen',
-            password='citizen',
+            email="citizen@citizen.com", username="citizen", password="citizen"
         )
-        api.group.add_user(
-            groupname='Citizens',
-            user=citizen,
-        )
+        api.group.add_user(groupname="Citizens", user=citizen)
 
-        login(portal, 'manager')
+        login(portal, "manager")
         api.content.create(
-            type='Document',
-            id='citizen-document',
-            title='Citizen Document',
+            type="Document",
+            id="citizen-document",
+            title="Citizen Document",
             container=portal,
-            citizens=['citizen'],
+            citizens=["citizen"],
         )
         api.content.create(
-            type='Document',
-            id='document',
-            title='Document',
-            container=portal,
+            type="Document", id="document", title="Document", container=portal
         )
         document = api.content.create(
-            type='Document',
-            id='claim-document',
-            title='Claim Document',
+            type="Document",
+            id="claim-document",
+            title="Claim Document",
             container=portal,
         )
         annotations = IAnnotations(document)
         annotations[ANNOTATION_KEY] = PersistentDict()
-        annotations[ANNOTATION_KEY]['claim'] = ['citizen']
+        annotations[ANNOTATION_KEY]["claim"] = ["citizen"]
 
         obj = api.content.create(
-            type='Folder',
-            id='documents',
-            title='Documents',
-            container=portal,
+            type="Folder", id="documents", title="Documents", container=portal
         )
-        api.content.transition(obj=obj, transition='publish')
+        api.content.transition(obj=obj, transition="publish")
 
         api.portal.set_registry_record(
-            name='creation_types',
-            value=['Document'],
-            interface=ISettings,
+            name="creation_types", value=["Document"], interface=ISettings
         )
 
         logout()
@@ -106,67 +88,59 @@ class CpskinCitizenLayer(PloneSandboxLayer):
 
     def tearDownZope(self, app):
         """Tear down Zope."""
-        z2.uninstallProduct(app, 'imio.dashboard')
-        z2.uninstallProduct(app, 'Products.DateRecurringIndex')
+        z2.uninstallProduct(app, "imio.dashboard")
+        z2.uninstallProduct(app, "Products.DateRecurringIndex")
 
 
 CPSKIN_CITIZEN_FIXTURE = CpskinCitizenLayer()
 
 
 CPSKIN_CITIZEN_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(CPSKIN_CITIZEN_FIXTURE, ),
-    name='CpskinCitizenLayer:IntegrationTesting'
+    bases=(CPSKIN_CITIZEN_FIXTURE,), name="CpskinCitizenLayer:IntegrationTesting"
 )
 
 
 CPSKIN_CITIZEN_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(CPSKIN_CITIZEN_FIXTURE, ),
-    name='CpskinCitizenLayer:FunctionalTesting'
+    bases=(CPSKIN_CITIZEN_FIXTURE,), name="CpskinCitizenLayer:FunctionalTesting"
 )
 
 
 CPSKIN_CITIZEN_ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(
-        CPSKIN_CITIZEN_FIXTURE,
-        REMOTE_LIBRARY_BUNDLE_FIXTURE,
-        z2.ZSERVER_FIXTURE
-    ),
-    name='CpskinCitizenLayer:AcceptanceTesting'
+    bases=(CPSKIN_CITIZEN_FIXTURE, REMOTE_LIBRARY_BUNDLE_FIXTURE, z2.ZSERVER_FIXTURE),
+    name="CpskinCitizenLayer:AcceptanceTesting",
 )
 
 
 class BaseTestCase(unittest.TestCase):
-
     @property
     def portal(self):
-        return self.layer['portal']
+        return self.layer["portal"]
 
     @property
     def citizen_document(self):
-        return self.portal['citizen-document']
+        return self.portal["citizen-document"]
 
     @property
     def claim_document(self):
-        return self.portal['claim-document']
+        return self.portal["claim-document"]
 
     @property
     def document(self):
-        return self.portal['document']
+        return self.portal["document"]
 
     @property
     def documents(self):
-        return self.portal['documents']
+        return self.portal["documents"]
 
     @property
     def dashboards(self):
-        return self.portal['citizen-dashboard']
+        return self.portal["citizen-dashboard"]
 
     @property
     def drafts(self):
-        return self.portal['citizen-drafts']
+        return self.portal["citizen-drafts"]
 
 
 class TestCreationFolderAdapter(CitizenCreationFolderAdapter):
-
     def get_folder(self, navigation_root, portal_type):
-        return navigation_root['documents']
+        return navigation_root["documents"]

@@ -11,7 +11,6 @@ from zope.interface import noLongerProvides
 
 
 class CleanupView(BrowserView):
-
     def __call__(self, *args, **kwargs):
         context = aq_base(aq_inner(self.context))
         relations = get_relations(context)

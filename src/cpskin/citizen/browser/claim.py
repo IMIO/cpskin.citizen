@@ -39,16 +39,16 @@ class ClaimForm(Form):
     def handleConfirm(self, action):
         data, errors = self.extractData()
         if self.can_claim is False:
-            raise Unauthorized('Cannot claim this content')
+            raise Unauthorized("Cannot claim this content")
         if errors:
             self.status = self.formErrorsMessage
             return
         view_url = self.context.absolute_url()
         annotations = utils.get_annotations(self.context)
-        if 'claim' not in annotations:
-            annotations['claim'] = []
-        if self.current_user.id not in [e[0] for e in annotations['claim']]:
-            annotations['claim'].append((self.current_user.id, data["reason"]))
+        if "claim" not in annotations:
+            annotations["claim"] = []
+        if self.current_user.id not in [e[0] for e in annotations["claim"]]:
+            annotations["claim"].append((self.current_user.id, data["reason"]))
             annotations._p_changed = True
             self.context.reindexObject()
         self.request.response.redirect(view_url)
@@ -56,7 +56,7 @@ class ClaimForm(Form):
     @button.buttonAndHandler(_(u"Cancel"), name="cancel")
     def handleCancel(self, action):
         if self.can_claim is False:
-            raise Unauthorized('Cannot claim this content')
+            raise Unauthorized("Cannot claim this content")
         view_url = self.context.absolute_url()
         self.request.response.redirect(view_url)
 
@@ -70,10 +70,9 @@ class ClaimCitizenView(FormWrapper):
 
 
 class ClaimCitizenApprovalView(BrowserView):
-
     def __call__(self):
         annotations = utils.get_annotations(self.context)
-        self.claims = annotations.get('claim', [])
+        self.claims = annotations.get("claim", [])
         if not self._is_valid_request:
             return
         if self.confirm:
@@ -82,23 +81,23 @@ class ClaimCitizenApprovalView(BrowserView):
             if self.user not in self.context.citizens:
                 self.context.citizens.append(self.user)
         self.claims.remove(self.user)
-        annotations['claim'] = self.claims
+        annotations["claim"] = self.claims
         annotations._p_changed = True
         self.context.reindexObject()
         self.request.response.redirect(self.context.absolute_url())
 
     @property
     def _is_valid_request(self):
-        return ((self.confirm or self.refuse) and self.user in self.claims)
+        return (self.confirm or self.refuse) and self.user in self.claims
 
     @property
     def confirm(self):
-        return 'form.button.Confirm' in self.request.form
+        return "form.button.Confirm" in self.request.form
 
     @property
     def refuse(self):
-        return 'form.button.Refuse' in self.request.form
+        return "form.button.Refuse" in self.request.form
 
     @property
     def user(self):
-        return self.request.form.get('userid', '')
+        return self.request.form.get("userid", "")

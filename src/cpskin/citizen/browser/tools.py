@@ -5,6 +5,5 @@ from cpskin.citizen import security
 
 
 class CitizenSecurityMigrateView(BrowserView):
-
     def migrate(self):
         return security.ManageSecurity(self.request).migrate()

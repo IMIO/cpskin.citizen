@@ -21,24 +21,20 @@ from cpskin.citizen import utils
 
 
 class BaseCitizenColumn(BaseColumn):
-
     def _translate(self, msgid):
         return translate(msgid, context=self.request)
 
 
 class DashboardColumnHeader(BaseColumnHeader):
-
     @property
     def faceted_url(self):
-        return '/'.join(self.request.get('URL').split('/')[:-1])
+        return "/".join(self.request.get("URL").split("/")[:-1])
 
 
 class CitizenDraftColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
-    header = _(u'Title')
+    header = _(u"Title")
     weight = 5
-    params = {
-        'target': '_blank',
-    }
+    params = {"target": "_blank"}
 
     def renderCell(self, item):
         obj = self._getObject(item)
@@ -49,23 +45,21 @@ class CitizenDraftColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
 
 
 class CitizenTitleColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
-    header = _(u'Title')
+    header = _(u"Title")
     weight = 5
-    params = {
-        'target': '_blank',
-    }
+    params = {"target": "_blank"}
 
 
 class CitizenTitleNoLinkColumn(BaseCitizenColumn):
-    header = _(u'Title')
+    header = _(u"Title")
     weight = 5
 
     def renderCell(self, item):
-        return item.Title.decode('utf8')
+        return item.Title.decode("utf8")
 
 
 class DraftStateColumn(BaseCitizenColumn):
-    header = _(u'Modification state')
+    header = _(u"Modification state")
     weight = 10
 
     def renderCell(self, item):
@@ -73,23 +67,22 @@ class DraftStateColumn(BaseCitizenColumn):
         working_copy = get_working_copy(obj)
         if working_copy:
             annotations = utils.get_annotations(working_copy)
-            if annotations.get('validation_required', False):
-                return self._translate(_(u'Awaiting for validation'))
-            if annotations.get('comment', None):
-                return self._translate(_(u'Awaiting for changes'))
+            if annotations.get("validation_required", False):
+                return self._translate(_(u"Awaiting for validation"))
+            if annotations.get("comment", None):
+                return self._translate(_(u"Awaiting for changes"))
         else:
-            return self._translate(_(u'None'))
-        return self._translate(_(u'Draft'))
+            return self._translate(_(u"None"))
+        return self._translate(_(u"Draft"))
 
 
 class CitizenStateColumn(BaseCitizenColumn):
-    header = _(u'State')
+    header = _(u"State")
     weight = 20
 
     def state(self, title, selected=False):
         html = """<div class="line-state {0}">{1}</div>""".format(
-            selected and "active" or "",
-            title,
+            selected and "active" or "", title
         )
         return html
 
@@ -99,9 +92,9 @@ class CitizenStateColumn(BaseCitizenColumn):
         draft = submitted = published = False
         if working_copy:
             annotations = utils.get_annotations(working_copy)
-            if annotations.get('validation_required', False):
+            if annotations.get("validation_required", False):
                 submitted = True
-            if annotations.get('comment', None):
+            if annotations.get("comment", None):
                 # XXX doit-on refléter que des changements sont attendus ?
                 submitted = True
         else:
@@ -109,29 +102,16 @@ class CitizenStateColumn(BaseCitizenColumn):
         if not submitted and not published:
             draft = True
         return "{}{}{}".format(
-            self.state(
-                self._translate(_(u'Draft')),
-                draft,
-            ),
-            self.state(
-                self._translate(_(u'Awaiting for validation')),
-                submitted,
-            ),
-            self.state(
-                self._translate(_(u'Published')),
-                published,
-            ),
+            self.state(self._translate(_(u"Draft")), draft),
+            self.state(self._translate(_(u"Awaiting for validation")), submitted),
+            self.state(self._translate(_(u"Published")), published),
         )
 
 
 class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
-    header = _(u'Online version')
+    header = _(u"Online version")
     weight = 90
-    params = {
-        'target': '_blank',
-        'showLockedIcon': False,
-        'showIcons': False,
-    }
+    params = {"target": "_blank", "showLockedIcon": False, "showIcons": False}
 
     def getPrettyLink(self, obj):
         pl = IPrettyLink(obj)
@@ -147,13 +127,13 @@ class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
             online_obj = get_baseline(obj)
         except KeyError:
             # This append when the original document was deleted
-            return self._translate(_(u'Removed'))
+            return self._translate(_(u"Removed"))
         if working_copy:
-            self.params['isViewable'] = False
-            self.params['contentValue'] = self._translate(_(u'No'))
+            self.params["isViewable"] = False
+            self.params["contentValue"] = self._translate(_(u"No"))
         else:
-            self.params['isViewable'] = True
-            self.params['contentValue'] = self._translate(_(u'Yes'))
+            self.params["isViewable"] = True
+            self.params["contentValue"] = self._translate(_(u"Yes"))
         if not online_obj:
             # special case where content was assigned by admin without edit
             online_obj = obj
@@ -161,21 +141,21 @@ class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
 
 
 class ActionsColumn(columns.ActionsColumn):
-    header = _(u'Actions')
+    header = _(u"Actions")
     weight = 100
 
 
 class CitizenClaimingUsersColumn(BaseCitizenColumn):
-    header = _(u'Citizen Users')
+    header = _(u"Citizen Users")
     weight = 20
 
     def renderCell(self, item):
         obj = self._getObject(item)
         claims = []
         annotations = utils.get_annotations(obj)
-        for claim in annotations.get('claim', []):
+        for claim in annotations.get("claim", []):
             user = api.user.get(userid=claim)
             if user:
-                claims.append(user.getProperty('fullname'))
+                claims.append(user.getProperty("fullname"))
         claims.sort()
-        return u', '.join([e.decode('utf8') for e in claims])
+        return u", ".join([e.decode("utf8") for e in claims])

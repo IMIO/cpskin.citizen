@@ -15,7 +15,6 @@ from cpskin.citizen import utils
 
 
 class ContentArchiverAdapter(archiver.ContentArchiver):
-
     def save(self, checkin_message):
         current_user = api.user.get_current()
         if utils.can_edit(current_user, self.context):
@@ -28,4 +27,4 @@ class ContentArchiverAdapter(archiver.ContentArchiver):
                 self.context,
                 checkin_message,
             )
-        raise Unauthorized(u'Cannot edit this content')
+        raise Unauthorized(u"Cannot edit this content")

@@ -15,7 +15,6 @@ from cpskin.citizen.behavior import ICitizenAccess
 
 
 class CitizenControl(BrowserView):
-
     def __init__(self, *args, **kwargs):
         super(CitizenControl, self).__init__(*args, **kwargs)
         self.is_anonymous = api.user.is_anonymous()
@@ -31,7 +30,7 @@ class CitizenControl(BrowserView):
         """Check if the current user can administrate citizen contents"""
         if self.is_anonymous:
             return False
-        allowed_roles = ['Editor', 'Manager', 'Reviewer', 'Site Administrator']
+        allowed_roles = ["Editor", "Manager", "Reviewer", "Site Administrator"]
         user_roles = api.user.get_roles(user=self.current_user)
         return len([r for r in user_roles if r in allowed_roles]) > 0
 

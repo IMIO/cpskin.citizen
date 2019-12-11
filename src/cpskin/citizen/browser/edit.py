@@ -24,14 +24,9 @@ from cpskin.citizen import utils
 
 
 class EditCitizenForm(DefaultEditForm):
-    _allowed_fieldsets = [
-        'address',
-        'contact_details',
-        'schedule',
-        'images',
-    ]
+    _allowed_fieldsets = ["address", "contact_details", "schedule", "images"]
 
-    @button.buttonAndHandler(DX_MF(u'Save'), name='save')
+    @button.buttonAndHandler(DX_MF(u"Save"), name="save")
     def handleApply(self, action):
         data, errors = self.extractData()
         if errors:
@@ -42,10 +37,7 @@ class EditCitizenForm(DefaultEditForm):
             self.applyChanges(data)
         else:
             utils.execute_under_unrestricted_user(
-                api.portal.get(),
-                self.applyChanges,
-                current_user.id,
-                data,
+                api.portal.get(), self.applyChanges, current_user.id, data
             )
         IStatusMessage(self.request).addStatusMessage(
             DX_MF(u"Changes saved"), "info success"
@@ -54,8 +46,9 @@ class EditCitizenForm(DefaultEditForm):
         notify(EditFinishedEvent(self.context))
 
     def update_groups(self):
-        self.groups = tuple([g for g in self.groups
-                             if g.__name__ in self._allowed_fieldsets])
+        self.groups = tuple(
+            [g for g in self.groups if g.__name__ in self._allowed_fieldsets]
+        )
 
     def update(self):
         super(EditCitizenForm, self).update()
@@ -71,14 +64,13 @@ classImplements(DefaultEditView, IDexterityEditForm)
 
 
 class EditCitizenView(DefaultEditView):
-
     def update(self):
         original = get_baseline(self.context)
         working_copy = get_working_copy(original)
         if original is None or self.context == original:
-            url = '{0}/@@content-checkout'.format(self.context.absolute_url())
+            url = "{0}/@@content-checkout".format(self.context.absolute_url())
             if working_copy is not None:
-                url = '{0}/@@edit-citizen'.format(working_copy.absolute_url())
+                url = "{0}/@@edit-citizen".format(working_copy.absolute_url())
             self.request.response.redirect(url)
             return
         super(EditCitizenView, self).update()

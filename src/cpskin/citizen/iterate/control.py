@@ -16,13 +16,11 @@ from cpskin.citizen.behavior import ICitizenAccess
 
 
 class DefaultControl(control.Control):
-
     def return_allowed(self):
         return False
 
 
 class Control(control.Control):
-
     def checkout_allowed(self):
         """ Check if a checkout is allowed """
         context = aq_inner(self.context)

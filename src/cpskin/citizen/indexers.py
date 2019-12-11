@@ -27,7 +27,7 @@ def citizens_indexer(obj):
 def validation_required_indexer(obj):
     if obj == get_working_copy(obj):
         annotations = utils.get_annotations(obj)
-        return annotations.get('validation_required', False)
+        return annotations.get("validation_required", False)
     return False
 
 
@@ -46,12 +46,12 @@ def is_draft(obj):
 def has_claim(obj):
     if obj != get_working_copy(obj):
         annotations = utils.get_annotations(obj)
-        return len(annotations.get('claim', [])) > 0
+        return len(annotations.get("claim", [])) > 0
 
 
 @indexer(Interface)
 def is_geolocated(obj):
     geo_adapter = queryAdapter(obj, IGeoreferenced)
     if geo_adapter:
-        return geo_adapter.geo.get('coordinates') is not None
+        return geo_adapter.geo.get("coordinates") is not None
     return False

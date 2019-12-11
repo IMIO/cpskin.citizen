@@ -13,16 +13,15 @@ from cpskin.citizen import utils
 
 
 class ReturnView(BrowserView):
-
     def __call__(self):
         view_url = self.context.absolute_url()
         form = self.request.form
-        if 'form.button.Confirm' in form:
+        if "form.button.Confirm" in form:
             annotations = utils.get_annotations(self.context)
-            annotations['validation_required'] = False
-            annotations['comment'] = form.get('return_message', u'')
+            annotations["validation_required"] = False
+            annotations["comment"] = form.get("return_message", u"")
             self.context.reindexObject()
             self.request.response.redirect(view_url)
-        elif 'form.button.Cancel' in form:
+        elif "form.button.Cancel" in form:
             self.request.response.redirect(view_url)
         return self.index()

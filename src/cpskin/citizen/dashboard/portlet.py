@@ -35,11 +35,11 @@ class DashboardPortletAssignment(base.Assignment):
     @property
     def title(self):
         """Return the title of the portlet in "manage portlets" screen"""
-        return 'citizen dashboard'
+        return "citizen dashboard"
 
 
 class DashboardPortletRenderer(base.Renderer):
-    render = ViewPageTemplateFile('templates/dashboard-portlet.pt')
+    render = ViewPageTemplateFile("templates/dashboard-portlet.pt")
 
     def update(self, *args, **kwargs):
         super(DashboardPortletRenderer, self).update(*args, **kwargs)
@@ -64,16 +64,18 @@ class DashboardPortletRenderer(base.Renderer):
         return ICitizenContentSubMenu.providedBy(obj)
 
     def get_admin_dashboards(self):
-        return [d for i, d in self.base_folder.contentItems()
-                if IAdminDashboard.providedBy(d)
-                and checkPermission('zope2.View', d)]
+        return [
+            d
+            for i, d in self.base_folder.contentItems()
+            if IAdminDashboard.providedBy(d) and checkPermission("zope2.View", d)
+        ]
 
     def get_citizen_items(self):
         items = []
         for i, d in self.base_folder.contentItems():
             if IAdminDashboard.providedBy(d):
                 continue
-            if not checkPermission('zope2.View', d):
+            if not checkPermission("zope2.View", d):
                 continue
             items.append(d)
         return items
@@ -94,6 +96,5 @@ class DashboardPortletRenderer(base.Renderer):
 
 
 class DashboardPortletAddForm(base.NullAddForm):
-
     def create(self):
         return DashboardPortletAssignment()

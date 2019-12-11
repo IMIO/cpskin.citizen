@@ -22,9 +22,9 @@ class TestCancelView(testing.BaseTestCase):
         logout()
         self._create_checkout()
 
-    def _create_checkout(self, user='citizen'):
+    def _create_checkout(self, user="citizen"):
         login(self.portal, user)
-        view = self.cancel_document.restrictedTraverse('@@content-checkout')
+        view = self.cancel_document.restrictedTraverse("@@content-checkout")
         view.request.form["form.button.Checkout"] = "1"
         view.__call__()
         self.document_draft = self.drafts["cancel-document"]

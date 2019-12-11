@@ -15,7 +15,7 @@ from cpskin.citizen import utils
 
 class DraftFolderLocator(object):
 
-    title = _(u'Citizen draft folder')
+    title = _(u"Citizen draft folder")
 
     def __init__(self, context):
         self.context = context

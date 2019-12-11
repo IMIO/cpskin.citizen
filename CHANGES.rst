@@ -5,7 +5,8 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Blackened
+  [mpeeters]
 
 
 1.2.0 (2019-12-11)

@@ -16,7 +16,6 @@ from zope.intid.interfaces import IIntIds
 
 
 class DiffView(diff.DiffView):
-
     def __init__(self, context, request):
         self.context = context
         self.request = request
@@ -27,15 +26,27 @@ class DiffView(diff.DiffView):
         intids = queryUtility(IIntIds)
         if IBaseline.providedBy(self.context):
             self.baseline = context
-            self.working_copy = catalog.findRelations(
-                dict(from_id=intids.getId(context),
-                     from_attribute=STAGING_RELATION_NAME),
-            ).next().to_object
+            self.working_copy = (
+                catalog.findRelations(
+                    dict(
+                        from_id=intids.getId(context),
+                        from_attribute=STAGING_RELATION_NAME,
+                    )
+                )
+                .next()
+                .to_object
+            )
         elif IWorkingCopy.providedBy(self.context):
             self.working_copy = context
-            self.baseline = catalog.findRelations(
-                dict(to_id=intids.getId(context),
-                     from_attribute=STAGING_RELATION_NAME),
-            ).next().from_object
+            self.baseline = (
+                catalog.findRelations(
+                    dict(
+                        to_id=intids.getId(context),
+                        from_attribute=STAGING_RELATION_NAME,
+                    )
+                )
+                .next()
+                .from_object
+            )
         else:
             raise AttributeError("Invalid Context")

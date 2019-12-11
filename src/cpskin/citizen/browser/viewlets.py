@@ -15,7 +15,6 @@ from cpskin.citizen import utils
 
 
 class CitizenBaseViewlet(base.ViewletBase):
-
     def update(self):
         self.current_user = api.user.get_current()
         if self.can_view:
@@ -27,20 +26,20 @@ class CitizenBaseViewlet(base.ViewletBase):
 
     @property
     def comment(self):
-        return self.annotations.get('comment', None)
+        return self.annotations.get("comment", None)
 
     @property
     def validation_required(self):
-        return self.annotations.get('validation_required', False)
+        return self.annotations.get("validation_required", False)
 
     @property
     def has_claims(self):
-        return len(self.annotations.get('claim', [])) > 0
+        return len(self.annotations.get("claim", [])) > 0
 
     @property
     def awaiting_claims(self):
         claims = []
-        for claim in self.annotations.get('claim', []):
+        for claim in self.annotations.get("claim", []):
             # Backward compatibility
             if isinstance(claim, str):
                 user_id = claim
@@ -49,24 +48,22 @@ class CitizenBaseViewlet(base.ViewletBase):
                 user_id, reason = claim
             user = api.user.get(userid=user_id)
             if user:
-                claims.append({
-                    'id': claim,
-                    'username': user.getProperty('fullname'),
-                    'email': user.getProperty('email'),
-                    'reason': reason,
-                })
+                claims.append(
+                    {
+                        "id": claim,
+                        "username": user.getProperty("fullname"),
+                        "email": user.getProperty("email"),
+                        "reason": reason,
+                    }
+                )
         return claims
 
 
 class CitizenEditionViewlet(CitizenBaseViewlet):
-
     def update(self):
         super(CitizenEditionViewlet, self).update()
         if self.can_view:
-            self.have_claimed = utils.have_claimed(
-                self.current_user,
-                self.context,
-            )
+            self.have_claimed = utils.have_claimed(self.current_user, self.context)
 
     @property
     def can_view(self):
@@ -112,7 +109,6 @@ class CitizenProposeContentViewlet(CitizenBaseViewlet):
 
 
 class CitizenInfoViewlet(CitizenBaseViewlet):
-
     @property
     def can_view(self):
         if api.user.is_anonymous() is True:
@@ -121,6 +117,6 @@ class CitizenInfoViewlet(CitizenBaseViewlet):
 
     @property
     def url(self):
-        return '{0}/citizen-dashboard/'.format(
+        return "{0}/citizen-dashboard/".format(
             api.portal.get_navigation_root(self.context).absolute_url()
         )

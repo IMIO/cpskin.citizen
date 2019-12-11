@@ -27,11 +27,11 @@ class DashboardLocalRoleAdapter(object):
         """Grant permission for principal"""
         if IAdminDashboard.providedBy(self.context) or not self.is_citizen:
             return []
-        return ('Reader', )
+        return ("Reader",)
 
     def getAllRoles(self):
         """Grant permissions"""
         if IAdminDashboard.providedBy(self.context) or not self.is_citizen:
-            yield ('', ('', ))
+            yield ("", ("",))
             raise StopIteration
-        yield ('Citizens', 'Reader')
+        yield ("Citizens", "Reader")

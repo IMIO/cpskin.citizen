@@ -28,9 +28,9 @@ class TestCheckout(testing.BaseTestCase):
         )
         logout()
 
-    def _create_checkout(self, obj, user='citizen'):
+    def _create_checkout(self, obj, user="citizen"):
         login(self.portal, user)
-        view = obj.restrictedTraverse('@@content-checkout')
+        view = obj.restrictedTraverse("@@content-checkout")
         view.request.form["form.button.Checkout"] = "1"
         view.__call__()
         logout()
