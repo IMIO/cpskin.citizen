@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-12-11 15:02+0000\n"
+"POT-Creation-Date: 2019-12-11 15:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,7 +83,7 @@ msgstr "Avant de créer un contenu, veuillez vérifier qu'il n'est pas déjà ex
 msgid "CPSkin Citizen Settings"
 msgstr "CPSkin Citizen Configuration"
 
-#: ../browser/claim.py:57
+#: ../browser/claim.py:56
 #: ../browser/templates/citizen-return-checkout.pt:34
 #: ../browser/templates/citizen-validation-required.pt:23
 msgid "Cancel"
@@ -191,7 +191,7 @@ msgstr "Commentaire"
 msgid "Comment on changes"
 msgstr "Commenter les changements"
 
-#: ../browser/claim.py:39
+#: ../browser/claim.py:38
 #: ../browser/propose.py:46
 #: ../browser/templates/citizen-admin-viewlet.pt:26
 msgid "Confirm"
@@ -229,6 +229,10 @@ msgstr "Editer ce contenu"
 #: ../browser/templates/citizen-return-checkout.pt:17
 msgid "Enter a message for the citizen to specify what changes need to be made."
 msgstr "Veuillez entrer un message pour indiquer au citoyen les changements devant être réalisés"
+
+#: ../browser/claim.py:25
+msgid "Explain briefly why you are asking the management of this content"
+msgstr "Expliquez en quelques mots pourquoi vous demandez la gestion de ce contenu"
 
 #: ../configure.zcml:51
 msgid "Give access to citizen users to specific contents"

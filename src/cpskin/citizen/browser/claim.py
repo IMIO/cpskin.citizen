@@ -22,7 +22,7 @@ from zope.interface import Interface
 
 class ClaimSchema(Interface):
     reason = schema.Text(
-        title=u"Explain briefly why you are asking the management of this content",
+        title=_(u"Explain briefly why you are asking the management of this content"),
         required=True,
     )
 
