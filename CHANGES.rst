@@ -5,7 +5,8 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- WEB-3242: Add a message on propose content view
+  [mpeeters]
 
 
 1.1.0 (2019-12-09)

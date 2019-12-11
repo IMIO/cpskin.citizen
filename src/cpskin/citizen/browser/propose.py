@@ -100,3 +100,9 @@ class ProposeCitizenForm(Form):
 
 class ProposeCitizenView(FormWrapper):
     form = ProposeCitizenForm
+
+    def links(self):
+        """Return the creation folders links"""
+        folders = [utils.get_creation_folder(self.context, self.request, e)
+                   for e in utils.get_allowed_creation_types()]
+        return [{"href": p.absolute_url(), "title": p.Title()} for p in folders]
