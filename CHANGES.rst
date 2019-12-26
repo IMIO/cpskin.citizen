@@ -5,6 +5,9 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
+- WEB-3245: Fix an issue with claim approval form
+  [mpeeters]
+
 - Blackened
   [mpeeters]
 

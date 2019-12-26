@@ -234,3 +234,38 @@ def get_required_fields(portal_type):
             [(k, f) for k, f in field.Fields(schema).items() if f.field.required]
         )
     return fields
+
+
+def iterate_claims(claims):
+    """Backward compatibility method for claims without reason"""
+    for claim in claims:
+        if isinstance(claim, tuple):
+            yield claim
+        else:
+            yield (claim, "")
+
+
+def get_claims(context):
+    annotations = get_annotations(context)
+    if "claim" not in annotations:
+        return []
+    return iterate_claims(annotations["claim"])
+
+
+def add_claim(context, user_id, reason):
+    annotations = get_annotations(context)
+    if "claim" not in annotations:
+        annotations["claim"] = []
+    if user_id not in [e[0] for e in iterate_claims(annotations["claim"])]:
+        annotations["claim"].append((user_id, reason))
+        annotations._p_changed = True
+        context.reindexObject()
+
+
+def remove_claim(context, user_id):
+    annotations = get_annotations(context)
+    annotations["claim"] = [
+        e for e in iterate_claims(annotations["claim"]) if e[0] != user_id
+    ]
+    annotations._p_changed = True
+    context.reindexObject()

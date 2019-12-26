@@ -39,18 +39,14 @@ class CitizenBaseViewlet(base.ViewletBase):
     @property
     def awaiting_claims(self):
         claims = []
-        for claim in self.annotations.get("claim", []):
-            # Backward compatibility
-            if isinstance(claim, str):
-                user_id = claim
-                reason = u""
-            else:
-                user_id, reason = claim
+        for claim in utils.get_claims(self.context):
+            user_id, reason = claim
             user = api.user.get(userid=user_id)
             if user:
                 claims.append(
                     {
                         "id": claim,
+                        "user_id": user_id,
                         "username": user.getProperty("fullname"),
                         "email": user.getProperty("email"),
                         "reason": reason,

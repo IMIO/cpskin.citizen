@@ -44,13 +44,7 @@ class ClaimForm(Form):
             self.status = self.formErrorsMessage
             return
         view_url = self.context.absolute_url()
-        annotations = utils.get_annotations(self.context)
-        if "claim" not in annotations:
-            annotations["claim"] = []
-        if self.current_user.id not in [e[0] for e in annotations["claim"]]:
-            annotations["claim"].append((self.current_user.id, data["reason"]))
-            annotations._p_changed = True
-            self.context.reindexObject()
+        utils.add_claim(self.context, self.current_user.id, data["reason"])
         self.request.response.redirect(view_url)
 
     @button.buttonAndHandler(_(u"Cancel"), name="cancel")
@@ -71,8 +65,7 @@ class ClaimCitizenView(FormWrapper):
 
 class ClaimCitizenApprovalView(BrowserView):
     def __call__(self):
-        annotations = utils.get_annotations(self.context)
-        self.claims = annotations.get("claim", [])
+        self.claims = [e for e in utils.get_claims(self.context)]
         if not self._is_valid_request:
             return
         if self.confirm:
@@ -80,15 +73,16 @@ class ClaimCitizenApprovalView(BrowserView):
                 self.context.citizens = []
             if self.user not in self.context.citizens:
                 self.context.citizens.append(self.user)
-        self.claims.remove(self.user)
-        annotations["claim"] = self.claims
-        annotations._p_changed = True
-        self.context.reindexObject()
+        utils.remove_claim(self.context, self.user)
         self.request.response.redirect(self.context.absolute_url())
 
     @property
+    def _user_claims(self):
+        return [e[0] for e in self.claims]
+
+    @property
     def _is_valid_request(self):
-        return (self.confirm or self.refuse) and self.user in self.claims
+        return (self.confirm or self.refuse) and self.user in self._user_claims
 
     @property
     def confirm(self):

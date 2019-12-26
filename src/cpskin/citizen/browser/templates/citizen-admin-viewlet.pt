@@ -22,7 +22,7 @@
           <input type="hidden"
                  name="userid"
                  value=""
-                 tal:attributes="value claim/id" />
+                 tal:attributes="value claim/user_id" />
           <input type="submit"
                  name="form.button.Confirm"
                  value="Confirm"
