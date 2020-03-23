@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.2.1 (unreleased)
+1.2.1 (2020-03-23)
 ------------------
 
 - WEB-3245: Fix an issue with claim approval form
