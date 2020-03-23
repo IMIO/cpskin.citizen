@@ -4,4 +4,4 @@ include *.rst
 global-exclude *.pyc
 include *.py
 include Makefile
-
+exclude requirements.txt
