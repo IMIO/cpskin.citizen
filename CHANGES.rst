@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.2.2 (unreleased)
+1.2.2 (2020-04-07)
 ------------------
 
 - WEB-2937: Improve cancel view code
