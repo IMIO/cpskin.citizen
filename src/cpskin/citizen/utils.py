@@ -13,6 +13,7 @@ from AccessControl.SecurityManagement import setSecurityManager
 from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
 from persistent.dict import PersistentDict
 from plone import api
+from plone.app.linkintegrity.exceptions import LinkIntegrityNotificationException
 from plone.dexterity import utils
 from plone.registry.interfaces import IRegistry
 from z3c.form import field
@@ -97,7 +98,8 @@ def execute_under_unrestricted_user(portal, function, user, *args, **kwargs):
             newSecurityManager(None, tmp_user)
             # Call the function
             return function(*args, **kwargs)
-
+        except LinkIntegrityNotificationException as e:
+            raise e
         except:  # noqa
             # If special exception handlers are needed, run them here
             pass

@@ -5,7 +5,8 @@ Changelog
 1.2.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- WEB-2937: LinkIntegrity exceptions must be raised to avoid errors with plone.app.iterate
+  [mpeeters]
 
 
 1.2.1 (2020-03-23)
