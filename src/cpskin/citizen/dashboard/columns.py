@@ -12,8 +12,6 @@ from imio.prettylink.interfaces import IPrettyLink
 from collective.eeafaceted.z3ctable.columns import BaseColumn
 from collective.eeafaceted.z3ctable.columns import BaseColumnHeader
 from plone import api
-from plone.app.stagingbehavior.utils import get_baseline
-from plone.app.stagingbehavior.utils import get_working_copy
 from zope.i18n import translate
 
 from cpskin.citizen import _
@@ -38,7 +36,7 @@ class CitizenDraftColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
 
     def renderCell(self, item):
         obj = self._getObject(item)
-        working_copy = get_working_copy(obj)
+        working_copy = utils.get_working_copy(obj)
         if working_copy:
             return self.getPrettyLink(working_copy)
         return self.getPrettyLink(obj)
@@ -64,7 +62,7 @@ class DraftStateColumn(BaseCitizenColumn):
 
     def renderCell(self, item):
         obj = self._getObject(item)
-        working_copy = get_working_copy(obj)
+        working_copy = utils.get_working_copy(obj)
         if working_copy:
             annotations = utils.get_annotations(working_copy)
             if annotations.get("validation_required", False):
@@ -88,7 +86,7 @@ class CitizenStateColumn(BaseCitizenColumn):
 
     def renderCell(self, item):
         obj = self._getObject(item)
-        working_copy = get_working_copy(obj)
+        working_copy = utils.get_working_copy(obj)
         draft = submitted = published = False
         if working_copy:
             annotations = utils.get_annotations(working_copy)
@@ -122,9 +120,9 @@ class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
 
     def renderCell(self, item):
         obj = self._getObject(item)
-        working_copy = get_working_copy(obj)
+        working_copy = utils.get_working_copy(obj)
         try:
-            online_obj = get_baseline(obj)
+            online_obj = utils.get_baseline(obj)
         except KeyError:
             # This append when the original document was deleted
             return self._translate(_(u"Removed"))

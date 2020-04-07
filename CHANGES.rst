@@ -5,6 +5,9 @@ Changelog
 1.2.2 (unreleased)
 ------------------
 
+- Centralized calls to plone.app.stagingbehavior to prepare the migration to Plone 5
+  [mpeeters]
+
 - WEB-2937: LinkIntegrity exceptions must be raised to avoid errors with plone.app.iterate
   [mpeeters]
 

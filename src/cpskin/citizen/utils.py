@@ -14,6 +14,9 @@ from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
 from persistent.dict import PersistentDict
 from plone import api
 from plone.app.linkintegrity.exceptions import LinkIntegrityNotificationException
+from plone.app.stagingbehavior.utils import get_baseline  # noqa API
+from plone.app.stagingbehavior.utils import get_relations  # noqa API
+from plone.app.stagingbehavior.utils import get_working_copy  # noqa API
 from plone.dexterity import utils
 from plone.registry.interfaces import IRegistry
 from z3c.form import field
