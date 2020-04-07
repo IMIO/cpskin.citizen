@@ -28,7 +28,9 @@ class TestVocabularies(testing.BaseTestCase):
     def test_citizen_portal_types_vocabulary(self):
         """Test 'CitizensPortalTypesVocabulary'"""
         voc = self._get_vocabulary_values("cpskin.citizen.portal_types")
-        self.assertListEqual(sorted(["Document", "News Item", "Event"]), sorted(voc))
+        self.assertListEqual(
+            sorted(["Document", "News Item", "Event", "organization"]), sorted(voc)
+        )
 
     def test_citizen_creation_types_vocabulary(self):
         """Test 'CitizensAllowedCreationTypesVocabulary'"""

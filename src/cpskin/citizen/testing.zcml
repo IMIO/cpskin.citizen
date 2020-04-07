@@ -5,6 +5,7 @@
 
   <include file="configure.zcml" />
   <include package="plone.app.contenttypes" />
+  <include package="collective.contact.core" />
 
   <genericsetup:registerProfile
     name="testing"
