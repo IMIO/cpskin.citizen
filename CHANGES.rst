@@ -5,6 +5,9 @@ Changelog
 1.2.2 (unreleased)
 ------------------
 
+- WEB-2937: Improve cancel view code
+  [mpeeters]
+
 - WEB-2937: Add `collective.contact.core` organization content type in tests
   [mpeeters]
 

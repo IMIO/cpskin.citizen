@@ -20,10 +20,13 @@ class CancelCitizenView(Cancel):
             if utils.can_edit(current_user, self.context):
                 return super(CancelCitizenView, self).__call__()
             else:
-                return utils.execute_under_unrestricted_user(
-                    api.portal.get(),
-                    super(CancelCitizenView, self).__call__,
-                    current_user.id,
-                )
+                return self._unrestricted_call(current_user)
         else:
             return super(CancelCitizenView, self).__call__()
+
+    def _unrestricted_call(self, current_user):
+        return utils.execute_under_unrestricted_user(
+            api.portal.get(),
+            super(CancelCitizenView, self).__call__,
+            current_user.id,
+        )
