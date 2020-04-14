@@ -236,7 +236,7 @@ msgstr "Expliquez en quelques mots pourquoi vous demandez la gestion de ce conte
 
 #: ../browser/templates/fix_links.pt:9
 msgid "Fix plone.app.iterate links for citizen contents"
-msgstr ""
+msgstr "Correction des liens de plone.app.iterate pour les contenus citoyens"
 
 #: ../configure.zcml:51
 msgid "Give access to citizen users to specific contents"
@@ -390,7 +390,7 @@ msgstr "Les dossiers ou (par défaut) les nouveaux contenus proposés par les ci
 
 #: ../browser/templates/fix_links.pt:18
 msgid "There was no object with broken link"
-msgstr ""
+msgstr "Il n'existe pas d'objet avec un lien cassé"
 
 #: ../browser/propose.py:34
 #: ../dashboard/columns.py:33
