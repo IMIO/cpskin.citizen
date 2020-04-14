@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-12-11 15:44+0000\n"
+"POT-Creation-Date: 2020-04-14 15:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: cpskin.citizen\n"
 
-#: ../dashboard/columns.py:164
+#: ../dashboard/columns.py:142
 msgid "Actions"
 msgstr ""
 
-#: ../security.py:91
+#: ../security.py:85
 msgid "Add local roles for user {0}"
 msgstr ""
 
-#: ../setuphandlers.py:58
+#: ../setuphandlers.py:60
 msgid "Admin Citizen Claims"
 msgstr ""
 
-#: ../setuphandlers.py:57
+#: ../setuphandlers.py:59
 msgid "Admin Citizen Content"
 msgstr ""
 
@@ -41,11 +41,11 @@ msgstr ""
 msgid "Admin citizen content dashboard"
 msgstr ""
 
-#: ../browser/settings.py:55
+#: ../browser/settings.py:58
 msgid "Allowed content types for creation by citizens (by default all content types are allowed)"
 msgstr ""
 
-#: ../browser/settings.py:44
+#: ../browser/settings.py:48
 msgid "Allowed content types for the claim procedure"
 msgstr ""
 
@@ -69,12 +69,12 @@ msgstr ""
 msgid "Awaiting claims"
 msgstr ""
 
-#: ../dashboard/columns.py:79
+#: ../dashboard/columns.py:71
 msgid "Awaiting for changes"
 msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:20
-#: ../dashboard/columns.py:77
+#: ../dashboard/columns.py:69
 msgid "Awaiting for validation"
 msgstr ""
 
@@ -86,7 +86,7 @@ msgstr ""
 msgid "CPSkin Citizen Settings"
 msgstr ""
 
-#: ../browser/claim.py:56
+#: ../browser/claim.py:50
 #: ../browser/templates/citizen-return-checkout.pt:34
 #: ../browser/templates/citizen-validation-required.pt:23
 msgid "Cancel"
@@ -108,19 +108,19 @@ msgstr ""
 msgid "Citizen Administration"
 msgstr ""
 
-#: ../setuphandlers.py:55
+#: ../setuphandlers.py:56
 msgid "Citizen Claims"
 msgstr ""
 
-#: ../setuphandlers.py:53
+#: ../setuphandlers.py:51
 msgid "Citizen Content"
 msgstr ""
 
-#: ../setuphandlers.py:73
+#: ../setuphandlers.py:75
 msgid "Citizen Dashboard"
 msgstr ""
 
-#: ../setuphandlers.py:64
+#: ../setuphandlers.py:66
 msgid "Citizen Drafts"
 msgstr ""
 
@@ -128,15 +128,15 @@ msgstr ""
 msgid "Citizen Edition"
 msgstr ""
 
-#: ../setuphandlers.py:88
+#: ../setuphandlers.py:91
 msgid "Citizen Map"
 msgstr ""
 
-#: ../dashboard/columns.py:169
+#: ../dashboard/columns.py:147
 msgid "Citizen Users"
 msgstr ""
 
-#: ../behavior.py:29
+#: ../behavior.py:27
 msgid "Citizen access"
 msgstr ""
 
@@ -152,16 +152,16 @@ msgstr ""
 msgid "Citizen draft folder"
 msgstr ""
 
-#: ../setuphandlers.py:104
+#: ../setuphandlers.py:107
 msgid "Citizen propose"
 msgstr ""
 
-#: ../behavior.py:35
+#: ../behavior.py:31
 msgid "Citizens users"
 msgstr ""
 
 #. Default: "Ville"
-#: ../user.py:42
+#: ../user.py:39
 msgid "City"
 msgstr ""
 
@@ -169,7 +169,7 @@ msgstr ""
 msgid "Claim awaiting for approval"
 msgstr ""
 
-#: ../browser/settings.py:43
+#: ../browser/settings.py:47
 msgid "Claim content types"
 msgstr ""
 
@@ -195,16 +195,16 @@ msgid "Comment on changes"
 msgstr ""
 
 #: ../browser/claim.py:38
-#: ../browser/propose.py:46
+#: ../browser/propose.py:43
 #: ../browser/templates/citizen-admin-viewlet.pt:26
 msgid "Confirm"
 msgstr ""
 
-#: ../browser/settings.py:28
+#: ../browser/settings.py:30
 msgid "Content type"
 msgstr ""
 
-#: ../browser/settings.py:54
+#: ../browser/settings.py:57
 msgid "Creation content types"
 msgstr ""
 
@@ -212,11 +212,11 @@ msgstr ""
 msgid "Dashboard Portlet"
 msgstr ""
 
-#: ../browser/settings.py:33
+#: ../browser/settings.py:35
 msgid "Default folder"
 msgstr ""
 
-#: ../dashboard/columns.py:82
+#: ../dashboard/columns.py:74
 #: ../dashboard/templates/actions_panel_citizen.pt:5
 msgid "Draft"
 msgstr ""
@@ -235,6 +235,10 @@ msgstr ""
 
 #: ../browser/claim.py:25
 msgid "Explain briefly why you are asking the management of this content"
+msgstr ""
+
+#: ../browser/templates/fix_links.pt:9
+msgid "Fix plone.app.iterate links for citizen contents"
 msgstr ""
 
 #: ../configure.zcml:51
@@ -258,49 +262,50 @@ msgid "Keep checkout"
 msgstr ""
 
 #. Default: "Latitude"
-#: ../user.py:47
+#: ../user.py:42
 msgid "Latitude"
 msgstr ""
 
 #. Default: "Longitude"
-#: ../user.py:54
+#: ../user.py:50
 msgid "Longitude"
 msgstr ""
 
-#: ../browser/settings.py:66
+#: ../browser/settings.py:70
 msgid "Map view content types"
 msgstr ""
 
+#: ../browser/templates/fix_links.pt:11
 #: ../browser/templates/security_migrator.pt:11
 msgid "Migration result"
 msgstr ""
 
-#: ../dashboard/columns.py:68
+#: ../dashboard/columns.py:60
 msgid "Modification state"
 msgstr ""
 
-#: ../setuphandlers.py:130
+#: ../setuphandlers.py:132
 msgid "My profile"
 msgstr ""
 
-#: ../dashboard/columns.py:153
+#: ../dashboard/columns.py:131
 msgid "No"
 msgstr ""
 
-#: ../dashboard/columns.py:81
+#: ../dashboard/columns.py:73
 msgid "None"
 msgstr ""
 
 #. Default: "Numéro"
-#: ../user.py:32
+#: ../user.py:33
 msgid "Number"
 msgstr ""
 
-#: ../dashboard/columns.py:128
+#: ../dashboard/columns.py:110
 msgid "Online version"
 msgstr ""
 
-#: ../browser/settings.py:34
+#: ../browser/settings.py:36
 msgid "Path to the folder from the navigation root (should not contains the language folder)"
 msgstr ""
 
@@ -313,7 +318,7 @@ msgid "Portal Type"
 msgstr ""
 
 #. Default: "Code postal"
-#: ../user.py:37
+#: ../user.py:36
 msgid "Post Code"
 msgstr ""
 
@@ -321,7 +326,7 @@ msgstr ""
 msgid "Proposal default folders"
 msgstr ""
 
-#: ../dashboard/columns.py:121
+#: ../dashboard/columns.py:105
 msgid "Published"
 msgstr ""
 
@@ -329,11 +334,11 @@ msgstr ""
 msgid "Refuse"
 msgstr ""
 
-#: ../security.py:81
+#: ../security.py:77
 msgid "Remove local roles for user {0}"
 msgstr ""
 
-#: ../dashboard/columns.py:150
+#: ../dashboard/columns.py:128
 msgid "Removed"
 msgstr ""
 
@@ -345,19 +350,19 @@ msgstr ""
 msgid "Return this document to the citizen and ask for changes."
 msgstr ""
 
-#: ../security.py:60
+#: ../security.py:54
 msgid "Role acquisition already disabled"
 msgstr ""
 
-#: ../security.py:65
+#: ../security.py:61
 msgid "Role acquisition already enabled"
 msgstr ""
 
-#: ../security.py:59
+#: ../security.py:53
 msgid "Role acquisition was disabled"
 msgstr ""
 
-#: ../security.py:64
+#: ../security.py:60
 msgid "Role acquisition was enabled"
 msgstr ""
 
@@ -369,11 +374,11 @@ msgstr ""
 msgid "Show citizen dashboards"
 msgstr ""
 
-#: ../dashboard/columns.py:86
+#: ../dashboard/columns.py:78
 msgid "State"
 msgstr ""
 
-#: ../testing.zcml:15
+#: ../testing.zcml:16
 msgid "Steps to ease tests of cpskin.citizen"
 msgstr ""
 
@@ -386,16 +391,20 @@ msgstr ""
 msgid "The folders where (by default) new content proposed by citizens will be created"
 msgstr ""
 
-#: ../browser/propose.py:35
-#: ../dashboard/columns.py:37
+#: ../browser/templates/fix_links.pt:18
+msgid "There was no object with broken link"
+msgstr ""
+
+#: ../browser/propose.py:34
+#: ../dashboard/columns.py:33
 msgid "Title"
 msgstr ""
 
-#: ../browser/settings.py:67
+#: ../browser/settings.py:71
 msgid "Visibled content types for map view for citizens (by default no content types are allowed)"
 msgstr ""
 
-#: ../dashboard/columns.py:156
+#: ../dashboard/columns.py:134
 msgid "Yes"
 msgstr ""
 
@@ -403,7 +412,7 @@ msgstr ""
 msgid "cpskin.citizen"
 msgstr ""
 
-#: ../testing.zcml:15
+#: ../testing.zcml:16
 msgid "cpskin.citizen tests"
 msgstr ""
 
@@ -413,7 +422,7 @@ msgid "description_cancel"
 msgstr ""
 
 #. Default: "Indiquez le nom de votre rue"
-#: ../user.py:48
+#: ../user.py:43
 msgid "help_coordinates_description"
 msgstr ""
 
@@ -422,7 +431,7 @@ msgstr ""
 msgid "help_street_description"
 msgstr ""
 
-#: ../security.py:106
+#: ../security.py:99
 msgid "local roles are correct for user {0}"
 msgstr ""
 
@@ -431,6 +440,6 @@ msgstr ""
 msgid "title_cancel"
 msgstr ""
 
-#: ../security.py:100
+#: ../security.py:93
 msgid "update local roles for user {0}"
 msgstr ""
