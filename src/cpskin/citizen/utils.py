@@ -16,7 +16,7 @@ from plone import api
 from plone.app.linkintegrity.exceptions import LinkIntegrityNotificationException
 from plone.app.stagingbehavior.utils import get_baseline  # noqa API
 from plone.app.stagingbehavior.utils import get_relations  # noqa API
-from plone.app.stagingbehavior.utils import get_working_copy  # noqa API
+from plone.app.stagingbehavior.utils import get_working_copy as get_wc
 from plone.dexterity import utils
 from plone.registry.interfaces import IRegistry
 from z3c.form import field
@@ -274,3 +274,10 @@ def remove_claim(context, user_id):
     ]
     annotations._p_changed = True
     context.reindexObject()
+
+
+def get_working_copy(obj):
+    try:
+        return get_wc(obj)
+    except KeyError:  # This happen if a link is broken
+        return

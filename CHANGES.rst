@@ -5,7 +5,8 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- WEB-2937: Dot not raise an error on citizen dashboard if the link with the draft is broken
+  [mpeeters]
 
 
 1.2.2 (2020-04-07)
