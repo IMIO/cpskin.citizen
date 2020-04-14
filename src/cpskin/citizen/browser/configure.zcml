@@ -88,6 +88,15 @@
     template="templates/security_migrator.pt"
     />
 
+  <browser:page
+    for="*"
+    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+    name="citizen-fix-links"
+    class=".tools.CitizenFixBrokenLinks"
+    permission="cmf.ManagePortal"
+    template="templates/fix_links.pt"
+    />
+
   <!-- viewlets -->
   <browser:viewlet
     name="citizen-edition-viewlet"

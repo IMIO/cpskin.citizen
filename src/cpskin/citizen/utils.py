@@ -20,6 +20,7 @@ from plone.app.stagingbehavior.utils import get_working_copy as get_wc
 from plone.dexterity import utils
 from plone.registry.interfaces import IRegistry
 from z3c.form import field
+from zc.relation.interfaces import ICatalog
 from zope.annotation import IAnnotations
 from zope.component import getMultiAdapter
 from zope.component import getUtility
@@ -274,6 +275,13 @@ def remove_claim(context, user_id):
     ]
     annotations._p_changed = True
     context.reindexObject()
+
+
+def remove_relation(obj):
+    catalog = getUtility(ICatalog)
+    for relation in get_relations(obj):
+        if relation.to_object is None:
+            catalog.unindex(relation)
 
 
 def get_working_copy(obj):

@@ -5,6 +5,9 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+- WEB-2937: Add view for administrator to fix broken links for citizen contents
+  [mpeeters]
+
 - WEB-2937: Dot not raise an error on citizen dashboard if the link with the draft is broken
   [mpeeters]
 
