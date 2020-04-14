@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.2.3 (unreleased)
+1.2.3 (2020-04-14)
 ------------------
 
 - WEB-2937: Add view for administrator to fix broken links for citizen contents
