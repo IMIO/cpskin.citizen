@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-04-14 15:53+0000\n"
+"POT-Creation-Date: 2020-04-22 12:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../dashboard/columns.py:142
+#: ../dashboard/columns.py:170
 msgid "Actions"
 msgstr "Actions"
 
@@ -22,21 +22,17 @@ msgstr "Actions"
 msgid "Add local roles for user {0}"
 msgstr "Ajout des rôles locaux pour l'utilisateur {0}"
 
-#: ../setuphandlers.py:60
-msgid "Admin Citizen Claims"
-msgstr "Administration demandes de gestion"
-
-#: ../setuphandlers.py:59
+#: ../setuphandlers.py:63
 msgid "Admin Citizen Content"
 msgstr "Administration contenus citoyen"
 
 #: ../profiles/default/actions.xml
-msgid "Admin citizen claims dashboard"
-msgstr "Gestions demandées"
-
-#: ../profiles/default/actions.xml
 msgid "Admin citizen content dashboard"
 msgstr "Contenus citoyen"
+
+#: ../vocabularies.py:85
+msgid "Allow management"
+msgstr ""
 
 #: ../browser/settings.py:58
 msgid "Allowed content types for creation by citizens (by default all content types are allowed)"
@@ -66,12 +62,16 @@ msgstr "Demander la validation de ce document enverra une demande aux administra
 msgid "Awaiting claims"
 msgstr "Demande(s) de gestion en attente"
 
-#: ../dashboard/columns.py:71
+#: ../vocabularies.py:86
+msgid "Awaiting for approval"
+msgstr ""
+
+#: ../dashboard/columns.py:65
 msgid "Awaiting for changes"
 msgstr "En attente de modifications"
 
 #: ../browser/templates/citizen-edition-viewlet.pt:20
-#: ../dashboard/columns.py:69
+#: ../dashboard/columns.py:63
 msgid "Awaiting for validation"
 msgstr "Attente de validation"
 
@@ -105,7 +105,7 @@ msgstr "Accès citoyen"
 msgid "Citizen Administration"
 msgstr "Administration Citoyen"
 
-#: ../setuphandlers.py:56
+#: ../setuphandlers.py:57
 msgid "Citizen Claims"
 msgstr "Gestion demandée"
 
@@ -113,11 +113,11 @@ msgstr "Gestion demandée"
 msgid "Citizen Content"
 msgstr "Voir, éditer mes contenus"
 
-#: ../setuphandlers.py:75
+#: ../setuphandlers.py:81
 msgid "Citizen Dashboard"
 msgstr "Mon compte"
 
-#: ../setuphandlers.py:66
+#: ../setuphandlers.py:72
 msgid "Citizen Drafts"
 msgstr "Brouillons citoyens"
 
@@ -125,11 +125,11 @@ msgstr "Brouillons citoyens"
 msgid "Citizen Edition"
 msgstr "Accès Citoyen"
 
-#: ../setuphandlers.py:91
+#: ../setuphandlers.py:97
 msgid "Citizen Map"
 msgstr "Près de chez moi"
 
-#: ../dashboard/columns.py:147
+#: ../dashboard/columns.py:139
 msgid "Citizen Users"
 msgstr "Utilisateurs citoyens"
 
@@ -149,7 +149,7 @@ msgstr ""
 msgid "Citizen draft folder"
 msgstr "Dossier de brouillons"
 
-#: ../setuphandlers.py:107
+#: ../setuphandlers.py:113
 msgid "Citizen propose"
 msgstr "Créer un nouveau contenu"
 
@@ -213,7 +213,7 @@ msgstr "Portlet pour les tableaux de bords"
 msgid "Default folder"
 msgstr "Dossier par défaut"
 
-#: ../dashboard/columns.py:74
+#: ../dashboard/columns.py:68
 #: ../dashboard/templates/actions_panel_citizen.pt:5
 msgid "Draft"
 msgstr "Brouillon"
@@ -263,6 +263,10 @@ msgstr "Garder le brouillon"
 msgid "Latitude"
 msgstr ""
 
+#: ../browser/settings.py:85
+msgid "List of object states that can be assimilate to published"
+msgstr ""
+
 #. Default: "Longitude"
 #: ../user.py:50
 msgid "Longitude"
@@ -277,19 +281,19 @@ msgstr "Types de contenu pour la vue cartographique"
 msgid "Migration result"
 msgstr "Résultats de la migration"
 
-#: ../dashboard/columns.py:60
+#: ../dashboard/columns.py:54
 msgid "Modification state"
 msgstr "Etat des modifications"
 
-#: ../setuphandlers.py:132
+#: ../setuphandlers.py:140
 msgid "My profile"
 msgstr "Mon profil"
 
-#: ../dashboard/columns.py:131
+#: ../dashboard/columns.py:134
 msgid "No"
 msgstr "Non"
 
-#: ../dashboard/columns.py:73
+#: ../dashboard/columns.py:67
 msgid "None"
 msgstr "Aucune"
 
@@ -298,7 +302,7 @@ msgstr "Aucune"
 msgid "Number"
 msgstr ""
 
-#: ../dashboard/columns.py:110
+#: ../dashboard/columns.py:100
 msgid "Online version"
 msgstr "Version en ligne"
 
@@ -323,9 +327,13 @@ msgstr ""
 msgid "Proposal default folders"
 msgstr "Dossiers par défauts pour les proposition citoyennes"
 
-#: ../dashboard/columns.py:105
+#: ../dashboard/columns.py:95
 msgid "Published"
 msgstr "Public"
+
+#: ../browser/settings.py:84
+msgid "Published states"
+msgstr ""
 
 #: ../browser/templates/citizen-admin-viewlet.pt:30
 msgid "Refuse"
@@ -335,7 +343,7 @@ msgstr "Refuser"
 msgid "Remove local roles for user {0}"
 msgstr "Supprime les rôles locaux pour l'utilisateur {0}"
 
-#: ../dashboard/columns.py:128
+#: ../dashboard/columns.py:124
 msgid "Removed"
 msgstr "Supprimé"
 
@@ -371,7 +379,7 @@ msgstr "Résultats de la migration de la sécurité"
 msgid "Show citizen dashboards"
 msgstr "Affiche les tableaux de bords pour les citoyens"
 
-#: ../dashboard/columns.py:78
+#: ../dashboard/columns.py:72
 msgid "State"
 msgstr "Etat"
 
@@ -393,7 +401,7 @@ msgid "There was no object with broken link"
 msgstr "Il n'existe pas d'objet avec un lien cassé"
 
 #: ../browser/propose.py:34
-#: ../dashboard/columns.py:33
+#: ../dashboard/columns.py:35
 msgid "Title"
 msgstr "Titre"
 
@@ -401,7 +409,7 @@ msgstr "Titre"
 msgid "Visibled content types for map view for citizens (by default no content types are allowed)"
 msgstr "Types de contenu visibles pour la vue cartographique des citoyens (par défaut aucun type de contenu n'est autorisé)"
 
-#: ../dashboard/columns.py:134
+#: ../dashboard/columns.py:131
 msgid "Yes"
 msgstr "Oui"
 
@@ -431,6 +439,10 @@ msgstr ""
 #: ../security.py:99
 msgid "local roles are correct for user {0}"
 msgstr "Les rôles locaux sont corrects pour l'utilisateur {0}"
+
+#: ../browser/settings.py:87
+msgid "states"
+msgstr ""
 
 #. Default: "Cancel modifications of ${object_title}."
 #: ../browser/templates/citizen-cancel.pt:9
