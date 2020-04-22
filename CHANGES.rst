@@ -5,6 +5,9 @@ Changelog
 1.2.4 (unreleased)
 ------------------
 
+- WEB-3301: Add `is_citizen_content` and `citizen_action` indexes
+  [mpeeters]
+
 - WEB-3301: Adapt "state" column on citizen dashboard to display only the current state
   [mpeeters]
 

@@ -29,4 +29,14 @@
     <indexed_attr value="is_geolocated"/>
   </index>
   <column value="is_geolocated"/>
+
+  <index name="is_citizen_content" meta_type="BooleanIndex">
+    <indexed_attr value="is_citizen_content"/>
+  </index>
+  <column value="is_citizen_content"/>
+
+  <index name="citizen_action" meta_type="KeywordIndex">
+    <indexed_attr value="citizen_action"/>
+  </index>
+  <column value="citizen_action"/>
 </object>

@@ -8,7 +8,8 @@ Created by mpeeters
 """
 
 from collective.geo.geographer.interfaces import IGeoreferenced
-from plone.app.stagingbehavior.utils import get_working_copy
+from cpskin.citizen.utils import get_working_copy
+from cpskin.citizen.utils import get_baseline
 from plone.indexer import indexer
 from zope.component import queryAdapter
 from zope.interface import Interface
@@ -25,10 +26,7 @@ def citizens_indexer(obj):
 
 @indexer(ICitizenAccess)
 def validation_required_indexer(obj):
-    if obj == get_working_copy(obj):
-        annotations = utils.get_annotations(obj)
-        return annotations.get("validation_required", False)
-    return False
+    return utils.validation_required(obj)
 
 
 @indexer(ICitizenAccess)
@@ -44,9 +42,7 @@ def is_draft(obj):
 
 @indexer(ICitizenAccess)
 def has_claim(obj):
-    if obj != get_working_copy(obj):
-        annotations = utils.get_annotations(obj)
-        return len(annotations.get("claim", [])) > 0
+    return utils.has_claim(obj)
 
 
 @indexer(Interface)
@@ -55,3 +51,25 @@ def is_geolocated(obj):
     if geo_adapter:
         return geo_adapter.geo.get("coordinates") is not None
     return False
+
+
+@indexer(ICitizenAccess)
+def is_citizen_content(obj):
+    if obj != get_working_copy(obj) and obj.citizens:
+        return True
+    try:
+        baseline = get_baseline(obj)
+        if getattr(baseline, "citizens", None):
+            return True
+    except KeyError:
+        # This happen when a link is broken
+        pass
+    return utils.has_claim(obj)
+
+
+@indexer(ICitizenAccess)
+def citizen_action(obj):
+    if utils.has_claim(obj) is True:
+        return "allow-management"
+    if utils.validation_required(obj) is True:
+        return "awaiting-for-approval"

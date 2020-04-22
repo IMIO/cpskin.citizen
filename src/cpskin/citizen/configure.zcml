@@ -87,6 +87,16 @@
     />
 
   <adapter
+    name="is_citizen_content"
+    factory=".indexers.is_citizen_content"
+    />
+
+  <adapter
+    name="citizen_action"
+    factory=".indexers.citizen_action"
+    />
+
+  <adapter
     for="zope.interface.Interface
          zope.interface.Interface"
     provides=".interfaces.ICitizenCreationFolder"

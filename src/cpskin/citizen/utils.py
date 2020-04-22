@@ -289,3 +289,19 @@ def get_working_copy(obj):
         return get_wc(obj)
     except KeyError:  # This happen if a link is broken
         return
+
+
+def has_claim(obj):
+    """Check if the given object has awaiting claims"""
+    if obj != get_working_copy(obj):
+        annotations = get_annotations(obj)
+        return len(annotations.get("claim", [])) > 0
+    return False
+
+
+def validation_required(obj):
+    """Check if the given object is awaiting for validation"""
+    if obj == get_working_copy(obj):
+        annotations = get_annotations(obj)
+        return annotations.get("validation_required", False)
+    return False
