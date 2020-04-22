@@ -5,7 +5,8 @@ Changelog
 1.2.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- WEB-3301: Fix "online" column value for citizens by adding a new config parameter that define which workflow states are egal to "online"
+  [mpeeters]
 
 
 1.2.3 (2020-04-14)

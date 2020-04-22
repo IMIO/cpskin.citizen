@@ -118,23 +118,30 @@ class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
         pl.notViewableHelpMessage = ""
         return pl.getLink()
 
+    @property
+    def published_states(self):
+        if not hasattr(self, "_published_states"):
+            settings = utils.get_settings()
+            self.table._published_states = settings.published_states
+        return self.table._published_states
+
     def renderCell(self, item):
         obj = self._getObject(item)
-        working_copy = utils.get_working_copy(obj)
         try:
             online_obj = utils.get_baseline(obj)
         except KeyError:
             # This append when the original document was deleted
             return self._translate(_(u"Removed"))
-        if working_copy:
-            self.params["isViewable"] = False
-            self.params["contentValue"] = self._translate(_(u"No"))
-        else:
-            self.params["isViewable"] = True
-            self.params["contentValue"] = self._translate(_(u"Yes"))
         if not online_obj:
             # special case where content was assigned by admin without edit
             online_obj = obj
+        current_state = api.content.get_state(online_obj)
+        if current_state in self.published_states:
+            self.params["isViewable"] = True
+            self.params["contentValue"] = self._translate(_(u"Yes"))
+        else:
+            self.params["isViewable"] = False
+            self.params["contentValue"] = self._translate(_(u"No"))
         return self.getPrettyLink(online_obj)
 
 

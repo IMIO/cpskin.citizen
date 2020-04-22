@@ -79,6 +79,17 @@ class ISettings(Interface):
         required=False,
     )
 
+    form.widget(creation_types=MultiSelect2FieldWidget)
+    published_states = schema.List(
+        title=_(u"Published states"),
+        description=_(u"List of object states that can be assimilate to published"),
+        value_type=schema.Choice(
+            title=_(u"states"),
+            vocabulary="plone.app.vocabularies.WorkflowStates",
+        ),
+        required=False,
+    )
+
 
 class SettingsEditForm(RegistryEditForm):
     schema = ISettings
