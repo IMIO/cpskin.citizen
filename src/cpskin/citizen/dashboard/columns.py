@@ -78,32 +78,28 @@ class CitizenStateColumn(BaseCitizenColumn):
     header = _(u"State")
     weight = 20
 
-    def state(self, title, selected=False):
-        html = """<div class="line-state {0}">{1}</div>""".format(
-            selected and "active" or "", title
-        )
-        return html
+    @property
+    def published_states(self):
+        if not hasattr(self, "_published_states"):
+            settings = utils.get_settings()
+            self.table._published_states = settings.published_states
+        return self.table._published_states
 
     def renderCell(self, item):
         obj = self._getObject(item)
         working_copy = utils.get_working_copy(obj)
-        draft = submitted = published = False
         if working_copy:
             annotations = utils.get_annotations(working_copy)
             if annotations.get("validation_required", False):
-                submitted = True
+                return self._translate(_(u"Awaiting for validation"))
             if annotations.get("comment", None):
                 # XXX doit-on refléter que des changements sont attendus ?
-                submitted = True
+                return self._translate(_(u"Awaiting for validation"))
         else:
-            published = True
-        if not submitted and not published:
-            draft = True
-        return "{}{}{}".format(
-            self.state(self._translate(_(u"Draft")), draft),
-            self.state(self._translate(_(u"Awaiting for validation")), submitted),
-            self.state(self._translate(_(u"Published")), published),
-        )
+            current_state = api.content.get_state(obj)
+            if current_state in self.published_states:
+                return self._translate(_(u"Published"))
+        return self._translate(_(u"Draft"))
 
 
 class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
