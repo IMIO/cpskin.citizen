@@ -21,4 +21,10 @@
     provides="zope.schema.interfaces.IVocabularyFactory"
     />
 
+  <utility
+    component=".vocabularies.CitizensActionsVocabulary"
+    name="cpskin.citizen.actions"
+    provides="zope.schema.interfaces.IVocabularyFactory"
+    />
+
 </configure>

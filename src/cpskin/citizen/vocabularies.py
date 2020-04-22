@@ -77,3 +77,14 @@ class CitizensAllowedCreationTypesVocabularyFactory(object):
 
 
 CitizensAllowedCreationTypesVocabulary = CitizensAllowedCreationTypesVocabularyFactory()
+
+
+class CitizensActionsVocabularyFactory(object):
+    def __call__(self, context):
+        return utils.dict_2_vocabulary({
+            u"allow-management": _(u"Allow management"),
+            u"awaiting-for-approval": _(u"Awaiting for approval"),
+        })
+
+
+CitizensActionsVocabulary = CitizensActionsVocabularyFactory()
