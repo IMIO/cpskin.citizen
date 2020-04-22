@@ -12,4 +12,23 @@
       profile="cpskin.citizen:default"
       />
 
+  <genericsetup:upgradeStep
+    title="Published states parameter / new indexes"
+    description="Add published states config parameter and the default value,
+                 is_citizen_content index and citizen_action index"
+    source="1001"
+    destination="1002"
+    handler=".upgradehandlers.upgrade_to_1002"
+    profile="cpskin.citizen:default"
+    />
+
+  <genericsetup:upgradeStep
+    title="Upgrade citizen admin dashboards"
+    description="Remove claims dashboard and add a new filter for citizen content dashboard"
+    source="1002"
+    destination="1003"
+    handler=".upgradehandlers.upgrade_to_1003"
+    profile="cpskin.citizen:default"
+    />
+
 </configure>
