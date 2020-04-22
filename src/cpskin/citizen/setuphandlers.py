@@ -50,16 +50,19 @@ def post_install(context):
             u"citizen-content",
             _(u"Citizen Content"),
             (ICitizenDashboard, ICitizenMyContent, ICitizenContentSubMenu),
+            "dashboard/faceted_config.xml",
         ),
         (
             u"citizen-claims",
             _(u"Citizen Claims"),
             (ICitizenDashboard, ICitizenContentSubMenu),
+            "dashboard/faceted_config.xml",
         ),
         (
             u"admin-content",
             _(u"Admin Citizen Content"),
             (IAdminDashboard,),
+            "dashboard/faceted_admin_config.xml",
         ),
     )
     for folder, lng in lrfs:
@@ -115,7 +118,7 @@ def post_install(context):
         alsoProvides(dashboard_folder[id], ICitizenProposeContentFolder)
         alsoProvides(dashboard_folder[id], ICitizenContentSubMenu)
 
-        for id, title, interfaces in dashboards:
+        for id, title, interfaces, template in dashboards:
             if id not in dashboard_folder:
                 api.content.create(
                     type="Folder",
@@ -124,7 +127,9 @@ def post_install(context):
                     container=dashboard_folder,
                     exclude_from_nav=True,
                 )
-                setup_faceted_dashboard_config(dashboard_folder[id], interfaces)
+                setup_faceted_dashboard_config(
+                    dashboard_folder[id], interfaces, config_path=template
+                )
 
         id = u"my-profile"
         if id not in dashboard_folder:

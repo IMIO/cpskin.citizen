@@ -5,6 +5,9 @@ Changelog
 1.2.4 (unreleased)
 ------------------
 
+- WEB-3301: Add a new filter on action for admin dashboard
+  [mpeeters]
+
 - WEB-3301: Merge admin dashboards into a single dashboard with all contents even contents where no action is required
   [mpeeters]
 
