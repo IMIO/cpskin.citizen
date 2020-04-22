@@ -7,12 +7,14 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
-from imio.dashboard import columns
-from imio.prettylink.interfaces import IPrettyLink
 from collective.eeafaceted.z3ctable.columns import BaseColumn
 from collective.eeafaceted.z3ctable.columns import BaseColumnHeader
+from imio.dashboard import columns
+from imio.prettylink.interfaces import IPrettyLink
 from plone import api
+from zope.component import getUtility
 from zope.i18n import translate
+from zope.schema.interfaces import IVocabularyFactory
 
 from cpskin.citizen import _
 from cpskin.citizen import utils
@@ -46,14 +48,6 @@ class CitizenTitleColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
     header = _(u"Title")
     weight = 5
     params = {"target": "_blank"}
-
-
-class CitizenTitleNoLinkColumn(BaseCitizenColumn):
-    header = _(u"Title")
-    weight = 5
-
-    def renderCell(self, item):
-        return item.Title.decode("utf8")
 
 
 class DraftStateColumn(BaseCitizenColumn):
@@ -141,17 +135,25 @@ class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
         return self.getPrettyLink(online_obj)
 
 
-class ActionsColumn(columns.ActionsColumn):
-    header = _(u"Actions")
-    weight = 100
-
-
-class CitizenClaimingUsersColumn(BaseCitizenColumn):
+class CitizenUsersColumn(BaseCitizenColumn):
     header = _(u"Citizen Users")
     weight = 20
 
     def renderCell(self, item):
         obj = self._getObject(item)
+        existing_users = self._get_existing_users(obj)
+        claimed_users = self._get_claimed_users(obj)
+        if not existing_users:
+            return claimed_users
+        if not claimed_users:
+            return existing_users
+        return u"{0} / {1}".format(existing_users, claimed_users)
+
+    def _get_existing_users(self, obj):
+        if getattr(obj, "citizens", None):
+            return u", ".join(obj.citizens)
+
+    def _get_claimed_users(self, obj):
         claims = []
         annotations = utils.get_annotations(obj)
         for claim in annotations.get("claim", []):
@@ -159,4 +161,22 @@ class CitizenClaimingUsersColumn(BaseCitizenColumn):
             if user:
                 claims.append(user.getProperty("fullname"))
         claims.sort()
-        return u", ".join([e.decode("utf8") for e in claims])
+        return u", ".join(
+            [u"<span class='claim'>{}</span>".format(e.decode("utf8")) for e in claims]
+        )
+
+
+class ActionsColumn(BaseCitizenColumn):
+    header = _(u"Actions")
+    weight = 100
+
+    def _get_vocabulary_value(self, item):
+        if not hasattr(self, "_vocabulary"):
+            factory = getUtility(IVocabularyFactory, 'cpskin.citizen.actions')
+            self._vocabulary = factory(item)
+        if not item.citizen_action:
+            return self._translate(_(u"None"))
+        return self._vocabulary.getTerm(item.citizen_action).title
+
+    def renderCell(self, item):
+        return self._get_vocabulary_value(item)

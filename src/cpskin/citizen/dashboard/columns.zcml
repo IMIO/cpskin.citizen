@@ -55,20 +55,20 @@
 
   <!-- admin content -->
   <adapter
-    name="citizen-title-no-link-column"
+    name="citizen-title-column"
     for="zope.interface.Interface
          zope.interface.Interface
          .interfaces.IFacetedDashboardAdminContentTable"
-    factory=".columns.CitizenTitleNoLinkColumn"
+    factory=".columns.CitizenTitleColumn"
     provides="z3c.table.interfaces.IColumn"
     />
 
   <adapter
-    name="draft-state-column"
+    name="citizen-users-column"
     for="zope.interface.Interface
          zope.interface.Interface
          .interfaces.IFacetedDashboardAdminContentTable"
-    factory=".columns.DraftStateColumn"
+    factory=".columns.CitizenUsersColumn"
     provides="z3c.table.interfaces.IColumn"
     />
 
@@ -91,13 +91,5 @@
     provides="z3c.table.interfaces.IColumn"
     />
 
-  <adapter
-    name="citizen-claiming-users-column"
-    for="zope.interface.Interface
-         zope.interface.Interface
-         .interfaces.IFacetedDashboardAdminClaimTable"
-    factory=".columns.CitizenClaimingUsersColumn"
-    provides="z3c.table.interfaces.IColumn"
-    />
 
 </configure>

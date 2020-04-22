@@ -5,6 +5,9 @@ Changelog
 1.2.4 (unreleased)
 ------------------
 
+- WEB-3301: Merge admin dashboards into a single dashboard with all contents even contents where no action is required
+  [mpeeters]
+
 - WEB-3301: Add `cpskin.citizen.actions` vocabulary to list actions for citizen content
   [mpeeters]
 

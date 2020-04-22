@@ -22,18 +22,12 @@ class DefaultQueryFilters(object):
         return query
 
 
-class AdminContentQueryFilters(DefaultQueryFilters):
-    def apply_filters(self, query):
-        query = super(AdminContentQueryFilters, self).apply_filters(query)
-        query["is_draft"] = True
-        query["validation_required"] = True
-        return query
+class AdminContentQueryFilters(object):
+    implements(ICitizenDashboardQuery)
 
-
-class AdminClaimQueryFilters(DefaultQueryFilters):
     def apply_filters(self, query):
-        query = super(AdminClaimQueryFilters, self).apply_filters(query)
-        query["has_claim"] = True
+        query["object_provides"] = u"cpskin.citizen.behavior.ICitizenAccess"
+        query["is_citizen_content"] = True
         return query
 
 

@@ -56,8 +56,11 @@ def post_install(context):
             _(u"Citizen Claims"),
             (ICitizenDashboard, ICitizenContentSubMenu),
         ),
-        (u"admin-content", _(u"Admin Citizen Content"), (IAdminDashboard,)),
-        (u"admin-claims", _(u"Admin Citizen Claims"), (IAdminDashboard,)),
+        (
+            u"admin-content",
+            _(u"Admin Citizen Content"),
+            (IAdminDashboard,),
+        ),
     )
     for folder, lng in lrfs:
         if u"citizen-drafts" not in folder:

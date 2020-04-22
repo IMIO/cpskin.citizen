@@ -64,14 +64,6 @@
     permission="cpskin.AdminCitizenContent"
     />
 
-  <browser:page
-    name="admin-claims-table-view"
-    class=".view.AdminClaimTableView"
-    for="plone.dexterity.interfaces.IDexterityContainer"
-    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
-    permission="cpskin.AdminCitizenContent"
-    />
-
   <configure package="imio.actionspanel.browser">
 
     <browser:page
@@ -122,12 +114,6 @@
     name="admin-content"
     />
 
-  <utility
-    provides=".interfaces.ICitizenDashboardQuery"
-    factory=".utility.AdminClaimQueryFilters"
-    name="admin-claims"
-    />
-
   <!-- adapter -->
 
   <adapter
@@ -152,8 +138,5 @@
     renderer=".portlet.DashboardPortletRenderer"
     addview=".portlet.DashboardPortletAddForm"
     />
-
-
-
 
 </configure>
