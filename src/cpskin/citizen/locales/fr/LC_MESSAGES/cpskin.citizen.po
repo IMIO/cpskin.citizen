@@ -32,7 +32,7 @@ msgstr "Contenus citoyen"
 
 #: ../vocabularies.py:85
 msgid "Allow management"
-msgstr ""
+msgstr "Accorder la gestion"
 
 #: ../browser/settings.py:58
 msgid "Allowed content types for creation by citizens (by default all content types are allowed)"
@@ -64,7 +64,7 @@ msgstr "Demande(s) de gestion en attente"
 
 #: ../vocabularies.py:86
 msgid "Awaiting for approval"
-msgstr ""
+msgstr "Valider le contenu"
 
 #: ../dashboard/columns.py:65
 msgid "Awaiting for changes"
@@ -265,7 +265,7 @@ msgstr ""
 
 #: ../browser/settings.py:85
 msgid "List of object states that can be assimilate to published"
-msgstr ""
+msgstr "Liste des états qui sont assimiliés à publié"
 
 #. Default: "Longitude"
 #: ../user.py:50
@@ -333,7 +333,7 @@ msgstr "Public"
 
 #: ../browser/settings.py:84
 msgid "Published states"
-msgstr ""
+msgstr "Etats publié"
 
 #: ../browser/templates/citizen-admin-viewlet.pt:30
 msgid "Refuse"
