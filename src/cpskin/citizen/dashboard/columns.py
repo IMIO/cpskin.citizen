@@ -176,7 +176,7 @@ class ActionsColumn(BaseCitizenColumn):
             self._vocabulary = factory(item)
         if not item.citizen_action:
             return self._translate(_(u"None"))
-        return self._vocabulary.getTerm(item.citizen_action).title
+        return self._translate(self._vocabulary.getTerm(item.citizen_action).title)
 
     def renderCell(self, item):
         return self._get_vocabulary_value(item)
