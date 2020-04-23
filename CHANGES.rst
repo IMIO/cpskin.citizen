@@ -5,6 +5,9 @@ Changelog
 1.2.4 (unreleased)
 ------------------
 
+- WEB-3301: Set the default value for action filter to "Awaiting for approval"
+  [mpeeters]
+
 - WEB-3301: Add a new filter on action for admin dashboard
   [mpeeters]
 

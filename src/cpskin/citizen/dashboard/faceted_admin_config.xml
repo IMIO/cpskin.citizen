@@ -71,7 +71,7 @@
    <property name="hidealloption">0</property>
    <property name="maxitems"></property>
    <property name="sortreversed">0</property>
-   <property name="default"></property>
+   <property name="default">awaiting-for-approval</property>
   </criterion>
 
  </criteria>
