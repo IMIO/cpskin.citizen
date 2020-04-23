@@ -329,7 +329,7 @@ msgstr "Dossiers par défauts pour les proposition citoyennes"
 
 #: ../dashboard/columns.py:107
 msgid "Published"
-msgstr "Public"
+msgstr "En ligne"
 
 #: ../browser/settings.py:84
 msgid "Published states"
@@ -394,11 +394,11 @@ msgstr ""
 
 #: ../dashboard/columns.py:108
 msgid "The document is published and visible to visitors"
-msgstr ""
+msgstr "Le document est publié donc en ligne et visible par les internautes"
 
 #: ../dashboard/columns.py:95
 msgid "The draft was submitted to administrator for approval"
-msgstr ""
+msgstr "Le brouillon a été soumis  à l'administrateur du site pour être validé et mis en ligne"
 
 #: ../browser/settings.py:25
 msgid "The folders where (by default) new content proposed by citizens will be created"
@@ -423,7 +423,7 @@ msgstr "Oui"
 
 #: ../dashboard/columns.py:112
 msgid "You are working on a new version of the document that are not yet published"
-msgstr ""
+msgstr "Vous travaillez sur la nouvelle version d'un document qui n'est pas encore en ligne"
 
 #: ../configure.zcml:35
 msgid "cpskin.citizen"
