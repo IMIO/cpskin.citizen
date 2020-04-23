@@ -79,21 +79,41 @@ class CitizenStateColumn(BaseCitizenColumn):
             self.table._published_states = settings.published_states
         return self.table._published_states
 
+    def _render_state(self, state, help_msg):
+        return "{state} <span class='wf-info' title='{help_msg}'>?</span>".format(
+            state=self._translate(state), help_msg=self._translate(help_msg)
+        )
+
     def renderCell(self, item):
         obj = self._getObject(item)
         working_copy = utils.get_working_copy(obj)
         if working_copy:
             annotations = utils.get_annotations(working_copy)
             if annotations.get("validation_required", False):
-                return self._translate(_(u"Awaiting for validation"))
+                return self._render_state(
+                    _(u"Awaiting for validation"),
+                    _("The draft was submitted to administrator for approval"),
+                )
             if annotations.get("comment", None):
                 # XXX doit-on refléter que des changements sont attendus ?
-                return self._translate(_(u"Awaiting for validation"))
+                return self._render_state(
+                    _(u"Awaiting for validation"),
+                    _("The draft was submitted to administrator for approval"),
+                )
         else:
             current_state = api.content.get_state(obj)
             if current_state in self.published_states:
-                return self._translate(_(u"Published"))
-        return self._translate(_(u"Draft"))
+                return self._render_state(
+                    _(u"Published"),
+                    _("The document is published and visible to visitors"),
+                )
+        return self._render_state(
+            _(u"Draft"),
+            _(
+                "You are working on a new version of the document that are not "
+                "yet published"
+            ),
+        )
 
 
 class OnlineColumn(columns.PrettyLinkColumn, BaseCitizenColumn):
@@ -147,7 +167,9 @@ class CitizenUsersColumn(BaseCitizenColumn):
             return claimed_users
         if not claimed_users:
             return existing_users
-        return u"{0} / {1}".format(existing_users, claimed_users)
+        return u"{claimed_users} ({existing_users})".format(
+            existing_users=existing_users, claimed_users=claimed_users
+        )
 
     def _get_existing_users(self, obj):
         if getattr(obj, "citizens", None):
@@ -172,7 +194,7 @@ class ActionsColumn(BaseCitizenColumn):
 
     def _get_vocabulary_value(self, item):
         if not hasattr(self, "_vocabulary"):
-            factory = getUtility(IVocabularyFactory, 'cpskin.citizen.actions')
+            factory = getUtility(IVocabularyFactory, "cpskin.citizen.actions")
             self._vocabulary = factory(item)
         if not item.citizen_action:
             return self._translate(_(u"None"))
