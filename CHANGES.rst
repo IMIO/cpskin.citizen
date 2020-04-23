@@ -20,7 +20,7 @@ Changelog
 - WEB-3301: Adapt "state" column on citizen dashboard to display only the current state
   [mpeeters]
 
-- WEB-3301: Fix "online" column value for citizens by adding a new config parameter that define which workflow states are egal to "online"
+- WEB-3301: Fix "online" column value for citizens by adding a new config parameter that define which workflow states are equal to "online"
   [mpeeters]
 
 
