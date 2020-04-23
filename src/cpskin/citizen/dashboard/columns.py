@@ -80,7 +80,7 @@ class CitizenStateColumn(BaseCitizenColumn):
         return self.table._published_states
 
     def _render_state(self, state, help_msg):
-        return "{state} <span class='wf-info' title='{help_msg}'>?</span>".format(
+        return u'{state} <span class="wf-info" title="{help_msg}">?</span>'.format(
             state=self._translate(state), help_msg=self._translate(help_msg)
         )
 

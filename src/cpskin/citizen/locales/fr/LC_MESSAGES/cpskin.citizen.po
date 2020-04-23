@@ -398,7 +398,7 @@ msgstr "Le document est publié donc en ligne et visible par les internautes"
 
 #: ../dashboard/columns.py:95
 msgid "The draft was submitted to administrator for approval"
-msgstr "Le brouillon a été soumis  à l'administrateur du site pour être validé et mis en ligne"
+msgstr "Le brouillon a été soumis à l'administrateur du site pour être validé et mis en ligne"
 
 #: ../browser/settings.py:25
 msgid "The folders where (by default) new content proposed by citizens will be created"
