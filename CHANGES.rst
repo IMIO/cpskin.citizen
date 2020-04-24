@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.2.4 (unreleased)
+1.3.0 (2020-04-24)
 ------------------
 
 - WEB-3301: Set the default value for action filter to "Awaiting for approval"
