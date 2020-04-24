@@ -8,14 +8,14 @@ Created by mpeeters
 """
 
 from collective.geo.geographer.interfaces import IGeoreferenced
-from cpskin.citizen.utils import get_working_copy
+from cpskin.citizen import utils
+from cpskin.citizen.behavior import ICitizenAccess
 from cpskin.citizen.utils import get_baseline
+from cpskin.citizen.utils import get_working_copy
+from plone.app.iterate.interfaces import IWorkingCopy
 from plone.indexer import indexer
 from zope.component import queryAdapter
 from zope.interface import Interface
-
-from cpskin.citizen import utils
-from cpskin.citizen.behavior import ICitizenAccess
 
 
 @indexer(ICitizenAccess)
@@ -37,7 +37,7 @@ def citizen_claim_indexer(obj):
 
 @indexer(ICitizenAccess)
 def is_draft(obj):
-    return obj == get_working_copy(obj)
+    return IWorkingCopy.providedBy(obj)
 
 
 @indexer(ICitizenAccess)
