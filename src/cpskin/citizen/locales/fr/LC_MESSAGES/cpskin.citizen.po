@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-04-23 14:29+0000\n"
+"POT-Creation-Date: 2020-05-20 15:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,6 +13,14 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+
+#: ../notification.py:149
+msgid "<a href=\"{link}\" alt=\"{title}\">A new access request</a> from {name} for a citizen content is awaiting for approval"
+msgstr ""
+
+#: ../notification.py:120
+msgid "<a href=\"{link}\" alt=\"{title}\">A review for a citizen content</a>was requested by {name}"
+msgstr ""
 
 #: ../dashboard/columns.py:192
 msgid "Actions"
@@ -83,7 +91,7 @@ msgstr "Avant de créer un contenu, veuillez vérifier qu'il n'est pas déjà ex
 msgid "CPSkin Citizen Settings"
 msgstr "CPSkin Citizen Configuration"
 
-#: ../browser/claim.py:50
+#: ../browser/claim.py:52
 #: ../browser/templates/citizen-return-checkout.pt:34
 #: ../browser/templates/citizen-validation-required.pt:23
 msgid "Cancel"
@@ -191,7 +199,7 @@ msgstr "Commentaire"
 msgid "Comment on changes"
 msgstr "Commenter les changements"
 
-#: ../browser/claim.py:38
+#: ../browser/claim.py:39
 #: ../browser/propose.py:43
 #: ../browser/templates/citizen-admin-viewlet.pt:26
 msgid "Confirm"
@@ -226,11 +234,15 @@ msgstr "Edition"
 msgid "Edit this content"
 msgstr "Editer ce contenu"
 
+#: ../browser/settings.py:94
+msgid "Email address of persons that manage citizen contents"
+msgstr ""
+
 #: ../browser/templates/citizen-return-checkout.pt:17
 msgid "Enter a message for the citizen to specify what changes need to be made."
 msgstr "Veuillez entrer un message pour indiquer au citoyen les changements devant être réalisés"
 
-#: ../browser/claim.py:25
+#: ../browser/claim.py:26
 msgid "Explain briefly why you are asking the management of this content"
 msgstr "Expliquez en quelques mots pourquoi vous demandez la gestion de ce contenu"
 
@@ -241,6 +253,14 @@ msgstr "Correction des liens de plone.app.iterate pour les contenus citoyens"
 #: ../configure.zcml:51
 msgid "Give access to citizen users to specific contents"
 msgstr "Donne accès aux citoyens à certains contenus"
+
+#: ../notification.py:17
+msgid "Hello"
+msgstr ""
+
+#: ../browser/settings.py:95
+msgid "If there are multiple email addresses, separate them with semicolons"
+msgstr ""
 
 #: ../browser/templates/citizen-edition-viewlet.pt:14
 msgid "Info"
@@ -392,6 +412,14 @@ msgstr ""
 msgid "Street"
 msgstr ""
 
+#: ../notification.py:64
+msgid "The content \"{title}\" that you manage on the website {portal_url}<a href=\"{link}\" alt=\"{title}\">requires a modification from you</a>"
+msgstr ""
+
+#: ../notification.py:94
+msgid "The content \"{title}\" that you manage on the website {portal_url}<a href=\"{link}\" alt=\"{title}\">was published online</a>"
+msgstr ""
+
 #: ../dashboard/columns.py:108
 msgid "The document is published and visible to visitors"
 msgstr "Le document est publié donc en ligne et visible par les internautes"
@@ -424,6 +452,14 @@ msgstr "Oui"
 #: ../dashboard/columns.py:112
 msgid "You are working on a new version of the document that are not yet published"
 msgstr "Vous travaillez sur la nouvelle version d'un document qui n'est pas encore en ligne"
+
+#: ../notification.py:59
+msgid "You have a message about a content that you manage on {portal_url}"
+msgstr ""
+
+#: ../notification.py:115
+msgid "You have a request about a citizen content on {portal_url}"
+msgstr ""
 
 #: ../configure.zcml:35
 msgid "cpskin.citizen"
