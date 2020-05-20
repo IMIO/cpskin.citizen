@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.3.1 (unreleased)
+1.4.0 (2020-05-20)
 ------------------
 
 - WEB-3301: Remove a remaining reference to admin claims dashboard
