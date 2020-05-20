@@ -23,7 +23,7 @@ class TestVocabularies(testing.BaseTestCase):
     def test_citizen_vocabulary(self):
         """Test 'CitizenVocabulary'"""
         voc = self._get_vocabulary_values("cpskin.citizen.citizens")
-        self.assertListEqual(["citizen"], voc)
+        self.assertListEqual(sorted(["citizen", "newcitizen"]), sorted(voc))
 
     def test_citizen_portal_types_vocabulary(self):
         """Test 'CitizensPortalTypesVocabulary'"""

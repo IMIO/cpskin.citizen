@@ -51,7 +51,13 @@ class CpskinCitizenLayer(PloneSandboxLayer):
         citizen = api.user.create(
             email="citizen@citizen.com", username="citizen", password="citizen"
         )
+        citizen.setMemberProperties(mapping={"fullname": u"Céline Dupont"})
+        newcitizen = api.user.create(
+            email="newcitizen@citizen.com", username="newcitizen", password="citizen"
+        )
+        newcitizen.setMemberProperties(mapping={"fullname": "Jean Dupont"})
         api.group.add_user(groupname="Citizens", user=citizen)
+        api.group.add_user(groupname="Citizens", user=newcitizen)
 
         login(portal, "manager")
         api.content.create(
@@ -60,6 +66,13 @@ class CpskinCitizenLayer(PloneSandboxLayer):
             title="Citizen Document",
             container=portal,
             citizens=["citizen"],
+        )
+        api.content.create(
+            type="Document",
+            id="citizens-document",
+            title="Citiznes Document éàç",
+            container=portal,
+            citizens=["citizen", "newcitizen"],
         )
         api.content.create(
             type="Document", id="document", title="Document", container=portal
@@ -119,6 +132,10 @@ class BaseTestCase(unittest.TestCase):
     @property
     def citizen_document(self):
         return self.portal["citizen-document"]
+
+    @property
+    def citizens_document(self):
+        return self.portal["citizens-document"]
 
     @property
     def claim_document(self):
