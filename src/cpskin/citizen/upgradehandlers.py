@@ -94,3 +94,25 @@ def upgrade_to_1003(context):
             )
     setup_tool = api.portal.get_tool(name="portal_setup")
     setup_tool.runImportStepFromProfile("profile-cpskin.citizen:default", "actions")
+
+
+def upgrade_to_1004(context):
+    """
+    - Add cpskin.citizen.browser.settings.ISettings.manager_email record
+    """
+    registry = getUtility(IRegistry)
+    records = registry.records
+
+    if "cpskin.citizen.browser.settings.ISettings.manager_email" in records:
+        return
+
+    record = Record(
+        field.TextLine(
+            title=u"Email address of persons that manage citizen contents",
+            description=(
+                u"If there are multiple email addresses, separate them with semicolons"
+            ),
+        ),
+        value=u"",
+    )
+    records["cpskin.citizen.browser.settings.ISettings.manager_email"] = record

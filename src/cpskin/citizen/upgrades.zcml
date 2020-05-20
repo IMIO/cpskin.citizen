@@ -31,4 +31,12 @@
     profile="cpskin.citizen:default"
     />
 
+  <genericsetup:upgradeStep
+    title="Add manager email config parameter"
+    source="1003"
+    destination="1004"
+    handler=".upgradehandlers.upgrade_to_1004"
+    profile="cpskin.citizen:default"
+    />
+
 </configure>
