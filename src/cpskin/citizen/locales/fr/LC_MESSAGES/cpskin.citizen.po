@@ -16,11 +16,11 @@ msgstr ""
 
 #: ../notification.py:149
 msgid "<a href=\"{link}\" alt=\"{title}\">A new access request</a> from {name} for a citizen content is awaiting for approval"
-msgstr ""
+msgstr "<a href=\"{link}\" alt=\"{title}\">Une demande de gestion</a> a été faite par {name}"
 
 #: ../notification.py:120
 msgid "<a href=\"{link}\" alt=\"{title}\">A review for a citizen content</a>was requested by {name}"
-msgstr ""
+msgstr "<a href=\"{link}\" alt=\"{title}\">Une demande de validation</a> d'un contenu citoyen a été faite par {name}"
 
 #: ../dashboard/columns.py:192
 msgid "Actions"
@@ -256,7 +256,7 @@ msgstr "Donne accès aux citoyens à certains contenus"
 
 #: ../notification.py:17
 msgid "Hello"
-msgstr ""
+msgstr "Bonjour"
 
 #: ../browser/settings.py:95
 msgid "If there are multiple email addresses, separate them with semicolons"
@@ -414,11 +414,11 @@ msgstr ""
 
 #: ../notification.py:64
 msgid "The content \"{title}\" that you manage on the website {portal_url}<a href=\"{link}\" alt=\"{title}\">requires a modification from you</a>"
-msgstr ""
+msgstr "Une action est requise de votre par pour le contenu \"{title}\" que vous gérez sur le site de {portal_url}"
 
 #: ../notification.py:94
 msgid "The content \"{title}\" that you manage on the website {portal_url}<a href=\"{link}\" alt=\"{title}\">was published online</a>"
-msgstr ""
+msgstr "Le contenu \"{title}\" que vous gérez sur le site de {portal_url} est <a href=\"{link}\" alt=\"{title}\">maintenant en ligne</a>"
 
 #: ../dashboard/columns.py:108
 msgid "The document is published and visible to visitors"
@@ -455,11 +455,11 @@ msgstr "Vous travaillez sur la nouvelle version d'un document qui n'est pas enco
 
 #: ../notification.py:59
 msgid "You have a message about a content that you manage on {portal_url}"
-msgstr ""
+msgstr "Vous avez un message concernant la gestion de votre contenu sur {portal_url}"
 
 #: ../notification.py:115
 msgid "You have a request about a citizen content on {portal_url}"
-msgstr ""
+msgstr "Vous avez une demande liée à la gestion de contenu citoyen sur {portal_url}"
 
 #: ../configure.zcml:35
 msgid "cpskin.citizen"
