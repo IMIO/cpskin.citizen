@@ -10,6 +10,7 @@ Created by mpeeters
 from Products.Five import BrowserView
 from cpskin.citizen import _
 from cpskin.citizen import utils
+from cpskin.citizen import notification
 from plone import api
 from plone.z3cform.layout import FormWrapper
 from z3c.form import button
@@ -45,6 +46,7 @@ class ClaimForm(Form):
             return
         view_url = self.context.absolute_url()
         utils.add_claim(self.context, self.current_user.id, data["reason"])
+        notification.notify_content_awaiting_access(self.context, self.current_user)
         self.request.response.redirect(view_url)
 
     @button.buttonAndHandler(_(u"Cancel"), name="cancel")

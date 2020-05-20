@@ -90,6 +90,13 @@ class ISettings(Interface):
         required=False,
     )
 
+    manager_email = schema.TextLine(
+        title=_(u"Email address of persons that manage citizen contents"),
+        description=_(
+            u"If there are multiple email addresses, separate them with semicolons"
+        ),
+    )
+
 
 class SettingsEditForm(RegistryEditForm):
     schema = ISettings

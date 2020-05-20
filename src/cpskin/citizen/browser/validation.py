@@ -8,10 +8,10 @@ Created by mpeeters
 """
 
 from Products.Five import BrowserView
+from cpskin.citizen import utils
+from cpskin.citizen import notification
 from plone import api
 from zExceptions import Unauthorized
-
-from cpskin.citizen import utils
 
 
 class ValidationRequiredCitizenView(BrowserView):
@@ -24,6 +24,9 @@ class ValidationRequiredCitizenView(BrowserView):
             annotations = utils.get_annotations(self.context)
             annotations["validation_required"] = True
             self.context.reindexObject()
+            notification.notify_content_awaiting_validation(
+                self.context, self.current_user
+            )
             self.request.response.redirect(view_url)
         elif "form.button.Cancel" in self.request.form:
             self.request.response.redirect(view_url)

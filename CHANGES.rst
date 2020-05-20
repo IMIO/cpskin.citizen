@@ -5,6 +5,9 @@ Changelog
 1.3.1 (unreleased)
 ------------------
 
+- WEB-2997: Add email notifications related to citizen or administrator actions
+  [mpeeters]
+
 - WEB-3206: Fix an indexation issue where `is_draft` value was set to `False` for working copies
   [mpeeters]
 

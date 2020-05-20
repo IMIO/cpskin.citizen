@@ -66,6 +66,19 @@
     permission="zope2.View"
     />
 
+  <!-- override of plone.app.iterate view -->
+
+  <configure package="plone.app.iterate.browser">
+    <browser:page
+      for="..interfaces.IIterateAware"
+      name="content-checkin"
+      class="cpskin.citizen.browser.iterate.CheckinView"
+      template="checkin.pt"
+      layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
+      permission="cmf.ModifyPortalContent"
+      />
+  </configure>
+
   <!-- control view -->
 
   <browser:page
