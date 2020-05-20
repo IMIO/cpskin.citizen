@@ -5,6 +5,9 @@ Changelog
 1.3.1 (unreleased)
 ------------------
 
+- WEB-3301: Remove a remaining reference to admin claims dashboard
+  [mpeeters]
+
 - WEB-2997: Add email notifications related to citizen or administrator actions
   [mpeeters]
 

@@ -41,7 +41,6 @@ DASHBOARD_FOLDERS_IDS = (
     "citizen-map",
     "citizen-propose-content",
     "admin-content",
-    "admin-claims",
 )
 
 
