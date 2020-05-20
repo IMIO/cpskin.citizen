@@ -10,11 +10,11 @@ from smtplib import SMTPException
 from zope.i18n import translate
 
 
-def _generate_email(body):
+def _generate_email(body, obj):
     html = safe_unicode(
         """<html><body style="font-family: arial;">{0},<br><br>""" "{1}</body></html>"
     )
-    html_body = html.format(_("Hello"), body)
+    html_body = html.format(translate(_("Hello"), context=obj.REQUEST), body)
     msg = MIMEMultipart("alternative")
     msg.attach(MIMEText(html_body.encode("utf-8"), "html", "UTF-8"))
     return msg
@@ -73,7 +73,7 @@ def notify_content_validated(obj):
 
     for citizen in citizens:
         recipient = _get_recipient(citizen)
-        _send_email(recipient, portal.email_from_address, title, _generate_email(body))
+        _send_email(recipient, portal.email_from_address, title, _generate_email(body, obj))
 
 
 def notify_content_refused(obj):
@@ -103,7 +103,7 @@ def notify_content_refused(obj):
 
     for citizen in citizens:
         recipient = _get_recipient(citizen)
-        _send_email(recipient, portal.email_from_address, title, _generate_email(body))
+        _send_email(recipient, portal.email_from_address, title, _generate_email(body, obj))
 
 
 def notify_content_awaiting_validation(obj, user):
@@ -132,7 +132,7 @@ def notify_content_awaiting_validation(obj, user):
     recipients = [portal.email_from_address]
     recipients.extend(_get_admin_recipients())
     for recipient in recipients:
-        _send_email(recipient, portal.email_from_address, title, _generate_email(body))
+        _send_email(recipient, portal.email_from_address, title, _generate_email(body, obj))
 
 
 def notify_content_awaiting_access(obj, user):
@@ -161,4 +161,4 @@ def notify_content_awaiting_access(obj, user):
     recipients = [portal.email_from_address]
     recipients.extend(_get_admin_recipients())
     for recipient in recipients:
-        _send_email(recipient, portal.email_from_address, title, _generate_email(body))
+        _send_email(recipient, portal.email_from_address, title, _generate_email(body, obj))
