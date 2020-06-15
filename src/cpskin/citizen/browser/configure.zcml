@@ -83,7 +83,6 @@
 
   <browser:page
     for="*"
-    layer="cpskin.citizen.interfaces.ICpskinCitizenLayer"
     name="citizen_control"
     class=".control.CitizenControl"
     permission="zope2.View"

@@ -5,6 +5,9 @@ Changelog
 1.4.1 (unreleased)
 ------------------
 
+- WEB-3337: Remove layer restriction for `citizen_control` view since the layer is not yet defined during install of the product
+  [mpeeters]
+
 - WEB-3337: Fix an issue with install on multilingual websites with `plone.app.contenttypes` profile
   [mpeeters]
 
