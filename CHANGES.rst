@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.4.1 (unreleased)
+1.4.1 (2020-06-15)
 ------------------
 
 - WEB-3337: Remove layer restriction for `citizen_control` view since the layer is not yet defined during install of the product
