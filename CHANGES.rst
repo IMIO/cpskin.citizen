@@ -5,7 +5,8 @@ Changelog
 1.4.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- WEB-3337: Fix an issue with install on multilingual websites with `plone.app.contenttypes` profile
+  [mpeeters]
 
 
 1.4.0 (2020-05-20)

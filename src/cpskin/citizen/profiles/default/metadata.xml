@@ -3,7 +3,6 @@
   <version>1003</version>
   <dependencies>
     <dependency>profile-plone.app.dexterity:default</dependency>
-    <dependency>profile-plone.app.contenttypes:plone-content</dependency>
     <dependency>profile-plone.app.relationfield:default</dependency>
     <dependency>profile-plone.app.iterate:plone.app.iterate</dependency>
     <dependency>profile-plone.app.stagingbehavior:plone.app.contenttypes</dependency>
