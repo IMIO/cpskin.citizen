@@ -5,7 +5,8 @@ Changelog
 1.4.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- WEB-3411: Color correction for better accessibility
+  [thomlamb]
 
 
 1.4.1 (2020-06-15)
