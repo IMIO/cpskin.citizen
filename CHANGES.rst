@@ -5,6 +5,9 @@ Changelog
 1.4.2 (unreleased)
 ------------------
 
+- SUP-17819: Fix help message for user coordinates
+  [mpeeters]
+
 - WEB-3411: Color correction for better accessibility
   [thomlamb]
 
