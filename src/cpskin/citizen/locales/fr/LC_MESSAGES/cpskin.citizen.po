@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-05-20 15:32+0000\n"
+"POT-Creation-Date: 2021-07-15 14:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -288,7 +288,7 @@ msgid "List of object states that can be assimilate to published"
 msgstr "Liste des états qui sont assimiliés à publié"
 
 #. Default: "Longitude"
-#: ../user.py:50
+#: ../user.py:51
 msgid "Longitude"
 msgstr ""
 
@@ -474,10 +474,15 @@ msgstr ""
 msgid "description_cancel"
 msgstr "Supprimer ce brouillon entrainera la suppression de cette copie de travail et de toutes ses modifications."
 
-#. Default: "Indiquez le nom de votre rue"
+#. Default: "Coordinates (latitude) of your living place"
 #: ../user.py:43
-msgid "help_coordinates_description"
-msgstr ""
+msgid "help_latitude_coordinates"
+msgstr "Coordonnées (Latitude) de votre lieu de vie, cette information est utilisée pour afficher des contenus autour de chez vous."
+
+#. Default: "Coordinates (longitude) of your living place"
+#: ../user.py:52
+msgid "help_longitude_coordinates"
+msgstr "Coordonnées (Longitude) de votre lieu de vie, cette information est utilisée pour afficher des contenus autour de chez vous."
 
 #. Default: "Indiquez le nom de votre rue, cette adresse sera utilisée dans le site pour géolocaliser ce qu'il se passe autour de chez vous."
 #: ../user.py:26
