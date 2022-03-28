@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.4.2 (unreleased)
+1.4.2 (2022-03-28)
 ------------------
 
 - SUP-17819: Fix help message for user coordinates
