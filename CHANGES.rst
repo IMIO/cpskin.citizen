@@ -5,7 +5,8 @@ Changelog
 1.4.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- SUP-21239: Add cache to speed up users searching in citizen vocabulary
+  [laulaz]
 
 
 1.4.2 (2022-03-28)

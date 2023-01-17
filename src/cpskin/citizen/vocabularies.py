@@ -8,7 +8,9 @@ Created by mpeeters
 """
 
 from plone import api
+from plone.memoize import ram
 from plone.principalsource.source import PrincipalSource
+from time import time
 from zope.globalrequest import getRequest
 from zope.i18n import translate
 from zope.interface import implements
@@ -18,15 +20,21 @@ from cpskin.citizen import _
 from cpskin.citizen import utils
 
 
+@ram.cache(lambda *args: time() // (60 * 60))
+def get_users():
+    users = api.user.get_users(groupname="Citizens")
+    return [user.id for user in users]
+
+
 class CitizensSource(PrincipalSource):
     def __init__(self, context):
         super(CitizensSource, self).__init__(context)
 
     def _search(self, id=None, exact_match=True):
-        users = api.user.get_users(groupname="Citizens")
+        users = get_users()
         if id is not None:
-            return [{"id": u.id} for u in users if u.id == id]
-        return [{"id": u.id} for u in users]
+            return [{"id": user_id} for user_id in users if user_id == id]
+        return [{"id": user_id} for user_id in users]
 
 
 class CitizensSourceBinder(object):
