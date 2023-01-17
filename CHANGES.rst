@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.4.3 (unreleased)
+1.4.3 (2023-01-17)
 ------------------
 
 - SUP-21239: Add cache to speed up users searching in citizen vocabulary
